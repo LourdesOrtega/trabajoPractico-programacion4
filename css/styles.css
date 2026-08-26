@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.canchas {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+}
+.contenedor-canchas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tarjeta-cancha {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+    text-align: left;
+    transition: transform 0.3s;
+}
+.tarjeta-cancha:hover {
+    transform: translateY(-5px);
+}
+.tarjeta-cancha h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tarjeta-cancha h3 {
+    color: var(--color-primario);
+    margin-bottom: 20px;
+}
+.tarjeta-cancha p {
+    margin-bottom: 12px;
+}
+/* ESTADOS */
+
+.estado-disponible {
+    color: var(--color-disponible);
+    font-weight: bold;
+}
+
+.estado-ocupado {
+    color: var(--color-ocupado);
+    font-weight: bold;
+}
+
+.estado-pendiente {
+    color: var(--color-pendiente);
+    font-weight: bold;
+}
+.tarjeta-cancha button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-primario);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+.tarjeta-cancha button:hover {
+    background-color: var(--color-secundario);
+}
+@media (max-width: 900px) {
+
+    .contenedor-canchas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+@media (max-width: 900px) {
+
+    .contenedor-canchas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+@media (max-width: 600px) {
+
+    .contenedor-canchas {
+        grid-template-columns: 1fr;
+    }
+
+}
