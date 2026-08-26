@@ -1,36 +1,245 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <title>Contacto | Club Cancha - Turnos de Fútbol y Pádel</title>
+
+    <meta name="description"
+        content="Comunicate con el club: teléfono, email, dirección y horarios de atención. Escribinos tu consulta por el formulario de contacto.">
+    <meta name="author" content="Grupo 5 - Tecnicatura Universitaria en Programación">
+
+    <link rel="canonical" href="https://lourdesortega.github.io/trabajoPractico-programacion4/contacto.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:title" content="Contacto | Club Cancha">
+    <meta property="og:description" content="Teléfono, email, dirección y formulario de consultas del club.">
+    <meta property="og:url" content="https://lourdesortega.github.io/trabajoPractico-programacion4/contacto.html">
+    <meta property="og:image" content="https://lourdesortega.github.io/trabajoPractico-programacion4/img/cancha-futbol5.svg">
+
+    <meta name="theme-color" content="#0f766e">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Contacto</h1>
+    <header class="cabecera">
+        <div class="contenedor cabecera__inner">
+
+            <a class="logo" href="index.html">
+                <span class="logo__icono" aria-hidden="true">&#9917;</span>
+                <span>Club Cancha</span>
+            </a>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <ul class="nav__lista">
+                    <li><a class="nav__link" href="index.html">Inicio</a></li>
+                    <li><a class="nav__link" href="canchas.html">Canchas</a></li>
+                    <li><a class="nav__link" href="horarios.html">Horarios</a></li>
+                    <li><a class="nav__link" href="reservar.html">Reservar</a></li>
+                    <li><a class="nav__link" href="contacto.html" aria-current="page">Contacto</a></li>
+                </ul>
+            </nav>
+
+        </div>
     </header>
 
     <main>
-        <section>
-            <h2>Contactanos</h2>
 
-            <form>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
-
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email">
-
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje"></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
+        <section class="hero">
+            <div class="contenedor">
+                <h1>Contacto</h1>
+                <p class="hero__texto">
+                    ¿Tenés una consulta sobre precios, torneos o tu reserva? Escribinos y
+                    te respondemos dentro de las 24 horas.
+                </p>
+            </div>
         </section>
+
+        <!-- ===== DATOS + FORMULARIO: dos columnas con CSS GRID ===== -->
+        <section class="seccion">
+            <div class="contenedor grid-contacto">
+
+                <!-- Columna 1: datos del club -->
+                <div>
+                    <h2>Dónde encontrarnos</h2>
+                    <p class="intro">
+                        También podés acercarte directamente por la administración del club.
+                    </p>
+
+                    <ul class="lista-contacto">
+
+                        <li>
+                            <span class="icono" aria-hidden="true">&#128222;</span>
+                            <span>
+                                <strong>Teléfono</strong>
+                                <a href="tel:+543884000000">+54 388 400-0000</a>
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="icono" aria-hidden="true">&#9993;</span>
+                            <span>
+                                <strong>Email</strong>
+                                <a href="mailto:turnos@clubcancha.com.ar">turnos@clubcancha.com.ar</a>
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="icono" aria-hidden="true">&#128205;</span>
+                            <span>
+                                <strong>Dirección</strong>
+                                Av. Siempreviva 742, San Salvador de Jujuy
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="icono" aria-hidden="true">&#128336;</span>
+                            <span>
+                                <strong>Horario de atención</strong>
+                                Lunes a domingo de 8:00 a 23:00 h
+                            </span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- Columna 2: formulario -->
+                <div>
+                    <h2 id="titulo-contacto">Contactanos</h2>
+                    <p class="intro">
+                        Completá el formulario y nos comunicamos con vos.
+                    </p>
+
+                    <form class="formulario" aria-labelledby="titulo-contacto">
+
+                        <div class="campo">
+                            <label for="nombre">Nombre <span class="obligatorio">*</span></label>
+                            <input type="text" id="nombre" name="nombre" autocomplete="name"
+                                placeholder="Ej: Belén Bulacio" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="email">Correo electrónico <span class="obligatorio">*</span></label>
+                            <input type="email" id="email" name="email" autocomplete="email"
+                                placeholder="Ej: belen@correo.com" required>
+                        </div>
+
+                        <div class="campo campo--ancho">
+                            <label for="asunto">Asunto</label>
+                            <select id="asunto" name="asunto">
+                                <option value="">Elegí un motivo</option>
+                                <option value="reservas">Consulta por una reserva</option>
+                                <option value="precios">Precios y promociones</option>
+                                <option value="torneos">Torneos y campeonatos</option>
+                                <option value="otros">Otro motivo</option>
+                            </select>
+                        </div>
+
+                        <div class="campo campo--ancho">
+                            <label for="mensaje">Mensaje <span class="obligatorio">*</span></label>
+                            <textarea id="mensaje" name="mensaje" rows="5" maxlength="500"
+                                placeholder="Contanos en qué te podemos ayudar." required></textarea>
+                            <span class="campo__ayuda">Máximo 500 caracteres.</span>
+                        </div>
+
+                        <button type="submit" class="boton boton--secundario">Enviar mensaje</button>
+
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== PREGUNTAS FRECUENTES (buen contenido para SEO) ===== -->
+        <section class="seccion seccion--clara" aria-labelledby="titulo-faq">
+            <div class="contenedor">
+
+                <h2 class="seccion__titulo" id="titulo-faq">Preguntas frecuentes</h2>
+                <p class="seccion__bajada">Las consultas que más nos llegan por teléfono.</p>
+
+                <div class="grid-funciones">
+
+                    <article class="tarjeta">
+                        <div class="tarjeta__cuerpo">
+                            <h3>¿Puedo cancelar mi turno?</h3>
+                            <p class="tarjeta__texto">
+                                Sí, avisando con al menos 3 horas de anticipación y sin ningún costo.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="tarjeta__cuerpo">
+                            <h3>¿Alquilan pelotas y paletas?</h3>
+                            <p class="tarjeta__texto">
+                                Sí. El alquiler de paletas de pádel y pelotas se abona en la administración.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="tarjeta__cuerpo">
+                            <h3>¿Cómo se paga el turno?</h3>
+                            <p class="tarjeta__texto">
+                                En efectivo, con transferencia o tarjeta de débito al llegar al club.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <footer class="pie">
+        <div class="contenedor">
+
+            <div class="pie__grid">
+
+                <div>
+                    <h3>Club Cancha</h3>
+                    <p>Sistema interno de gestión de turnos para canchas de fútbol y pádel.</p>
+                </div>
+
+                <div>
+                    <h3>Secciones</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="canchas.html">Nuestras canchas</a></li>
+                        <li><a href="horarios.html">Horarios disponibles</a></li>
+                        <li><a href="reservar.html">Reservar un turno</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Atención</h3>
+                    <ul>
+                        <li>Lunes a domingo de 8 a 23 h</li>
+                        <li><a href="tel:+543884000000">+54 388 400-0000</a></li>
+                        <li><a href="mailto:turnos@clubcancha.com.ar">turnos@clubcancha.com.ar</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <p class="pie__copy">Copyright 2026 &middot; Sistema interno del club</p>
+
+        </div>
+    </footer>
+
 </body>
+
 </html>
