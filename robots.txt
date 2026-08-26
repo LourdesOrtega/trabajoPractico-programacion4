@@ -1,6 +1,0 @@
-# Permite que los buscadores recorran todo el sitio
-User-agent: *
-Allow: /
-
-# Ubicacion del mapa del sitio
-Sitemap: https://lourdesortega.github.io/trabajoPractico-programacion4/sitemap.xml
