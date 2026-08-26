@@ -79,13 +79,15 @@
   --color-borde: #d1d5db;
 
   /* --- Tipografias --- */
-  --fuente-titulos: "Poppins", "Segoe UI", system-ui, sans-serif;
-  --fuente-texto: "Inter", "Segoe UI", system-ui, sans-serif;
+  --fuente-titulos: "Poppins", "Segoe UI", sans-serif;
+  --fuente-texto: "Inter", "Segoe UI", sans-serif;
 
-  /* --- Escala tipografica fluida (clamp: minimo, ideal en vw, maximo) --- */
-  --fs-h1: clamp(1.9rem, 1.2rem + 3vw, 3.25rem);
-  --fs-h2: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);
-  --fs-h3: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+  /* --- Tamanos de letra (valores del CELULAR).
+         Mas abajo, en las media queries, redefinimos estas mismas variables
+         con valores mas grandes para tablet y escritorio. --- */
+  --fs-h1: 2rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.15rem;
   --fs-base: 1rem;                   /* 1rem = 16px por defecto */
   --fs-chico: 0.875rem;
 
@@ -106,7 +108,7 @@
   --sombra-fuerte: 0 12px 28px rgba(0, 0, 0, 0.16);
 
   /* --- Layout --- */
-  --ancho-contenedor: 75rem;         /* 1200px */
+  --ancho-contenedor: 1200px;
   --transicion: 200ms ease-in-out;
 }
 
@@ -124,10 +126,6 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* FLEXBOX: body en columna + main con flex:1 empuja el footer siempre
    al fondo, aunque la pagina tenga poco contenido ("sticky footer"). */
 body {
@@ -139,7 +137,6 @@ body {
   line-height: 1.6;
   color: var(--color-texto);
   background-color: var(--color-fondo);
-  -webkit-font-smoothing: antialiased;
 }
 
 main {
@@ -163,10 +160,9 @@ a:hover {
 }
 
 /* Accesibilidad: marca visible al navegar con la tecla Tab */
-:focus-visible {
+:focus {
   outline: 3px solid var(--color-secundario);
   outline-offset: 2px;
-  border-radius: var(--radio-chico);
 }
 
 h1, h2, h3, h4 {
@@ -184,16 +180,19 @@ h3 { font-size: var(--fs-h3); }
    0.3  UTILIDADES GENERALES
    ---------------------------------------------------------------------------- */
 
-/* Centra el contenido y le da aire lateral en cualquier pantalla */
+/* Centra el contenido y le da aire lateral en cualquier pantalla.
+   margin: 0 auto  ->  arriba y abajo 0, izquierda y derecha automatico
+                       (el "auto" reparte el sobrante y centra la caja). */
 .contenedor {
   width: 100%;                       /* % = relativo al ancho del padre */
   max-width: var(--ancho-contenedor);
-  margin-inline: auto;               /* BOX MODEL: margin automatico = centrado */
-  padding-inline: var(--esp-2);
+  margin: 0 auto;
+  padding: 0 var(--esp-2);           /* arriba y abajo 0, a los costados 1rem */
 }
 
+/* padding: 3rem 0  ->  arriba y abajo 3rem, a los costados 0 */
 .seccion {
-  padding-block: var(--esp-5);
+  padding: var(--esp-5) 0;
 }
 
 .seccion--clara {
@@ -205,11 +204,11 @@ h3 { font-size: var(--fs-h3); }
   margin-bottom: var(--esp-2);
 }
 
+/* margin: 0 auto 2rem  ->  arriba 0, costados auto (centrado), abajo 2rem */
 .seccion__bajada {
   text-align: center;
-  max-width: 60ch;                   /* ch = ancho del caracter cero: mide texto */
-  margin-inline: auto;
-  margin-bottom: var(--esp-4);
+  max-width: 600px;
+  margin: 0 auto var(--esp-4);
   color: var(--color-texto-suave);
 }
 
@@ -221,16 +220,6 @@ h3 { font-size: var(--fs-h3); }
 .intro {
   margin-bottom: var(--esp-3);
   color: var(--color-texto-suave);
-}
-
-/* Visible solo para lectores de pantalla (accesibilidad + SEO) */
-.solo-lectores {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
 }
 
 
@@ -281,7 +270,7 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .boton--borde {
-  border-color: currentColor;
+  border-color: var(--color-primario);
   color: var(--color-primario);
   background-color: transparent;
 }
@@ -315,7 +304,7 @@ h3 { font-size: var(--fs-h3); }
   align-items: center;               /* eje transversal: alineacion vertical */
   justify-content: space-between;    /* eje principal: separacion horizontal */
   gap: var(--esp-2);
-  padding-block: var(--esp-2);
+  padding: var(--esp-2) 0;
 }
 
 .logo {
@@ -373,7 +362,7 @@ h3 { font-size: var(--fs-h3); }
    0.6  HERO BASE  (la portada la usan las 5 paginas)
    ---------------------------------------------------------------------------- */
 .hero {
-  padding-block: var(--esp-6);
+  padding: var(--esp-6) 0;
   color: #ffffff;
   text-align: center;
   background-image: linear-gradient(135deg, var(--color-primario-oscuro) 0%,
@@ -388,9 +377,8 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .hero__texto {
-  max-width: 55ch;
-  margin-inline: auto;
-  margin-bottom: var(--esp-3);
+  max-width: 550px;
+  margin: 0 auto var(--esp-3);
   font-size: 1.1rem;
   color: var(--color-primario-claro);
 }
@@ -438,14 +426,14 @@ h3 { font-size: var(--fs-h3); }
    ---------------------------------------------------------------------------- */
 .pie {
   margin-top: var(--esp-6);
-  padding-block: var(--esp-4) var(--esp-2);
+  padding: var(--esp-4) 0 var(--esp-2);   /* arriba 2rem, costados 0, abajo 1rem */
   background-color: var(--color-oscuro);
   color: var(--color-texto-claro);
 }
 
 .pie__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--esp-3);
   padding-bottom: var(--esp-3);
 }
@@ -492,17 +480,27 @@ h3 { font-size: var(--fs-h3); }
    0.9  MEDIA QUERIES DE LA ZONA COMUN
    Mobile First: los estilos de arriba son los del celular y aca AGREGAMOS
    reglas para pantallas mas grandes.
+
+   Truco: volvemos a declarar :root para AGRANDAR los tamanos de letra.
+   Como los titulos usan var(--fs-h1), con cambiar la variable ya crecen
+   todos los h1 del sitio. No hace falta tocar cada titulo uno por uno.
    ---------------------------------------------------------------------------- */
 
-/* --- TABLET: desde 48rem (768px) --- */
-@media (min-width: 48rem) {
+/* --- TABLET: desde 768px --- */
+@media (min-width: 768px) {
+
+  :root {
+    --fs-h1: 2.5rem;
+    --fs-h2: 1.9rem;
+    --fs-h3: 1.3rem;
+  }
 
   .contenedor {
-    padding-inline: var(--esp-3);
+    padding: 0 var(--esp-3);
   }
 
   .seccion {
-    padding-block: var(--esp-6);
+    padding: var(--esp-6) 0;
   }
 
   .hero__texto {
@@ -510,19 +508,25 @@ h3 { font-size: var(--fs-h3); }
   }
 }
 
-/* --- ESCRITORIO: desde 64rem (1024px) --- */
-@media (min-width: 64rem) {
+/* --- ESCRITORIO: desde 1024px --- */
+@media (min-width: 1024px) {
+
+  :root {
+    --fs-h1: 3.25rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.4rem;
+  }
 
   .cabecera__inner {
     flex-wrap: nowrap;               /* logo y menu en una sola fila */
   }
 }
 
-/* --- CELULAR CHICO: hasta 30rem (480px) --- */
-@media (max-width: 30rem) {
+/* --- CELULAR CHICO: hasta 480px --- */
+@media (max-width: 480px) {
 
   .hero {
-    padding-block: var(--esp-4);
+    padding: var(--esp-4) 0;
   }
 
   .nav__lista {
@@ -532,17 +536,6 @@ h3 { font-size: var(--fs-h3); }
   .nav__link {
     padding: 0.4rem 0.6rem;
     font-size: 0.8rem;
-  }
-}
-
-/* --- Accesibilidad: si la usuaria pidio menos animaciones, las apagamos --- */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }
 
@@ -595,22 +588,23 @@ h3 { font-size: var(--fs-h3); }
 
 /* ----------------------------------------------------------------------------
    1.2  FUNCIONES PRINCIPALES  ->  CSS GRID
-   repeat(auto-fit, minmax(Xrem, 1fr)) = "mete todas las columnas que entren,
+   repeat(auto-fit, minmax(Xpx, 1fr)) = "mete todas las columnas que entren,
    cada una de minimo X, y que se repartan el sobrante (fr)".
    Con esa sola linea la grilla ya es responsive, sin escribir media queries.
    ---------------------------------------------------------------------------- */
 .grid-funciones {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--esp-3);
 }
 
 /* Circulito con el icono de cada funcion */
 .tarjeta__icono {
-  display: grid;
-  place-items: center;               /* centrado vertical y horizontal en 1 linea */
-  width: 3.5rem;
-  height: 3.5rem;
+  display: flex;
+  align-items: center;               /* centrado vertical */
+  justify-content: center;           /* centrado horizontal */
+  width: 56px;
+  height: 56px;
   margin-bottom: var(--esp-1);
   border-radius: 50%;
   background-color: var(--color-primario-claro);
@@ -623,7 +617,7 @@ h3 { font-size: var(--fs-h3); }
    ---------------------------------------------------------------------------- */
 
 /* --- CELULAR CHICO: los botones de la portada a lo ancho --- */
-@media (max-width: 30rem) {
+@media (max-width: 480px) {
 
   .hero__acciones {
     flex-direction: column;
@@ -666,18 +660,20 @@ h3 { font-size: var(--fs-h3); }
    ---------------------------------------------------------------------------- */
 .grid-canchas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--esp-3);
 }
 
 
 /* ----------------------------------------------------------------------------
    2.2  IMAGEN DE LA TARJETA
+   Le damos un alto fijo para que todas las tarjetas queden parejas.
+   object-fit: cover recorta la imagen para llenar el espacio SIN deformarla.
    ---------------------------------------------------------------------------- */
 .tarjeta__imagen {
   width: 100%;
-  aspect-ratio: 16 / 10;             /* reserva el espacio: la pagina no salta */
-  object-fit: cover;                 /* recorta sin deformar la imagen */
+  height: 200px;
+  object-fit: cover;
   border-bottom: var(--borde);
 }
 
@@ -690,7 +686,7 @@ h3 { font-size: var(--fs-h3); }
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  margin-block: var(--esp-1);
+  margin: var(--esp-1) 0;
   font-size: var(--fs-chico);
   color: var(--color-texto-suave);
 }
@@ -723,7 +719,7 @@ h3 { font-size: var(--fs-h3); }
    ---------------------------------------------------------------------------- */
 
 /* --- ESCRITORIO: las 4 canchas en una sola fila --- */
-@media (min-width: 64rem) {
+@media (min-width: 1024px) {
 
   .grid-canchas {
     grid-template-columns: repeat(4, 1fr);   /* fr: reparte el espacio libre */
@@ -762,9 +758,9 @@ h3 { font-size: var(--fs-h3); }
    ---------------------------------------------------------------------------- */
 .grid-horarios {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
   gap: var(--esp-2);
-  margin-block: var(--esp-2) var(--esp-5);   /* BOX MODEL: margin externo */
+  margin: var(--esp-2) 0 var(--esp-5);   /* arriba 1rem, costados 0, abajo 3rem */
 }
 
 /* Referencias de color debajo del titulo  ->  FLEXBOX */
@@ -870,10 +866,6 @@ h3 { font-size: var(--fs-h3); }
   body {
     background: #ffffff;
   }
-
-  .turno {
-    break-inside: avoid;             /* que un casillero no se corte a la mitad */
-  }
 }
 
 
@@ -969,7 +961,7 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .campo textarea {
-  min-height: 8rem;
+  min-height: 128px;
   resize: vertical;
 }
 
@@ -1009,10 +1001,11 @@ h3 { font-size: var(--fs-h3); }
 
 .aviso li {
   position: relative;
-  padding-left: 1.75rem;
+  padding-left: 28px;
   color: var(--color-texto-suave);
 }
 
+/* ::before inventa un pedacito de contenido antes del texto del <li> */
 .aviso li::before {
   content: "\2714";                  /* tilde de verificacion */
   position: absolute;
@@ -1027,7 +1020,7 @@ h3 { font-size: var(--fs-h3); }
    ---------------------------------------------------------------------------- */
 
 /* --- TABLET: el formulario pasa a 2 columnas --- */
-@media (min-width: 48rem) {
+@media (min-width: 768px) {
 
   .formulario {
     grid-template-columns: repeat(2, 1fr);
@@ -1042,7 +1035,7 @@ h3 { font-size: var(--fs-h3); }
 }
 
 /* --- ESCRITORIO: formulario grande + columna de avisos --- */
-@media (min-width: 64rem) {
+@media (min-width: 1024px) {
 
   .grid-reserva {
     grid-template-columns: 3fr 1.5fr;
@@ -1050,7 +1043,7 @@ h3 { font-size: var(--fs-h3); }
 }
 
 /* --- CELULAR CHICO: menos aire adentro del formulario --- */
-@media (max-width: 30rem) {
+@media (max-width: 480px) {
 
   .formulario {
     padding: var(--esp-2);
@@ -1135,7 +1128,7 @@ h3 { font-size: var(--fs-h3); }
 /* --- ESCRITORIO: datos a la izquierda (2 partes) y formulario a la
        derecha (3 partes). El formulario necesita mas ancho para que los
        campos entren de a dos. --- */
-@media (min-width: 64rem) {
+@media (min-width: 1024px) {
 
   .grid-contacto {
     grid-template-columns: 2fr 3fr;
