@@ -3,288 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Horarios y Disponibilidad de Turnos | Club Cancha</title>
-
-    <meta name="description"
-        content="Consultá la grilla de horarios de las canchas de fútbol y pádel: turnos libres, ocupados y pendientes de confirmación, hora por hora.">
-    <meta name="author" content="Grupo 5 - Tecnicatura Universitaria en Programación">
-
-    <link rel="canonical" href="https://lourdesortega.github.io/trabajoPractico-programacion4/horarios.html">
-
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_AR">
-    <meta property="og:title" content="Horarios y Disponibilidad | Club Cancha">
-    <meta property="og:description" content="Mirá qué turnos están libres hoy en cada cancha del club.">
-    <meta property="og:url" content="https://lourdesortega.github.io/trabajoPractico-programacion4/horarios.html">
-    <meta property="og:image" content="https://lourdesortega.github.io/trabajoPractico-programacion4/img/cancha-futbol5.svg">
-
-    <meta name="theme-color" content="#0f766e">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Turnos</title>
 </head>
 
 <body>
 
-    <header class="cabecera">
-        <div class="contenedor cabecera__inner">
+    <h1>Turnos - Cancha de Fútbol</h1>
 
-            <a class="logo" href="index.html">
-                <span class="logo__icono" aria-hidden="true">&#9917;</span>
-                <span>Club Cancha</span>
-            </a>
+    <h2>Reservar un turno</h2>
 
-            <nav class="nav" aria-label="Navegación principal">
-                <ul class="nav__lista">
-                    <li><a class="nav__link" href="index.html">Inicio</a></li>
-                    <li><a class="nav__link" href="canchas.html">Canchas</a></li>
-                    <li><a class="nav__link" href="horarios.html" aria-current="page">Horarios</a></li>
-                    <li><a class="nav__link" href="reservar.html">Reservar</a></li>
-                    <li><a class="nav__link" href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
+    <form>
 
-        </div>
-    </header>
+        <label>Nombre:</label>
+        <input type="text">
 
-    <main>
+        <br><br>
 
-        <section class="hero">
-            <div class="contenedor">
-                <h1>Horarios y disponibilidad</h1>
-                <p class="hero__texto">
-                    Grilla de turnos del día de hoy. Cada turno dura una hora y el club abre
-                    de 8 a 23 h, todos los días.
-                </p>
-            </div>
-        </section>
+        <label>Fecha:</label>
+        <input type="date">
 
-        <section class="seccion" aria-labelledby="titulo-grilla">
-            <div class="contenedor">
+        <br><br>
 
-                <h2 class="seccion__titulo" id="titulo-grilla">Grilla del día</h2>
-                <p class="seccion__bajada">
-                    Hacé clic en un turno disponible para pasar al formulario de reserva.
-                </p>
+        <label>Horario:</label>
+        <input type="time">
 
-                <!-- Referencias de color (FLEXBOX) -->
-                <ul class="referencias">
-                    <li><span class="estado estado--disponible">Disponible</span></li>
-                    <li><span class="estado estado--pendiente">A confirmar</span></li>
-                    <li><span class="estado estado--ocupado">Ocupado</span></li>
-                </ul>
+        <br><br>
 
-                <!-- ============ CANCHA DE FUTBOL 5 (CSS GRID) ============ -->
-                <article aria-labelledby="cancha-futbol5">
-                    <h3 id="cancha-futbol5">Fútbol 5 &middot; Cancha 1</h3>
-                    <div class="grid-horarios">
+        <label>Cancha:</label>
+        <select>
+            <option>Fútbol 5</option>
+            <option>Fútbol 7</option>
+            <option>Fútbol 11</option>
+        </select>
 
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">08:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
+        <br><br>
 
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">09:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
+        <button>Reservar turno</button>
 
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">10:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--pendiente">
-                            <span class="turno__hora">11:00</span>
-                            <span class="estado estado--pendiente">A confirmar</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">18:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">19:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">20:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">21:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                    </div>
-                </article>
-
-                <!-- ============ CANCHA DE FUTBOL 7 ============ -->
-                <article aria-labelledby="cancha-futbol7">
-                    <h3 id="cancha-futbol7">Fútbol 7 &middot; Cancha 2</h3>
-                    <div class="grid-horarios">
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">08:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">09:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">10:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">17:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--pendiente">
-                            <span class="turno__hora">19:00</span>
-                            <span class="estado estado--pendiente">A confirmar</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">21:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">22:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">23:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                    </div>
-                </article>
-
-                <!-- ============ CANCHA DE PADEL ============ -->
-                <article aria-labelledby="cancha-padel">
-                    <h3 id="cancha-padel">Pádel &middot; Cancha 3</h3>
-                    <div class="grid-horarios">
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">08:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">12:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">13:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">16:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">18:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--pendiente">
-                            <span class="turno__hora">20:00</span>
-                            <span class="estado estado--pendiente">A confirmar</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">21:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">22:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                    </div>
-                </article>
-
-                <p class="centrado">
-                    <a class="boton boton--secundario" href="reservar.html">Reservar un turno disponible</a>
-                </p>
-
-            </div>
-        </section>
-
-        <!-- ============ INFORMACION DE LA GRILLA ============ -->
-        <section class="seccion seccion--clara" aria-labelledby="titulo-reglas">
-            <div class="contenedor">
-                <aside class="aviso">
-                    <h2 id="titulo-reglas">Cómo funcionan los turnos</h2>
-                    <ul>
-                        <li>Cada turno tiene una duración de una hora exacta.</li>
-                        <li>La grilla se actualiza cuando el club confirma o cancela una reserva.</li>
-                        <li>Un turno "a confirmar" queda reservado por 24 horas.</li>
-                        <li>Las cancelaciones se avisan con 3 horas de anticipación.</li>
-                    </ul>
-                </aside>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="pie">
-        <div class="contenedor">
-
-            <div class="pie__grid">
-
-                <div>
-                    <h3>Club Cancha</h3>
-                    <p>Sistema interno de gestión de turnos para canchas de fútbol y pádel.</p>
-                </div>
-
-                <div>
-                    <h3>Secciones</h3>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="canchas.html">Nuestras canchas</a></li>
-                        <li><a href="horarios.html">Horarios disponibles</a></li>
-                        <li><a href="reservar.html">Reservar un turno</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3>Atención</h3>
-                    <ul>
-                        <li>Lunes a domingo de 8 a 23 h</li>
-                        <li><a href="tel:+543884000000">+54 388 400-0000</a></li>
-                        <li><a href="mailto:turnos@clubcancha.com.ar">turnos@clubcancha.com.ar</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <p class="pie__copy">Copyright 2026 &middot; Sistema interno del club</p>
-
-        </div>
-    </footer>
+    </form>
 
 </body>
 
