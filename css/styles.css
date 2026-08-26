@@ -666,7 +666,7 @@ h3 { font-size: var(--fs-h3); }
    ---------------------------------------------------------------------------- */
 .grid-canchas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--esp-3);
 }
 
@@ -722,13 +722,25 @@ h3 { font-size: var(--fs-h3); }
    2.4  MEDIA QUERIES DE CANCHAS
    ---------------------------------------------------------------------------- */
 
-/* --- ESCRITORIO: las 4 canchas en una sola fila --- */
-@media (min-width: 64rem) {
+   /* --- TABLET: 2 columnas --- */
+@media (max-width: 900px) {
 
   .grid-canchas {
-    grid-template-columns: repeat(4, 1fr);   /* fr: reparte el espacio libre */
+    grid-template-columns: repeat(2, 1fr);
   }
+
 }
+
+
+/* --- CELULAR: 1 columna --- */
+@media (max-width: 600px) {
+
+  .grid-canchas {
+    grid-template-columns: 1fr;
+  }
+
+}
+
 
 
 /* --------------------------- FIN DE LA ZONA 2 ---------------------------- */
