@@ -1,89 +1,1147 @@
+/* ============================================================================
+   SISTEMA DE TURNOS - CANCHAS DE FUTBOL Y PADEL
+   Hoja de estilos UNICA del proyecto.
+   Metodologia: Mobile First (primero celular, despues tablet y escritorio)
+   ============================================================================
+
+   >>> MAPA DEL ARCHIVO - LEER ANTES DE EDITAR <<<
+
+   El archivo esta dividido en ZONAS. Cada zona tiene una DUENA.
+   Cada una escribe UNICAMENTE dentro de su zona, entre sus dos banderas.
+
+     ZONA 0 - COMUN ................ Lourdes  (variables, reset, header, footer)
+     ZONA 1 - INICIO ............... Lourdes
+     ZONA 2 - CANCHAS .............. Analia
+     ZONA 3 - HORARIOS ............. Laura
+     ZONA 4 - RESERVAR ............. Emilse
+     ZONA 5 - CONTACTO ............. Belen
+
+   REGLAS PARA NO TENER CONFLICTOS EN GIT:
+
+   1. Escribi solo dentro de TU zona. Nunca edites la zona de otra.
+   2. No borres ni muevas las banderas ###### que separan las zonas.
+   3. Las MEDIA QUERIES de tu seccion van DENTRO de tu zona, al final.
+      No hay un bloque de media queries comun al final del archivo.
+   4. Si necesitas cambiar algo de la ZONA 0 (un color, el header),
+      pediselo a Lourdes. No lo toques por tu cuenta.
+   5. Antes de empezar a editar: git merge origin/dev
+
+   Por que funciona: git compara LINEAS, no archivos. Como las zonas estan
+   separadas por decenas de lineas, dos personas pueden editar el mismo
+   archivo al mismo tiempo y git las junta solo, sin conflicto.
+
+   ============================================================================ */
+
+
+
+
+/* ############################################################################
+   ############################################################################
+   ##                                                                        ##
+   ##   ZONA 0  -  COMUN                                    DUENA: LOURDES   ##
+   ##   Lo que se usa en TODAS las paginas.                                  ##
+   ##   Si necesitas cambiar algo de aca, pediselo a Lourdes.                ##
+   ##                                                                        ##
+   ############################################################################
+   ############################################################################ */
+
+
+/* ----------------------------------------------------------------------------
+   0.1  VARIABLES CSS  ->  :root + var()
+   :root es el elemento raiz del documento (<html>). Todo lo que definimos
+   aca se hereda a TODA la pagina y se reutiliza con var(--nombre).
+   Ventaja: cambiamos un color en un solo lugar y se actualiza el sitio entero.
+   ---------------------------------------------------------------------------- */
+:root {
+  /* --- Paleta de color --- */
+  --color-primario: #0f766e;         /* verde cesped: identidad del club */
+  --color-primario-oscuro: #115e59;
+  --color-primario-claro: #ccfbf1;
+  --color-secundario: #f59e0b;       /* ambar: llamadas a la accion */
+  --color-secundario-oscuro: #d97706;
+
+  --color-fondo: #f4f7f8;            /* fondo general de la pagina */
+  --color-superficie: #ffffff;       /* fondo de tarjetas y formularios */
+  --color-oscuro: #0b1f1d;           /* header y footer */
+
+  --color-texto: #1f2937;
+  --color-texto-suave: #4b5563;
+  --color-texto-claro: #e5e7eb;
+
+  /* --- Colores de estado (disponibilidad de turnos) --- */
+  --color-disponible: #15803d;
+  --color-disponible-fondo: #dcfce7;
+  --color-ocupado: #b91c1c;
+  --color-ocupado-fondo: #fee2e2;
+  --color-pendiente: #b45309;
+  --color-pendiente-fondo: #fef3c7;
+
+  --color-borde: #d1d5db;
+
+  /* --- Tipografias --- */
+  --fuente-titulos: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --fuente-texto: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  /* --- Escala tipografica fluida (clamp: minimo, ideal en vw, maximo) --- */
+  --fs-h1: clamp(1.9rem, 1.2rem + 3vw, 3.25rem);
+  --fs-h2: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);
+  --fs-h3: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+  --fs-base: 1rem;                   /* 1rem = 16px por defecto */
+  --fs-chico: 0.875rem;
+
+  /* --- Escala de espaciado (todo multiplo de 0.5rem = 8px) --- */
+  --esp-1: 0.5rem;
+  --esp-2: 1rem;
+  --esp-3: 1.5rem;
+  --esp-4: 2rem;
+  --esp-5: 3rem;
+  --esp-6: 4rem;
+
+  /* --- Bordes y sombras --- */
+  --radio: 0.75rem;
+  --radio-chico: 0.5rem;
+  --radio-pastilla: 999px;
+  --borde: 1px solid var(--color-borde);
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.10);
+  --sombra-fuerte: 0 12px 28px rgba(0, 0, 0, 0.16);
+
+  /* --- Layout --- */
+  --ancho-contenedor: 75rem;         /* 1200px */
+  --transicion: 200ms ease-in-out;
+}
+
+
+/* ----------------------------------------------------------------------------
+   0.2  RESET Y BOX MODEL
+   box-sizing: border-box hace que el padding y el border queden DENTRO
+   del ancho declarado. Sin esto, un div de 100% + padding se desborda.
+   ---------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* FLEXBOX: body en columna + main con flex:1 empuja el footer siempre
+   al fondo, aunque la pagina tenga poco contenido ("sticky footer"). */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+  min-height: 100vh;                 /* vh = alto de la ventana */
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fuente-texto);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  -webkit-font-smoothing: antialiased;
 }
 
-.canchas {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-    text-align: center;
-}
-.contenedor-canchas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+main {
+  flex: 1;
 }
 
-.tarjeta-cancha {
-    background-color: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
-    text-align: left;
-    transition: transform 0.3s;
-}
-.tarjeta-cancha:hover {
-    transform: translateY(-5px);
-}
-.tarjeta-cancha h2 {
-    font-weight: bold;
-    margin-bottom: 10px;
+img {
+  max-width: 100%;                   /* la imagen nunca se pasa de su contenedor */
+  height: auto;
+  display: block;
 }
 
-.tarjeta-cancha h3 {
-    color: var(--color-primario);
-    margin-bottom: 20px;
-}
-.tarjeta-cancha p {
-    margin-bottom: 12px;
-}
-/* ESTADOS */
-
-.estado-disponible {
-    color: var(--color-disponible);
-    font-weight: bold;
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+  transition: color var(--transicion);
 }
 
-.estado-ocupado {
-    color: var(--color-ocupado);
-    font-weight: bold;
+a:hover {
+  color: var(--color-secundario-oscuro);
 }
 
-.estado-pendiente {
-    color: var(--color-pendiente);
-    font-weight: bold;
+/* Accesibilidad: marca visible al navegar con la tecla Tab */
+:focus-visible {
+  outline: 3px solid var(--color-secundario);
+  outline-offset: 2px;
+  border-radius: var(--radio-chico);
 }
-.tarjeta-cancha button {
+
+h1, h2, h3, h4 {
+  font-family: var(--fuente-titulos);
+  line-height: 1.2;
+  color: var(--color-primario-oscuro);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+
+/* ----------------------------------------------------------------------------
+   0.3  UTILIDADES GENERALES
+   ---------------------------------------------------------------------------- */
+
+/* Centra el contenido y le da aire lateral en cualquier pantalla */
+.contenedor {
+  width: 100%;                       /* % = relativo al ancho del padre */
+  max-width: var(--ancho-contenedor);
+  margin-inline: auto;               /* BOX MODEL: margin automatico = centrado */
+  padding-inline: var(--esp-2);
+}
+
+.seccion {
+  padding-block: var(--esp-5);
+}
+
+.seccion--clara {
+  background-color: var(--color-superficie);
+}
+
+.seccion__titulo {
+  text-align: center;
+  margin-bottom: var(--esp-2);
+}
+
+.seccion__bajada {
+  text-align: center;
+  max-width: 60ch;                   /* ch = ancho del caracter cero: mide texto */
+  margin-inline: auto;
+  margin-bottom: var(--esp-4);
+  color: var(--color-texto-suave);
+}
+
+.centrado {
+  text-align: center;
+}
+
+/* Parrafo introductorio debajo de un h2 dentro de una columna */
+.intro {
+  margin-bottom: var(--esp-3);
+  color: var(--color-texto-suave);
+}
+
+/* Visible solo para lectores de pantalla (accesibilidad + SEO) */
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+
+/* ----------------------------------------------------------------------------
+   0.4  BOTONES  (se usan en las 5 paginas)
+   ---------------------------------------------------------------------------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-1);
+  padding: 0.75rem 1.5rem;           /* BOX MODEL: padding interno */
+  border: 2px solid transparent;     /* BOX MODEL: border */
+  border-radius: var(--radio-pastilla);
+  font-family: var(--fuente-titulos);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: transform var(--transicion), box-shadow var(--transicion),
+              background-color var(--transicion);
+}
+
+.boton--primario {
+  background-color: var(--color-primario);
+  color: #ffffff;
+  box-shadow: var(--sombra);
+}
+
+.boton--primario:hover {
+  background-color: var(--color-primario-oscuro);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.boton--secundario {
+  background-color: var(--color-secundario);
+  color: var(--color-oscuro);
+  box-shadow: var(--sombra);
+}
+
+.boton--secundario:hover {
+  background-color: var(--color-secundario-oscuro);
+  color: var(--color-oscuro);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.boton--borde {
+  border-color: currentColor;
+  color: var(--color-primario);
+  background-color: transparent;
+}
+
+.boton--borde:hover {
+  background-color: var(--color-primario);
+  color: #ffffff;
+}
+
+.boton--bloque {
+  width: 100%;
+}
+
+
+/* ----------------------------------------------------------------------------
+   0.5  CABECERA Y NAVEGACION  ->  FLEXBOX
+   Flexbox resuelve en 3 lineas el clasico "logo a la izquierda, menu a la
+   derecha" y ademas reacomoda todo solo cuando falta ancho.
+   ---------------------------------------------------------------------------- */
+.cabecera {
+  position: sticky;                  /* la barra queda fija al hacer scroll */
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-oscuro);
+  box-shadow: var(--sombra);
+}
+
+.cabecera__inner {
+  display: flex;
+  flex-wrap: wrap;                   /* en celular las filas bajan solas */
+  align-items: center;               /* eje transversal: alineacion vertical */
+  justify-content: space-between;    /* eje principal: separacion horizontal */
+  gap: var(--esp-2);
+  padding-block: var(--esp-2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-1);
+  font-family: var(--fuente-titulos);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.logo:hover {
+  color: var(--color-secundario);
+}
+
+.logo__icono {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.nav__lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--esp-1);
+  list-style: none;                  /* saca los puntitos del <ul> */
+}
+
+.nav__link {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radio-pastilla);
+  font-size: var(--fs-chico);
+  font-weight: 600;
+  color: var(--color-texto-claro);
+  transition: background-color var(--transicion), color var(--transicion);
+}
+
+.nav__link:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* Marca la pagina en la que estoy parada (se activa con aria-current="page") */
+.nav__link[aria-current="page"] {
+  background-color: var(--color-primario);
+  color: #ffffff;
+}
+
+
+/* ----------------------------------------------------------------------------
+   0.6  HERO BASE  (la portada la usan las 5 paginas)
+   ---------------------------------------------------------------------------- */
+.hero {
+  padding-block: var(--esp-6);
+  color: #ffffff;
+  text-align: center;
+  background-image: linear-gradient(135deg, var(--color-primario-oscuro) 0%,
+                                            var(--color-primario) 60%,
+                                            #14b8a6 100%);
+}
+
+.hero h1 {
+  color: #ffffff;
+  margin-bottom: var(--esp-2);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.hero__texto {
+  max-width: 55ch;
+  margin-inline: auto;
+  margin-bottom: var(--esp-3);
+  font-size: 1.1rem;
+  color: var(--color-primario-claro);
+}
+
+
+/* ----------------------------------------------------------------------------
+   0.7  TARJETA BASE  (la usan Inicio, Canchas y Contacto)
+   ---------------------------------------------------------------------------- */
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-superficie);
+  border: var(--borde);              /* BOX MODEL: border */
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.tarjeta__cuerpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;                           /* iguala el alto de todas las tarjetas */
+  gap: var(--esp-1);
+  padding: var(--esp-3);             /* BOX MODEL: padding */
+}
+
+.tarjeta__texto {
+  color: var(--color-texto-suave);
+}
+
+.tarjeta__pie {
+  margin-top: auto;                  /* empuja el boton al fondo de la tarjeta */
+  padding-top: var(--esp-2);
+}
+
+
+/* ----------------------------------------------------------------------------
+   0.8  PIE DE PAGINA  ->  CSS GRID
+   ---------------------------------------------------------------------------- */
+.pie {
+  margin-top: var(--esp-6);
+  padding-block: var(--esp-4) var(--esp-2);
+  background-color: var(--color-oscuro);
+  color: var(--color-texto-claro);
+}
+
+.pie__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--esp-3);
+  padding-bottom: var(--esp-3);
+}
+
+.pie h3 {
+  margin-bottom: var(--esp-1);
+  font-size: 1rem;
+  color: var(--color-secundario);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pie p {
+  font-size: var(--fs-chico);
+  color: #9ca3af;
+}
+
+.pie ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.pie a {
+  color: var(--color-texto-claro);
+  font-size: var(--fs-chico);
+}
+
+.pie a:hover {
+  color: var(--color-secundario);
+}
+
+.pie__copy {
+  padding-top: var(--esp-2);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  font-size: var(--fs-chico);
+  color: #9ca3af;
+}
+
+
+/* ----------------------------------------------------------------------------
+   0.9  MEDIA QUERIES DE LA ZONA COMUN
+   Mobile First: los estilos de arriba son los del celular y aca AGREGAMOS
+   reglas para pantallas mas grandes.
+   ---------------------------------------------------------------------------- */
+
+/* --- TABLET: desde 48rem (768px) --- */
+@media (min-width: 48rem) {
+
+  .contenedor {
+    padding-inline: var(--esp-3);
+  }
+
+  .seccion {
+    padding-block: var(--esp-6);
+  }
+
+  .hero__texto {
+    font-size: 1.25rem;
+  }
+}
+
+/* --- ESCRITORIO: desde 64rem (1024px) --- */
+@media (min-width: 64rem) {
+
+  .cabecera__inner {
+    flex-wrap: nowrap;               /* logo y menu en una sola fila */
+  }
+}
+
+/* --- CELULAR CHICO: hasta 30rem (480px) --- */
+@media (max-width: 30rem) {
+
+  .hero {
+    padding-block: var(--esp-4);
+  }
+
+  .nav__lista {
+    gap: 0.25rem;
+  }
+
+  .nav__link {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* --- Accesibilidad: si la usuaria pidio menos animaciones, las apagamos --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* --------------------------- FIN DE LA ZONA 0 ---------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################################################################
+   ############################################################################
+   ##                                                                        ##
+   ##   ZONA 1  -  PAGINA DE INICIO                         DUENA: LOURDES   ##
+   ##   Archivo: index.html                                                  ##
+   ##   Escribi solo entre esta bandera y la de "FIN DE LA ZONA 1".          ##
+   ##                                                                        ##
+   ############################################################################
+   ############################################################################ */
+
+
+/* ----------------------------------------------------------------------------
+   1.1  HERO ALTO DE LA PORTADA  ->  FLEXBOX
+   ---------------------------------------------------------------------------- */
+.hero--alto {
+  min-height: 60vh;                  /* vh: ocupa 60% del alto de la pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Los dos botones de la portada se acomodan solos y se apilan en celular */
+.hero__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--esp-2);
+}
+
+
+/* ----------------------------------------------------------------------------
+   1.2  FUNCIONES PRINCIPALES  ->  CSS GRID
+   repeat(auto-fit, minmax(Xrem, 1fr)) = "mete todas las columnas que entren,
+   cada una de minimo X, y que se repartan el sobrante (fr)".
+   Con esa sola linea la grilla ya es responsive, sin escribir media queries.
+   ---------------------------------------------------------------------------- */
+.grid-funciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--esp-3);
+}
+
+/* Circulito con el icono de cada funcion */
+.tarjeta__icono {
+  display: grid;
+  place-items: center;               /* centrado vertical y horizontal en 1 linea */
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: var(--esp-1);
+  border-radius: 50%;
+  background-color: var(--color-primario-claro);
+  font-size: 1.75rem;
+}
+
+
+/* ----------------------------------------------------------------------------
+   1.3  MEDIA QUERIES DE INICIO
+   ---------------------------------------------------------------------------- */
+
+/* --- CELULAR CHICO: los botones de la portada a lo ancho --- */
+@media (max-width: 30rem) {
+
+  .hero__acciones {
+    flex-direction: column;
+  }
+
+  .hero__acciones .boton {
     width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--color-primario);
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
+  }
 }
-.tarjeta-cancha button:hover {
-    background-color: var(--color-secundario);
+
+
+/* --------------------------- FIN DE LA ZONA 1 ---------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################################################################
+   ############################################################################
+   ##                                                                        ##
+   ##   ZONA 2  -  PAGINA DE CANCHAS                         DUENA: ANALIA   ##
+   ##   Archivo: canchas.html                                                ##
+   ##   Escribi solo entre esta bandera y la de "FIN DE LA ZONA 2".          ##
+   ##                                                                        ##
+   ############################################################################
+   ############################################################################ */
+
+
+/* ----------------------------------------------------------------------------
+   2.1  CATALOGO DE CANCHAS  ->  CSS GRID
+   ---------------------------------------------------------------------------- */
+.grid-canchas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--esp-3);
 }
-@media (max-width: 900px) {
 
-    .contenedor-canchas {
-        grid-template-columns: repeat(3, 1fr);
-    }
-@media (max-width: 900px) {
 
-    .contenedor-canchas {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+/* ----------------------------------------------------------------------------
+   2.2  IMAGEN DE LA TARJETA
+   ---------------------------------------------------------------------------- */
+.tarjeta__imagen {
+  width: 100%;
+  aspect-ratio: 16 / 10;             /* reserva el espacio: la pagina no salta */
+  object-fit: cover;                 /* recorta sin deformar la imagen */
+  border-bottom: var(--borde);
 }
-@media (max-width: 600px) {
 
-    .contenedor-canchas {
-        grid-template-columns: 1fr;
-    }
 
+/* ----------------------------------------------------------------------------
+   2.3  FICHA TECNICA DE CADA CANCHA  ->  FLEXBOX
+   ---------------------------------------------------------------------------- */
+.datos {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-block: var(--esp-1);
+  font-size: var(--fs-chico);
+  color: var(--color-texto-suave);
 }
+
+/* Etiqueta a la izquierda y valor a la derecha, con linea punteada abajo */
+.datos li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--esp-1);
+  padding-bottom: 0.35rem;
+  border-bottom: 1px dashed var(--color-borde);
+}
+
+.precio {
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+.precio span {
+  font-size: var(--fs-chico);
+  font-weight: 400;
+  color: var(--color-texto-suave);
+}
+
+
+/* ----------------------------------------------------------------------------
+   2.4  MEDIA QUERIES DE CANCHAS
+   ---------------------------------------------------------------------------- */
+
+/* --- ESCRITORIO: las 4 canchas en una sola fila --- */
+@media (min-width: 64rem) {
+
+  .grid-canchas {
+    grid-template-columns: repeat(4, 1fr);   /* fr: reparte el espacio libre */
+  }
+}
+
+
+/* --------------------------- FIN DE LA ZONA 2 ---------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################################################################
+   ############################################################################
+   ##                                                                        ##
+   ##   ZONA 3  -  PAGINA DE HORARIOS                         DUENA: LAURA   ##
+   ##   Archivo: horarios.html                                               ##
+   ##   Escribi solo entre esta bandera y la de "FIN DE LA ZONA 3".          ##
+   ##                                                                        ##
+   ############################################################################
+   ############################################################################ */
+
+
+/* ----------------------------------------------------------------------------
+   3.1  GRILLA DE DISPONIBILIDAD  ->  CSS GRID
+   ---------------------------------------------------------------------------- */
+.grid-horarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: var(--esp-2);
+  margin-block: var(--esp-2) var(--esp-5);   /* BOX MODEL: margin externo */
+}
+
+/* Referencias de color debajo del titulo  ->  FLEXBOX */
+.referencias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--esp-2);
+  margin-bottom: var(--esp-4);
+  list-style: none;
+}
+
+
+/* ----------------------------------------------------------------------------
+   3.2  PASTILLAS DE ESTADO
+   Cada estado usa DOS variables: color de texto (oscuro, legible) y
+   color de fondo (clarito). Asi el contraste siempre alcanza.
+   ---------------------------------------------------------------------------- */
+.estado {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radio-pastilla);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.estado--disponible {
+  color: var(--color-disponible);
+  background-color: var(--color-disponible-fondo);
+}
+
+.estado--ocupado {
+  color: var(--color-ocupado);
+  background-color: var(--color-ocupado-fondo);
+}
+
+.estado--pendiente {
+  color: var(--color-pendiente);
+  background-color: var(--color-pendiente-fondo);
+}
+
+
+/* ----------------------------------------------------------------------------
+   3.3  CASILLERO DE TURNO  (BEM: bloque .turno + modificadores .turno--X)
+   ---------------------------------------------------------------------------- */
+.turno {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--esp-1);
+  padding: var(--esp-2);
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-chico);
+  background-color: var(--color-superficie);
+  text-align: center;
+  transition: transform var(--transicion), border-color var(--transicion);
+}
+
+.turno__hora {
+  font-family: var(--fuente-titulos);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-texto);
+}
+
+.turno--disponible {
+  border-color: var(--color-disponible);
+}
+
+.turno--disponible:hover {
+  transform: scale(1.04);
+  box-shadow: var(--sombra);
+}
+
+.turno--ocupado {
+  border-color: var(--color-ocupado);
+  background-color: #fffafa;
+  opacity: 0.75;
+}
+
+.turno--pendiente {
+  border-color: var(--color-pendiente);
+}
+
+
+/* ----------------------------------------------------------------------------
+   3.4  MEDIA QUERIES DE HORARIOS
+   ---------------------------------------------------------------------------- */
+
+/* --- IMPRESION: si el club imprime la grilla del dia, no gastamos tinta
+       en el menu, el pie ni los botones. Las media queries no son solo
+       para tamanos de pantalla: tambien sirven para el medio. --- */
+@media print {
+
+  .cabecera,
+  .pie,
+  .boton {
+    display: none;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .turno {
+    break-inside: avoid;             /* que un casillero no se corte a la mitad */
+  }
+}
+
+
+/* --------------------------- FIN DE LA ZONA 3 ---------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################################################################
+   ############################################################################
+   ##                                                                        ##
+   ##   ZONA 4  -  PAGINA DE RESERVAR                        DUENA: EMILSE   ##
+   ##   Archivo: reservar.html                                               ##
+   ##   OJO: los estilos de formulario de aca los reusa Contacto.            ##
+   ##   Escribi solo entre esta bandera y la de "FIN DE LA ZONA 4".          ##
+   ##                                                                        ##
+   ############################################################################
+   ############################################################################ */
+
+
+/* ----------------------------------------------------------------------------
+   4.1  LAYOUT DE LA PAGINA  ->  CSS GRID
+   ---------------------------------------------------------------------------- */
+.grid-reserva {
+  display: grid;
+  grid-template-columns: 1fr;        /* celular: una sola columna */
+  gap: var(--esp-4);
+  align-items: start;
+}
+
+
+/* ----------------------------------------------------------------------------
+   4.2  FORMULARIO  ->  CSS GRID + FLEXBOX
+   ---------------------------------------------------------------------------- */
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr;        /* celular: un campo por fila */
+  gap: var(--esp-2);
+  padding: var(--esp-4);
+  background-color: var(--color-superficie);
+  border: var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+/* Cada campo es una columna flex: etiqueta arriba, control abajo */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label {
+  font-family: var(--fuente-titulos);
+  font-size: var(--fs-chico);
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 0.75rem var(--esp-2);
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-chico);
+  font-family: inherit;              /* hereda la tipografia del sitio */
+  font-size: var(--fs-base);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+
+/* Anillo de foco: sacamos el outline PERO lo reemplazamos por algo mas
+   visible. Nunca poner outline:none solo: dejaria a quien navega con
+   teclado sin saber donde esta parada. */
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 4px var(--color-primario-claro);
+}
+
+.campo textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.campo__ayuda {
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+}
+
+.obligatorio {
+  color: var(--color-ocupado);
+  font-weight: 700;
+}
+
+
+/* ----------------------------------------------------------------------------
+   4.3  BLOQUE DE AVISOS  (aside)   ->  FLEXBOX
+   ---------------------------------------------------------------------------- */
+.aviso {
+  padding: var(--esp-3);
+  border-left: 5px solid var(--color-secundario);   /* BOX MODEL: border */
+  border-radius: var(--radio);
+  background-color: var(--color-superficie);
+  box-shadow: var(--sombra);
+}
+
+.aviso h2,
+.aviso h3 {
+  margin-bottom: var(--esp-2);
+}
+
+.aviso ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+}
+
+.aviso li {
+  position: relative;
+  padding-left: 1.75rem;
+  color: var(--color-texto-suave);
+}
+
+.aviso li::before {
+  content: "\2714";                  /* tilde de verificacion */
+  position: absolute;
+  left: 0;
+  color: var(--color-primario);
+  font-weight: 700;
+}
+
+
+/* ----------------------------------------------------------------------------
+   4.4  MEDIA QUERIES DE RESERVAR
+   ---------------------------------------------------------------------------- */
+
+/* --- TABLET: el formulario pasa a 2 columnas --- */
+@media (min-width: 48rem) {
+
+  .formulario {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Los campos largos y el boton ocupan la fila entera.
+     1 / -1 = "desde la primera linea hasta la ultima". */
+  .campo--ancho,
+  .formulario > .boton {
+    grid-column: 1 / -1;
+  }
+}
+
+/* --- ESCRITORIO: formulario grande + columna de avisos --- */
+@media (min-width: 64rem) {
+
+  .grid-reserva {
+    grid-template-columns: 3fr 1.5fr;
+  }
+}
+
+/* --- CELULAR CHICO: menos aire adentro del formulario --- */
+@media (max-width: 30rem) {
+
+  .formulario {
+    padding: var(--esp-2);
+  }
+}
+
+
+/* --------------------------- FIN DE LA ZONA 4 ---------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################################################################
+   ############################################################################
+   ##                                                                        ##
+   ##   ZONA 5  -  PAGINA DE CONTACTO                         DUENA: BELEN   ##
+   ##   Archivo: contacto.html                                               ##
+   ##   Escribi solo entre esta bandera y el final del archivo.              ##
+   ##                                                                        ##
+   ############################################################################
+   ############################################################################ */
+
+
+/* ----------------------------------------------------------------------------
+   5.1  LAYOUT DE LA PAGINA  ->  CSS GRID
+   ---------------------------------------------------------------------------- */
+.grid-contacto {
+  display: grid;
+  grid-template-columns: 1fr;        /* celular: una sola columna */
+  gap: var(--esp-4);
+}
+
+
+/* ----------------------------------------------------------------------------
+   5.2  LISTA DE DATOS DEL CLUB  ->  DOS FLEXBOX ANIDADOS
+   El <ul> apila los items en columna y cada <li> pone el icono a la
+   izquierda y el texto a la derecha.
+   ---------------------------------------------------------------------------- */
+.lista-contacto {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+}
+
+.lista-contacto li {
+  display: flex;
+  align-items: flex-start;           /* alinea el icono con la 1ra linea del texto */
+  gap: var(--esp-2);
+  padding: var(--esp-2);
+  border: var(--borde);
+  border-radius: var(--radio-chico);
+  background-color: var(--color-fondo);
+}
+
+.lista-contacto .icono {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.lista-contacto strong {
+  display: block;
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario-oscuro);
+}
+
+
+/* ----------------------------------------------------------------------------
+   5.3  MEDIA QUERIES DE CONTACTO
+   ---------------------------------------------------------------------------- */
+
+/* --- ESCRITORIO: datos a la izquierda (2 partes) y formulario a la
+       derecha (3 partes). El formulario necesita mas ancho para que los
+       campos entren de a dos. --- */
+@media (min-width: 64rem) {
+
+  .grid-contacto {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+
+/* --------------------------- FIN DE LA ZONA 5 ---------------------------- */
+/* ------------------------- FIN DEL ARCHIVO CSS --------------------------- */
