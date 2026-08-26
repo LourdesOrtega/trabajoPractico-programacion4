@@ -34,6 +34,61 @@ Si al mergear salta un conflicto **en tu propia página**, quedate con la versi�
 
 ---
 
+## 🎨 PASO 0 bis — Cómo editamos las 5 el mismo `styles.css` sin conflictos
+
+El TP pide **un único archivo CSS**, así que las 5 tenemos que escribir en `css/styles.css`.
+Ese es el único archivo compartido del proyecto, y por eso es el único que puede dar conflicto.
+
+**Cómo lo resolvimos:** dividimos el archivo en **ZONAS**, una por integrante, separadas por
+banderas de comentarios y por muchas líneas en blanco.
+
+```
+ZONA 0 - COMÚN ........ Lourdes   (variables, reset, header, footer, botones)
+ZONA 1 - INICIO ....... Lourdes
+ZONA 2 - CANCHAS ...... Analía
+ZONA 3 - HORARIOS ..... Laura
+ZONA 4 - RESERVAR ..... Emilse
+ZONA 5 - CONTACTO ..... Belén
+```
+
+### Por qué esto funciona (respuesta técnica para la clase)
+
+> Git **no compara archivos enteros: compara líneas**. Cuando junta dos versiones, mira
+> qué líneas cambió cada una. Solo declara conflicto si las dos tocaron **las mismas líneas
+> o líneas pegadas** (git necesita 3 líneas de contexto sin tocar alrededor de cada cambio).
+>
+> Como cada zona está separada de la siguiente por más de 10 líneas en blanco, dos
+> integrantes pueden editar el mismo archivo el mismo día y git las junta **sola**.
+
+### Las reglas
+
+1. **Escribí solo dentro de tu zona**, entre tu bandera de inicio y la de "FIN DE LA ZONA X".
+2. **No borres ni muevas las banderas `######`** ni las líneas en blanco que separan zonas.
+3. **Tus media queries van DENTRO de tu zona**, al final. Por eso **no hay** un bloque común
+   de media queries al final del archivo: si lo hubiera, las 5 editaríamos ese mismo bloque
+   y sería conflicto seguro.
+4. **La ZONA 0 es de Lourdes.** Si necesitás cambiar un color, el header o el footer,
+   se lo pedís a ella. No lo toques por tu cuenta.
+5. **Siempre `git merge origin/dev` antes de empezar a editar.**
+
+### Si igual salta un conflicto en `styles.css`
+
+No te asustes: significa que dos tocaron el mismo pedazo. Vas a ver esto en el archivo:
+
+```
+<<<<<<< HEAD
+   (lo que escribiste vos)
+=======
+   (lo que escribió la otra)
+>>>>>>> origin/dev
+```
+
+**Casi siempre la solución es dejar las DOS cosas**: borrás las tres líneas de marcas
+(`<<<<<<<`, `=======`, `>>>>>>>`) y te quedás con los dos bloques de CSS, uno debajo del otro.
+Después `git add css/styles.css` y `git commit`.
+
+---
+
 ## 👩‍💻 LOURDES — Inicio (`index.html`) + hoja de estilos base
 
 ### Qué explicás
