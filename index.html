@@ -4,50 +4,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO 1: title unico y descriptivo (50-60 caracteres) -->
+    <title>Sistema de Turnos | Canchas de Fútbol y Pádel</title>
+
+    <!-- SEO 2: meta description unica de esta pagina (150-160 caracteres) -->
+    <meta name="description"
+        content="Sistema interno para gestionar turnos de canchas de fútbol y pádel: administrá reservas, controlá la disponibilidad y organizá a tus clientes.">
+    <meta name="author" content="Grupo 5 - Tecnicatura Universitaria en Programación">
+
+    <!-- SEO 3: canonical, evita contenido duplicado -->
+    <link rel="canonical" href="https://lourdesortega.github.io/trabajoPractico-programacion4/index.html">
+
+    <!-- SEO 4: Open Graph, controla como se ve el link al compartirlo -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:title" content="Sistema de Turnos | Canchas de Fútbol y Pádel">
+    <meta property="og:description" content="Administrá reservas, disponibilidad y clientes de tu club deportivo.">
+    <meta property="og:url" content="https://lourdesortega.github.io/trabajoPractico-programacion4/index.html">
+    <meta property="og:image" content="https://lourdesortega.github.io/trabajoPractico-programacion4/img/cancha-futbol5.svg">
+
+    <meta name="theme-color" content="#0f766e">
+
+    <!-- Tipografias -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Hoja de estilos externa (unica para todo el sitio) -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>Home</title>
+    <!-- SEO 5: datos estructurados JSON-LD (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Club Cancha",
+      "description": "Club deportivo con canchas de fútbol 5, fútbol 7, pádel y tenis con sistema de turnos online.",
+      "url": "https://lourdesortega.github.io/trabajoPractico-programacion4/",
+      "telephone": "+54 388 400-0000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Siempreviva 742",
+        "addressLocality": "San Salvador de Jujuy",
+        "addressRegion": "Jujuy",
+        "addressCountry": "AR"
+      },
+      "openingHours": "Mo-Su 08:00-23:00"
+    }
+    </script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href=""></a>Inicio</li>
-                <li><a href=""></a>Reservas</li>
-                <li><a href=""></a>Canchas</li>
-                <li><a href=""></a>Registro</li>
-                <li><a href="./contacto.html"></a>Contacto</li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Sistema de Gestión de Turnos</h1>
-        <p>Aquí podrás organizar y controlar de una manera óptima los turnos que tiene tu club</p>
-        <section> </section>
 
-        <section>
-            <h2>Funciones Principales</h2>
+    <!-- ===================== CABECERA + NAVEGACION (FLEXBOX) ===================== -->
+    <header class="cabecera">
+        <div class="contenedor cabecera__inner">
+
+            <a class="logo" href="index.html">
+                <span class="logo__icono" aria-hidden="true">&#9917;</span>
+                <span>Club Cancha</span>
+            </a>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <ul class="nav__lista">
+                    <li><a class="nav__link" href="index.html" aria-current="page">Inicio</a></li>
+                    <li><a class="nav__link" href="canchas.html">Canchas</a></li>
+                    <li><a class="nav__link" href="horarios.html">Horarios</a></li>
+                    <li><a class="nav__link" href="reservar.html">Reservar</a></li>
+                    <li><a class="nav__link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===================== HERO (FLEXBOX) ===================== -->
+        <section class="hero hero--alto">
+            <div class="contenedor">
+                <h1>Sistema de Gestión de Turnos</h1>
+                <p class="hero__texto">
+                    Organizá y controlá de manera óptima los turnos de las canchas de tu club,
+                    desde cualquier dispositivo y en pocos clics.
+                </p>
+                <div class="hero__acciones">
+                    <a class="boton boton--secundario" href="reservar.html">Reservar un turno</a>
+                    <a class="boton boton--primario" href="horarios.html">Ver disponibilidad</a>
+                </div>
+            </div>
         </section>
 
-        <article>
-            <h3>Administrar reservas</h3>
-            <p>Registrar, modificar o cancelar turnos solicitados por clientes.</p>
-        </article>
+        <!-- ===================== FUNCIONES PRINCIPALES (CSS GRID) ===================== -->
+        <section class="seccion" aria-labelledby="titulo-funciones">
+            <div class="contenedor">
 
-        <article>
-            <h3>Controlar disponibilidad</h3>
-            <p>Consultar los horarios libres y ocupados de cada cancha.</p>
-        </article>
+                <h2 class="seccion__titulo" id="titulo-funciones">Funciones principales</h2>
+                <p class="seccion__bajada">
+                    Todo lo que necesita el club para no perder ni un turno.
+                </p>
 
-        <article>
-            <h3>Gestionar clientes</h3>
-            <p>Guardar y consultar los datos necesarios de cada cliente.</p>
-        </article>
-      </main>
-    <footer>
-        <p>Copyright 2026 - Sistema interno del club</p>
+                <div class="grid-funciones">
+
+                    <article class="tarjeta">
+                        <div class="tarjeta__cuerpo">
+                            <span class="tarjeta__icono" aria-hidden="true">&#128197;</span>
+                            <h3>Administrar reservas</h3>
+                            <p class="tarjeta__texto">
+                                Registrar, modificar o cancelar los turnos solicitados por los clientes.
+                            </p>
+                            <p class="tarjeta__pie">
+                                <a class="boton boton--borde" href="reservar.html">Ir a reservas</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="tarjeta__cuerpo">
+                            <span class="tarjeta__icono" aria-hidden="true">&#128336;</span>
+                            <h3>Controlar disponibilidad</h3>
+                            <p class="tarjeta__texto">
+                                Consultar en una grilla los horarios libres y ocupados de cada cancha.
+                            </p>
+                            <p class="tarjeta__pie">
+                                <a class="boton boton--borde" href="horarios.html">Ver horarios</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="tarjeta__cuerpo">
+                            <span class="tarjeta__icono" aria-hidden="true">&#128100;</span>
+                            <h3>Gestionar clientes</h3>
+                            <p class="tarjeta__texto">
+                                Guardar y consultar los datos necesarios de cada cliente del club.
+                            </p>
+                            <p class="tarjeta__pie">
+                                <a class="boton boton--borde" href="contacto.html">Contactar</a>
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== NUESTRAS CANCHAS (resumen) ===================== -->
+        <section class="seccion seccion--clara" aria-labelledby="titulo-deportes">
+            <div class="contenedor">
+
+                <h2 class="seccion__titulo" id="titulo-deportes">Deportes disponibles</h2>
+                <p class="seccion__bajada">
+                    Cuatro tipos de cancha, iluminación LED y vestuarios en todas.
+                </p>
+
+                <div class="grid-canchas">
+
+                    <article class="tarjeta">
+                        <div class="tarjeta__cuerpo">
+                            <span class="tarjeta__icono" aria-hidden="true">&#9917;</span>
+                            <h3>Fútbol 5</h3>
+                            <p class="tarjeta__texto">Césped sintético, ideal para partidos rápidos.</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="tarjeta__cuerpo">
+                            <span class="tarjeta__icono" aria-hidden="true">&#127942;</span>
+                            <h3>Fútbol 7</h3>
+                            <p class="tarjeta__texto">Cancha amplia para equipos más numerosos.</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="tarjeta__cuerpo">
+                            <span class="tarjeta__icono" aria-hidden="true">&#127955;</span>
+                            <h3>Pádel</h3>
+                            <p class="tarjeta__texto">Paredes de blindex y piso de césped sintético.</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="tarjeta__cuerpo">
+                            <span class="tarjeta__icono" aria-hidden="true">&#127934;</span>
+                            <h3>Tenis</h3>
+                            <p class="tarjeta__texto">Polvo de ladrillo para singles y dobles.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== PIE DE PAGINA (CSS GRID) ===================== -->
+    <footer class="pie">
+        <div class="contenedor">
+
+            <div class="pie__grid">
+
+                <div>
+                    <h3>Club Cancha</h3>
+                    <p>Sistema interno de gestión de turnos para canchas de fútbol y pádel.</p>
+                </div>
+
+                <div>
+                    <h3>Secciones</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="canchas.html">Nuestras canchas</a></li>
+                        <li><a href="horarios.html">Horarios disponibles</a></li>
+                        <li><a href="reservar.html">Reservar un turno</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Atención</h3>
+                    <ul>
+                        <li>Lunes a domingo de 8 a 23 h</li>
+                        <li><a href="tel:+543884000000">+54 388 400-0000</a></li>
+                        <li><a href="mailto:turnos@clubcancha.com.ar">turnos@clubcancha.com.ar</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <p class="pie__copy">Copyright 2026 &middot; Sistema interno del club</p>
+
+        </div>
     </footer>
+
 </body>
 
 </html>
