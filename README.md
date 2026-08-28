@@ -1,19 +1,19 @@
 # Club Cancha — Sistema de Turnos
 
-Trabajo Práctico N.º 2 — HTML5 y CSS3
+Trabajo Práctico N.º 2 — HTML5 y CSS
 Tecnicatura Universitaria en Programación.
 
 ---
 
 ## Integrantes
 
-| Integrante | Página a cargo | Rama |
-|---|---|---|
-| Lourdes Ortega | Inicio (`index.html`) + hoja de estilos común | `home` |
-| Analía | Canchas (`canchas.html`) | `canchas` |
-| Laura | Horarios (`horarios.html`) | `horarios` |
-| Emilse Andrada | Reservar (`reservar.html`) | `reservar` |
-| Belén Bulacio | Contacto (`contacto.html`) | `contacto` |
+| Integrante            | Página a cargo                                     | Rama            |
+| --------------------- | -------------------------------------------------- | --------------- |
+| Lourdes Ortega        | feat/inicio (`index.html`) + hoja de estilos común | `feat/inicio`   |
+| Analía Roldan         | feat/canchas (`canchas.html`)                      | `feat/canchas`  |
+| Laura Soria           | feat/horarios (`horarios.html`)                    | `feat/horarios` |
+| Emilse Andrada Suarez | feat/reservar (`reservar.html`)                    | `feat/reservar` |
+| Belén Bulacio         | feat/contacto (`contacto.html`)                    | `feat/contacto` |
 
 ---
 
@@ -54,7 +54,7 @@ trabajoPractico-programacion4/
 │   ├── cancha-futbol5.svg
 │   ├── cancha-futbol7.svg
 │   ├── cancha-padel.svg
-│   └── cancha-tenis.svg
+│
 ├── index.html            <-- Inicio
 ├── canchas.html
 ├── horarios.html
@@ -74,18 +74,18 @@ tiempo sin que git nos genere conflictos.
 Flexbox lo usamos cuando hay que acomodar elementos **en una sola dirección**
 (una fila o una columna).
 
-| Dónde | Clase | Qué hace |
-|---|---|---|
-| Cabecera | `.cabecera__inner` | `justify-content: space-between` deja el logo a la izquierda y el menú a la derecha. |
-| Logo | `.logo` | Pone el ícono y el texto en fila, alineados al medio. |
-| Menú | `.nav__lista` | Pone los 5 links en fila con la misma separación (`gap`). |
-| Botones de la portada | `.hero__acciones` | En celular se apilan en columna, en tablet pasan a fila. |
-| Círculo de los íconos | `.tarjeta__icono` | `align-items` y `justify-content` en `center` centran el emoji adentro del círculo. |
-| Ficha de cada cancha | `.datos li` | Etiqueta a la izquierda y valor a la derecha. |
-| Casilleros de turno | `.turno` | Columna centrada: la hora arriba y el estado abajo. |
-| Referencias de colores | `.referencias` | Fila centrada que se acomoda sola. |
-| Campos del formulario | `.campo` | Columna: la etiqueta arriba y el input abajo. |
-| Datos de contacto | `.lista-contacto` y sus `li` | El ícono a la izquierda y el texto a la derecha. |
+| Dónde                  | Clase                        | Qué hace                                                                             |
+| ---------------------- | ---------------------------- | ------------------------------------------------------------------------------------ |
+| Cabecera               | `.cabecera__inner`           | `justify-content: space-between` deja el logo a la izquierda y el menú a la derecha. |
+| Logo                   | `.logo`                      | Pone el ícono y el texto en fila, alineados al medio.                                |
+| Menú                   | `.nav__lista`                | Pone los 5 links en fila con la misma separación (`gap`).                            |
+| Botones de la portada  | `.hero__acciones`            | En celular se apilan en columna, en tablet pasan a fila.                             |
+| Círculo de los íconos  | `.tarjeta__icono`            | `align-items` y `justify-content` en `center` centran el emoji adentro del círculo.  |
+| Ficha de cada cancha   | `.datos li`                  | Etiqueta a la izquierda y valor a la derecha.                                        |
+| Casilleros de turno    | `.turno`                     | Columna centrada: la hora arriba y el estado abajo.                                  |
+| Referencias de colores | `.referencias`               | Fila centrada que se acomoda sola.                                                   |
+| Campos del formulario  | `.campo`                     | Columna: la etiqueta arriba y el input abajo.                                        |
+| Datos de contacto      | `.lista-contacto` y sus `li` | El ícono a la izquierda y el texto a la derecha.                                     |
 
 ---
 
@@ -95,15 +95,15 @@ Grid lo usamos cuando hay que armar una **grilla de filas y columnas**.
 En todos los casos arrancamos con **1 columna en el celular** y agregamos
 columnas con media queries.
 
-| Dónde | Clase | Columnas |
-|---|---|---|
-| Funciones principales (Inicio y Contacto) | `.grid-funciones` | 1 → 2 (768px) → 3 (1024px) |
-| Catálogo de canchas | `.grid-canchas` | 1 → 2 (768px) → 3 (1024px) |
-| Grilla de turnos | `.grid-horarios` | 2 → 4 (768px) → 8 (1024px) |
-| Página Reservar | `.grid-reserva` | 1 → `2fr 1fr` en 1024px (formulario + avisos) |
-| Formulario | `.formulario` | 1 → 2 en 768px. Los campos largos usan `grid-column: span 2` |
-| Página Contacto | `.grid-contacto` | 1 → 2 en 1024px |
-| Pie de página | `.pie__grid` | 1 columna |
+| Dónde                                     | Clase             | Columnas                                                     |
+| ----------------------------------------- | ----------------- | ------------------------------------------------------------ |
+| Funciones principales (Inicio y Contacto) | `.grid-funciones` | 1 → 2 (768px) → 3 (1024px)                                   |
+| Catálogo de canchas                       | `.grid-canchas`   | 1 → 2 (768px) → 3 (1024px)                                   |
+| Grilla de turnos                          | `.grid-horarios`  | 2 → 4 (768px) → 8 (1024px)                                   |
+| Página Reservar                           | `.grid-reserva`   | 1 → `2fr 1fr` en 1024px (formulario + avisos)                |
+| Formulario                                | `.formulario`     | 1 → 2 en 768px. Los campos largos usan `grid-column: span 2` |
+| Página Contacto                           | `.grid-contacto`  | 1 → 2 en 1024px                                              |
+| Pie de página                             | `.pie__grid`      | 1 columna                                                    |
 
 ---
 
@@ -149,12 +149,12 @@ pantallas más grandes.
 2. **Unidades relativas** en lugar de medidas fijas. En todo el proyecto
    usamos solamente cuatro:
 
-| Unidad | Qué es | Dónde la usamos |
-|---|---|---|
-| `px` | Medida fija | Bordes, sombras, el círculo de los íconos (56px), el alto del textarea |
-| `%` | Relativa al elemento padre | `.contenedor` (100%), imágenes, `border-radius: 50%` para el círculo |
-| `rem` | Relativa al tamaño base del navegador (1rem = 16px) | Textos, paddings, márgenes, gaps |
-| `fr` | Fracción del espacio libre (solo en Grid) | Todas las columnas de las grillas |
+| Unidad | Qué es                                              | Dónde la usamos                                                        |
+| ------ | --------------------------------------------------- | ---------------------------------------------------------------------- |
+| `px`   | Medida fija                                         | Bordes, sombras, el círculo de los íconos (56px), el alto del textarea |
+| `%`    | Relativa al elemento padre                          | `.contenedor` (100%), imágenes, `border-radius: 50%` para el círculo   |
+| `rem`  | Relativa al tamaño base del navegador (1rem = 16px) | Textos, paddings, márgenes, gaps                                       |
+| `fr`   | Fracción del espacio libre (solo en Grid)           | Todas las columnas de las grillas                                      |
 
 3. **`box-sizing: border-box`** en todos los elementos, para que el `padding`
    y el `border` no agranden las cajas y no se desborde nada.
@@ -162,11 +162,11 @@ pantallas más grandes.
    salga de la pantalla.
 5. **Media queries** en dos puntos de corte:
 
-| Pantalla | Ancho | Qué cambia |
-|---|---|---|
-| Celular | base (menos de 768px) | Todo en 1 columna, botones apilados, menú compacto. |
-| Tablet | `min-width: 768px` | Grillas a 2 columnas, formulario a 2 columnas, títulos más grandes. |
-| Escritorio | `min-width: 1024px` | Grillas a 3 columnas, Contacto y Reservar a 2 columnas, títulos más grandes. |
+| Pantalla   | Ancho                 | Qué cambia                                                                   |
+| ---------- | --------------------- | ---------------------------------------------------------------------------- |
+| Celular    | base (menos de 768px) | Todo en 1 columna, botones apilados, menú compacto.                          |
+| Tablet     | `min-width: 768px`    | Grillas a 2 columnas, formulario a 2 columnas, títulos más grandes.          |
+| Escritorio | `min-width: 1024px`   | Grillas a 3 columnas, Contacto y Reservar a 2 columnas, títulos más grandes. |
 
 ---
 
@@ -175,11 +175,11 @@ pantallas más grandes.
 ```
 main                (protegida — integra Lourdes)
 └── dev             (rama de desarrollo — integran Lourdes o Belén)
-    ├── home        (Lourdes)
-    ├── canchas     (Analía)
-    ├── horarios    (Laura)
-    ├── reservar    (Emilse)
-    └── contacto    (Belén)
+    ├── feat/inicio      (Lourdes)
+    ├── feat/canchas     (Analía)
+    ├── feat/horarios    (Laura)
+    ├── feat/reservar    (Emilse)
+    └── feat/contacto    (Belén)
 ```
 
 Flujo de trabajo:
