@@ -192,9 +192,3 @@ Flujo de trabajo:
 6. Al final, un único Pull Request de `dev` hacia `main`.
 
 ---
-
-## Proyecto académico
-
-Realizado para la Tecnicatura Universitaria en Programación.
-Se usaron herramientas de IA como apoyo; todo el código fue revisado y es
-explicable por las integrantes del grupo.
