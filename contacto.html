@@ -1,36 +1,243 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" />
 
-<body>
+    <title>Contacto | Sistema de Gestión de Canchas</title>
 
-    <header>
-        <h1>Contacto</h1>
+    <meta
+      name="description"
+      content="Información de contacto y datos del establecimiento para la gestión interna de canchas de fútbol y pádel."
+    />
+
+    <meta
+      name="author"
+      content="Grupo 5 - Tecnicatura Universitaria en Programación"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header class="cabecera">
+      <div class="contenedor cabecera__inner">
+        <a class="logo" href="index.html">
+          <span class="logo__icono" aria-hidden="true">&#9917;</span>
+          <span>Club Cancha</span>
+        </a>
+
+        <nav class="nav" aria-label="Navegación principal">
+          <ul class="nav__lista">
+            <li>
+              <a class="nav__link" href="index.html">Inicio</a>
+            </li>
+
+            <li>
+              <a class="nav__link" href="canchas.html">Canchas</a>
+            </li>
+
+            <li>
+              <a class="nav__link" href="horarios.html">Horarios</a>
+            </li>
+
+            <li>
+              <a class="nav__link" href="reservar.html">Reservas</a>
+            </li>
+
+            <li>
+              <a class="nav__link" href="contacto.html" aria-current="page">
+                Contacto
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <section>
-            <h2>Contactanos</h2>
+      <!-- Encabezado de la sección -->
+      <section class="hero">
+        <div class="contenedor">
+          <h1>Información de contacto</h1>
 
-            <form>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
+          <p class="hero__texto">
+            Consultá los datos del establecimiento y la información necesaria
+            para la gestión interna del club.
+          </p>
+        </div>
+      </section>
 
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email">
+      <!-- Información del establecimiento -->
+      <section class="seccion">
+        <div class="contenedor grid-contacto">
+          <div>
+            <h2>Datos del establecimiento</h2>
 
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje"></textarea>
+            <p class="campo__ayuda" style="margin-bottom: 1.5rem">
+              Información de referencia para la administración y gestión del
+              establecimiento.
+            </p>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+            <ul class="lista-contacto">
+              <li>
+                <span class="icono" aria-hidden="true">&#128222;</span>
+
+                <span>
+                  <strong>Teléfono</strong>
+                  <a href="tel:+543884000000"> +54 388 400-0000 </a>
+                </span>
+              </li>
+
+              <li>
+                <span class="icono" aria-hidden="true">&#9993;</span>
+
+                <span>
+                  <strong>Email</strong>
+                  <a href="mailto:administracion@clubcancha.com.ar">
+                    administracion@clubcancha.com.ar
+                  </a>
+                </span>
+              </li>
+
+              <li>
+                <span class="icono" aria-hidden="true">&#128205;</span>
+
+                <span>
+                  <strong>Dirección</strong>
+                  Av. Siempreviva 742, San Salvador de Jujuy
+                </span>
+              </li>
+
+              <li>
+                <span class="icono" aria-hidden="true">&#128336;</span>
+
+                <span>
+                  <strong>Horario de funcionamiento</strong>
+                  Lunes a domingo de 8:00 a 23:00 h
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Información administrativa -->
+          <div>
+            <h2>Información administrativa</h2>
+
+            <p class="campo__ayuda" style="margin-bottom: 1.5rem">
+              Datos útiles para la administración y organización de las
+              actividades del club.
+            </p>
+
+            <ul class="lista-contacto">
+              <li>
+                <span class="icono" aria-hidden="true">&#128197;</span>
+
+                <span>
+                  <strong>Gestión de turnos</strong>
+                  Administración de reservas y horarios de las canchas.
+                </span>
+              </li>
+
+              <li>
+                <span class="icono" aria-hidden="true">&#9917;</span>
+
+                <span>
+                  <strong>Canchas disponibles</strong>
+                  Gestión de canchas de fútbol y pádel.
+                </span>
+              </li>
+
+              <li>
+                <span class="icono" aria-hidden="true">&#128176;</span>
+
+                <span>
+                  <strong>Control de pagos</strong>
+                  Registro y seguimiento de los pagos correspondientes a los
+                  turnos.
+                </span>
+              </li>
+
+              <li>
+                <span class="icono" aria-hidden="true">&#128100;</span>
+
+                <span>
+                  <strong>Administración</strong>
+                  Acceso destinado al personal encargado de la gestión del
+                  establecimiento.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Información del sistema -->
+      <section class="seccion seccion--clara" aria-labelledby="titulo-sistema">
+        <div class="contenedor">
+          <h2 class="seccion__titulo" id="titulo-sistema">
+            Sistema de gestión
+          </h2>
+
+          <p class="seccion__bajada">
+            El sistema permite organizar y administrar las actividades
+            relacionadas con el funcionamiento de las canchas.
+          </p>
+
+          <div class="grid-funciones">
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <h3>Gestión de canchas</h3>
+
+                <p class="tarjeta__texto">
+                  Permite consultar y administrar las canchas disponibles del
+                  establecimiento.
+                </p>
+              </div>
+            </article>
+
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <h3>Gestión de horarios</h3>
+
+                <p class="tarjeta__texto">
+                  Permite organizar los horarios disponibles para cada cancha.
+                </p>
+              </div>
+            </article>
+
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <h3>Gestión de reservas</h3>
+
+                <p class="tarjeta__texto">
+                  Permite registrar, consultar y administrar las reservas
+                  realizadas.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
-</body>
+    <footer class="pie">
+      <div class="contenedor">
+        <div class="pie__grid">
+          <div>
+            <h3>Club Cancha</h3>
+
+            <p>
+              Sistema interno de gestión de turnos para canchas de fútbol y
+              pádel.
+            </p>
+          </div>
+        </div>
+
+        <p class="pie__copy">
+          Copyright 2026 &middot; Sistema interno del club
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
