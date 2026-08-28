@@ -2,33 +2,39 @@
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestras Canchas |Club Canchas de Fútbol y Pádel </title>
-    <meta name="description"
-        content="Conoce las canchas del club: futbol 5,futbol 7 y padel. Precios por hora, vestuario e iluminacion LED en todas.">
+    <title>Nuestras Canchas | Club Canchas de Fútbol y Pádel</title>
+    <meta name="description" content="Conocé las canchas del club: fútbol 5, fútbol 7 y pádel. Precios por hora, vestuarios e iluminación LED en todas.">
     <meta name="author" content="Grupo 5 - Tecnicatura Universitaria en Programación">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+
     <header class="cabecera">
         <div class="contenedor cabecera__inner">
+
             <a class="logo" href="index.html">
                 <span class="logo__icono" aria-hidden="true">&#9917;</span>
                 <span>Club Cancha</span>
             </a>
+
             <nav class="nav" aria-label="Navegación principal">
                 <ul class="nav__lista">
                     <li><a class="nav__link" href="index.html">Inicio</a></li>
-                    <li><a class="nav__link" href="canchas.html" aria-current="page">Canchas</a></li>
+                    <li><a class="nav__link nav__link--activo" href="canchas.html" aria-current="page">Canchas</a></li>
                     <li><a class="nav__link" href="horarios.html">Horarios</a></li>
                     <li><a class="nav__link" href="reservar.html">Reservar</a></li>
                     <li><a class="nav__link" href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
+
         </div>
     </header>
+
     <main>
+
         <section class="hero">
             <div class="contenedor">
                 <h1>Nuestras Canchas</h1>
@@ -38,13 +44,17 @@
                 </p>
             </div>
         </section>
+
         <section class="seccion" aria-labelledby="titulo-catalogo">
             <div class="contenedor">
+
                 <h2 class="seccion__titulo" id="titulo-catalogo">Catálogo de canchas</h2>
                 <p class="seccion__bajada">
                     Precios vigentes por hora de juego. Los turnos se confirman por teléfono o email.
                 </p>
+
                 <div class="grid-canchas">
+
                     <!-- Cancha 1 -->
                     <article class="tarjeta">
                         <img class="tarjeta__imagen" src="img/cancha-futbol5.svg" width="640" height="400"
@@ -63,6 +73,7 @@
                             </p>
                         </div>
                     </article>
+
                     <!-- Cancha 2 -->
                     <article class="tarjeta">
                         <img class="tarjeta__imagen" src="img/cancha-futbol7.svg" width="640" height="400"
@@ -81,11 +92,11 @@
                             </p>
                         </div>
                     </article>
-                    ontainer">
+
                     <!-- Cancha 3 -->
                     <article class="tarjeta">
-                        <img class="tarjeta__imagen" src="img/cancha-padel.svg" width="640" height="400" loading="lazy"
-                            alt="Cancha de pádel con paredes de vidrio y red central">
+                        <img class="tarjeta__imagen" src="img/cancha-padel.svg" width="640" height="400"
+                            loading="lazy" alt="Cancha de pádel con paredes de vidrio y red central">
                         <div class="tarjeta__cuerpo">
                             <h3>Pádel</h3>
                             <p class="tarjeta__texto">Cancha de pádel equipada para disfrutar con amigos.</p>
@@ -100,13 +111,18 @@
                             </p>
                         </div>
                     </article>
+
                 </div>
             </div>
         </section>
+
         <section class="seccion seccion--clara" aria-labelledby="titulo-servicios">
             <div class="contenedor">
+
                 <h2 class="seccion__titulo" id="titulo-servicios">Servicios incluidos</h2>
+
                 <div class="grid-funciones">
+
                     <article class="tarjeta">
                         <div class="tarjeta__cuerpo">
                             <span class="tarjeta__icono" aria-hidden="true">&#128694;</span>
@@ -114,6 +130,7 @@
                             <p class="tarjeta__texto">Vestuarios climatizados y lockers sin costo adicional.</p>
                         </div>
                     </article>
+
                     <article class="tarjeta">
                         <div class="tarjeta__cuerpo">
                             <span class="tarjeta__icono" aria-hidden="true">&#128161;</span>
@@ -121,6 +138,7 @@
                             <p class="tarjeta__texto">Todas las canchas se pueden usar hasta las 23 h.</p>
                         </div>
                     </article>
+
                     <article class="tarjeta">
                         <div class="tarjeta__cuerpo">
                             <span class="tarjeta__icono" aria-hidden="true">&#128663;</span>
@@ -128,21 +146,28 @@
                             <p class="tarjeta__texto">Playa de estacionamiento propia y gratuita para socios.</p>
                         </div>
                     </article>
+
                 </div>
             </div>
         </section>
+
     </main>
+
     <footer class="pie">
         <div class="contenedor">
+
             <div class="pie__grid">
                 <div>
                     <h3>Club Cancha</h3>
                     <p>Sistema interno de gestión de turnos para canchas de fútbol y pádel.</p>
                 </div>
-                <p class="pie__copy">Copyright 2026 &middot; Sistema interno del club</p>
             </div>
+
+            <p class="pie__copy">Copyright 2026 &middot; Sistema interno del club</p>
+
         </div>
     </footer>
+
 </body>
 
 </html>
