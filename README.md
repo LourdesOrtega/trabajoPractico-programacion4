@@ -1,203 +1,200 @@
-# ⚽ Club Cancha — Sistema de Turnos para Canchas de Fútbol y Pádel
+# Club Cancha — Sistema de Turnos
 
-Trabajo Práctico N.º 2 — **HTML5 + CSS3 (Flexbox, Grid, Variables CSS y Responsive Design)**
+Trabajo Práctico N.º 2 — HTML5 y CSS3
 Tecnicatura Universitaria en Programación.
 
 ---
 
-## 👥 Integrantes
+## Integrantes
 
-| Integrante | Sección a cargo | Rama de trabajo |
+| Integrante | Página a cargo | Rama |
 |---|---|---|
-| Lourdes Ortega | Inicio (`index.html`) + hoja de estilos base | `home` |
-| Belén Bulacio | Contacto (`contacto.html`) | `contacto` |
-| Emilse | Reservar turno (`reservar.html`) | `reservar` |
+| Lourdes Ortega | Inicio (`index.html`) + hoja de estilos común | `home` |
 | Analía | Canchas (`canchas.html`) | `canchas` |
 | Laura | Horarios (`horarios.html`) | `horarios` |
-
-> Completar apellidos antes de la entrega.
-
----
-
-## 📌 Descripción breve
-
-Sitio web de un club deportivo que permite **gestionar los turnos de las canchas de fútbol y pádel**.
-El visitante puede ver el catálogo de canchas con sus precios, consultar la grilla de
-disponibilidad hora por hora, solicitar una reserva mediante un formulario y comunicarse
-con la administración.
-
-El proyecto parte del TP de HTML anterior y lo transforma en una **interfaz web completa**,
-aplicando una hoja de estilos externa con variables CSS, Flexbox, CSS Grid y diseño responsive.
+| Emilse Andrada | Reservar (`reservar.html`) | `reservar` |
+| Belén Bulacio | Contacto (`contacto.html`) | `contacto` |
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## Descripción breve
 
-- **HTML5** semántico (`header`, `nav`, `main`, `section`, `article`, `aside`, `footer`)
-- **CSS3**: variables (`:root` / `var()`), Flexbox, CSS Grid, Media Queries, `clamp()`, transiciones
-- **Google Fonts** — tipografías Poppins (títulos) e Inter (texto)
-- **Git y GitHub** — ramas, commits descriptivos y Pull Requests
-- **Visual Studio Code**
+Sitio web **interno** de un club deportivo para gestionar los turnos de las canchas
+de fútbol 5, fútbol 7 y pádel. No está pensado para el público general, sino para
+las personas que administran el club.
+
+Tiene 5 páginas:
+
+- **Inicio**: presentación del sistema y accesos rápidos.
+- **Canchas**: catálogo de las canchas con precio por hora y servicios.
+- **Horarios**: grilla del día con los turnos libres, ocupados y a confirmar.
+- **Reservar**: formulario para cargar una reserva.
+- **Contacto**: datos del establecimiento e información administrativa.
 
 ---
 
-## 📂 Estructura del proyecto
+## Tecnologías utilizadas
+
+- **HTML5 semántico**: `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`.
+- **CSS3**: variables (`:root` y `var()`), Flexbox, CSS Grid, Media Queries.
+- **Git y GitHub**: una rama por integrante, commits y Pull Requests.
+- **Visual Studio Code**.
+
+Una sola hoja de estilos externa: `css/styles.css`.
+
+---
+
+## Estructura del proyecto
 
 ```
 trabajoPractico-programacion4/
+├── css/
+│   └── styles.css        <-- ÚNICA hoja de estilos
 ├── img/
 │   ├── cancha-futbol5.svg
 │   ├── cancha-futbol7.svg
 │   ├── cancha-padel.svg
 │   └── cancha-tenis.svg
-├── css/
-│   └── styles.css          <-- ÚNICA hoja de estilos del proyecto
-├── index.html              <-- Inicio
-├── canchas.html            <-- Catálogo de canchas
-├── horarios.html           <-- Grilla de disponibilidad
-├── reservar.html           <-- Formulario de reserva
-├── contacto.html           <-- Datos de contacto y consultas
-├── robots.txt              <-- SEO
-├── sitemap.xml             <-- SEO
+├── index.html            <-- Inicio
+├── canchas.html
+├── horarios.html
+├── reservar.html
+├── contacto.html
 └── README.md
 ```
 
+El archivo `styles.css` está dividido en **zonas** y cada integrante escribe
+únicamente dentro de la suya. Así podemos editar el mismo archivo al mismo
+tiempo sin que git nos genere conflictos.
+
 ---
 
-## 🎨 ¿Dónde utilizamos **Flexbox**?
+## ¿Dónde utilizamos Flexbox?
 
-Flexbox se usa para acomodar elementos **en una sola dirección** (una fila o una columna).
-Lo elegimos donde los elementos tienen tamaños distintos y necesitamos alinearlos o separarlos.
+Flexbox lo usamos cuando hay que acomodar elementos **en una sola dirección**
+(una fila o una columna).
 
-| Dónde | Clase CSS | Para qué |
+| Dónde | Clase | Qué hace |
 |---|---|---|
-| Estructura general de la página | `body` + `main` | `flex-direction: column` + `flex: 1` en `main` mantiene el **footer siempre abajo** aunque la página tenga poco contenido. |
-| Barra de navegación | `.cabecera__inner` | `justify-content: space-between` deja el logo a la izquierda y el menú a la derecha; `flex-wrap` hace que bajen solos en celular. |
-| Menú de links | `.nav__lista` | Alinea los 5 links en fila con `gap` uniforme, sin usar `float` ni márgenes manuales. |
-| Botones del hero | `.hero__acciones` | Los botones se centran y, en celular, se apilan en columna. |
-| Tarjetas | `.tarjeta` / `.tarjeta__cuerpo` | `flex: 1` + `margin-top: auto` hacen que **todas las tarjetas queden del mismo alto** y el botón siempre pegado abajo. |
-| Campos de formulario | `.campo` | Columna: etiqueta arriba, input abajo. |
-| Casilleros de turno | `.turno` | Columna centrada: la hora arriba y la pastilla de estado abajo. |
-| Referencias de colores | `.referencias` | Fila centrada que se envuelve sola. |
-| Lista de datos de contacto | `.lista-contacto li` | Ícono a la izquierda, texto a la derecha, alineados arriba. |
+| Cabecera | `.cabecera__inner` | `justify-content: space-between` deja el logo a la izquierda y el menú a la derecha. |
+| Logo | `.logo` | Pone el ícono y el texto en fila, alineados al medio. |
+| Menú | `.nav__lista` | Pone los 5 links en fila con la misma separación (`gap`). |
+| Botones de la portada | `.hero__acciones` | En celular se apilan en columna, en tablet pasan a fila. |
+| Círculo de los íconos | `.tarjeta__icono` | `align-items` y `justify-content` en `center` centran el emoji adentro del círculo. |
+| Ficha de cada cancha | `.datos li` | Etiqueta a la izquierda y valor a la derecha. |
+| Casilleros de turno | `.turno` | Columna centrada: la hora arriba y el estado abajo. |
+| Referencias de colores | `.referencias` | Fila centrada que se acomoda sola. |
+| Campos del formulario | `.campo` | Columna: la etiqueta arriba y el input abajo. |
+| Datos de contacto | `.lista-contacto` y sus `li` | El ícono a la izquierda y el texto a la derecha. |
 
 ---
 
-## 🔲 ¿Dónde utilizamos **CSS Grid**?
+## ¿Dónde utilizamos CSS Grid?
 
-Grid se usa para maquetar **en dos dimensiones** (filas y columnas al mismo tiempo).
-Lo elegimos para las galerías de tarjetas y los layouts de dos columnas.
+Grid lo usamos cuando hay que armar una **grilla de filas y columnas**.
+En todos los casos arrancamos con **1 columna en el celular** y agregamos
+columnas con media queries.
 
-| Dónde | Clase CSS | Configuración |
+| Dónde | Clase | Columnas |
 |---|---|---|
-| Funciones principales (Inicio) | `.grid-funciones` | `repeat(auto-fit, minmax(16rem, 1fr))` — se acomoda sola: 1 columna en celular, 2 en tablet, 3 en escritorio. |
-| Catálogo de canchas | `.grid-canchas` | `repeat(auto-fit, minmax(15rem, 1fr))` y en escritorio `repeat(4, 1fr)`. |
-| Grilla de horarios | `.grid-horarios` | `repeat(auto-fit, minmax(9rem, 1fr))` — muestra todos los turnos que entren por fila. |
-| Página de Contacto | `.grid-contacto` | 1 columna en celular → `2fr 3fr` en escritorio (datos + formulario). |
-| Página de Reservar | `.grid-reserva` | 1 columna en celular → `3fr 1.5fr` en escritorio (formulario + avisos). |
-| Formularios | `.formulario` | 1 columna en celular → `repeat(2, 1fr)` en tablet. Los campos largos usan `grid-column: 1 / -1`. |
-| Pie de página | `.pie__grid` | `repeat(auto-fit, minmax(14rem, 1fr))` para las tres columnas del footer. |
-| Íconos circulares | `.tarjeta__icono` | `place-items: center` centra vertical y horizontalmente en una sola línea. |
+| Funciones principales (Inicio y Contacto) | `.grid-funciones` | 1 → 2 (768px) → 3 (1024px) |
+| Catálogo de canchas | `.grid-canchas` | 1 → 2 (768px) → 3 (1024px) |
+| Grilla de turnos | `.grid-horarios` | 2 → 4 (768px) → 8 (1024px) |
+| Página Reservar | `.grid-reserva` | 1 → `2fr 1fr` en 1024px (formulario + avisos) |
+| Formulario | `.formulario` | 1 → 2 en 768px. Los campos largos usan `grid-column: span 2` |
+| Página Contacto | `.grid-contacto` | 1 → 2 en 1024px |
+| Pie de página | `.pie__grid` | 1 columna |
 
 ---
 
-## 🎨 ¿Qué **variables CSS** creamos?
+## ¿Qué variables CSS creamos?
 
-Todas están declaradas en `:root` (elemento raíz del documento) y se usan con `var(--nombre)`.
-Así, cambiando **un solo valor** se actualiza todo el sitio.
+Están todas declaradas en `:root` (la raíz del documento) y se usan con
+`var(--nombre)`. La ventaja es que si queremos cambiar el verde del club,
+lo cambiamos en un solo lugar y se actualiza todo el sitio.
 
-**Colores de marca**
-`--color-primario` · `--color-primario-oscuro` · `--color-primario-claro` · `--color-secundario` · `--color-secundario-oscuro`
+**Colores del club**
+`--color-primario` · `--color-primario-oscuro` · `--color-primario-claro` ·
+`--color-secundario` · `--color-secundario-oscuro`
 
-**Colores de interfaz**
-`--color-fondo` · `--color-superficie` · `--color-oscuro` · `--color-texto` · `--color-texto-suave` · `--color-texto-claro` · `--color-borde`
+**Colores de la interfaz**
+`--color-fondo` · `--color-superficie` · `--color-oscuro` · `--color-texto` ·
+`--color-texto-suave` · `--color-texto-claro` · `--color-borde`
 
-**Colores de estado de turno**
-`--color-disponible` · `--color-disponible-fondo` · `--color-ocupado` · `--color-ocupado-fondo` · `--color-pendiente` · `--color-pendiente-fondo`
+**Colores según el estado del turno**
+`--color-disponible` · `--color-disponible-fondo` · `--color-ocupado` ·
+`--color-ocupado-fondo` · `--color-pendiente` · `--color-pendiente-fondo`
 
-**Tipografías y tamaños**
-`--fuente-titulos` · `--fuente-texto` · `--fs-h1` · `--fs-h2` · `--fs-h3` · `--fs-base` · `--fs-chico`
+**Tipografías**
+`--fuente-titulos` · `--fuente-texto`
 
-**Espaciado** (escala de múltiplos de 8 px)
-`--esp-1` (0.5rem) · `--esp-2` (1rem) · `--esp-3` (1.5rem) · `--esp-4` (2rem) · `--esp-5` (3rem) · `--esp-6` (4rem)
+**Espaciados** (múltiplos de 0.5rem, o sea de 8px)
+`--esp-1` (0.5rem) · `--esp-2` (1rem) · `--esp-3` (1.5rem) ·
+`--esp-4` (2rem) · `--esp-5` (3rem)
 
-**Bordes, sombras y layout**
-`--radio` · `--radio-chico` · `--radio-pastilla` · `--borde` · `--sombra` · `--sombra-fuerte` · `--ancho-contenedor` · `--transicion`
+**Bordes, sombras y ancho**
+`--radio` · `--radio-chico` · `--radio-pastilla` · `--sombra` · `--ancho-contenedor`
 
 ---
 
-## 📱 ¿Cómo implementamos el **Responsive Design**?
+## ¿Cómo implementamos el Responsive Design?
 
-Trabajamos con la metodología **Mobile First**: primero escribimos los estilos del celular
-y con `min-width` vamos **agregando** reglas para pantallas más grandes.
+Usamos la metodología **Mobile First**: primero escribimos los estilos del
+celular y después, con `min-width`, vamos **agregando** reglas para las
+pantallas más grandes.
 
-1. **`<meta name="viewport">`** en todas las páginas, para que el celular no simule una pantalla de escritorio.
-2. **Unidades relativas** en lugar de píxeles fijos: `rem`, `%`, `fr`, `vh`, `ch`.
-3. **Grillas que se adaptan solas** con `repeat(auto-fit, minmax(Xrem, 1fr))`, sin necesidad de media queries.
-4. **Tipografía fluida** con `clamp(mínimo, ideal en vw, máximo)`: el `h1` crece de 1.9rem a 3.25rem según el ancho.
-5. **Media queries** en tres puntos de corte:
+1. **`<meta name="viewport" content="width=device-width, initial-scale=1.0">`**
+   en las 5 páginas. Sin esta línea el celular simula una pantalla de escritorio
+   y la página se ve chiquita y alejada.
+2. **Unidades relativas** en lugar de medidas fijas. En todo el proyecto
+   usamos solamente cuatro:
 
-| Punto de corte | Ancho | Qué cambia |
+| Unidad | Qué es | Dónde la usamos |
 |---|---|---|
-| Celular | base (hasta 480 px) | Todo en 1 columna, botones a lo ancho, menú compacto. |
-| Tablet | `min-width: 48rem` (768 px) | Formularios a 2 columnas, más padding en las secciones. |
-| Escritorio | `min-width: 64rem` (1024 px) | Contacto `2fr 3fr`, Reservar `3fr 1.5fr`, canchas en 4 columnas, header en una sola fila. |
+| `px` | Medida fija | Bordes, sombras, el círculo de los íconos (56px), el alto del textarea |
+| `%` | Relativa al elemento padre | `.contenedor` (100%), imágenes, `border-radius: 50%` para el círculo |
+| `rem` | Relativa al tamaño base del navegador (1rem = 16px) | Textos, paddings, márgenes, gaps |
+| `fr` | Fracción del espacio libre (solo en Grid) | Todas las columnas de las grillas |
 
-6. **`img { max-width: 100%; height: auto; }`** para que ninguna imagen desborde la pantalla.
-7. **Media queries especiales**: `prefers-reduced-motion` (accesibilidad) y `print` (para imprimir la grilla de turnos).
+3. **`box-sizing: border-box`** en todos los elementos, para que el `padding`
+   y el `border` no agranden las cajas y no se desborde nada.
+4. **`img { max-width: 100%; height: auto; }`** para que ninguna imagen se
+   salga de la pantalla.
+5. **Media queries** en dos puntos de corte:
 
----
-
-## 🔍 Estrategias de **SEO** implementadas
-
-| # | Estrategia | Dónde se aplicó | Objetivo |
-|---|---|---|---|
-| 1 | `<title>` único y descriptivo por página | Las 5 páginas | Es el texto azul del resultado de Google; describe la página en 50-60 caracteres. |
-| 2 | `<meta name="description">` única por página | Las 5 páginas | Es el resumen que aparece bajo el título; mejora el porcentaje de clics. |
-| 3 | HTML semántico y jerarquía de encabezados | `header`, `nav`, `main`, `section`, `article`, `aside`, `footer` — un único `h1` por página | El buscador entiende qué parte del HTML es el contenido importante. |
-| 4 | Atributo `alt` descriptivo en imágenes | `canchas.html` | Permite posicionar en Google Imágenes y hace el sitio accesible para lectores de pantalla. |
-| 5 | Diseño responsive + `<meta viewport>` + `lang="es"` | Las 5 páginas | Google usa *mobile-first indexing*: un sitio que no se ve bien en celular pierde posiciones. |
-| 6 | Enlaces internos con texto descriptivo | Nav y footer de todas las páginas | Reparte autoridad entre las páginas y ayuda al robot a recorrer todo el sitio. |
-| 7 | `<link rel="canonical">` | Las 5 páginas | Indica cuál es la URL oficial y evita penalizaciones por contenido duplicado. |
-| 8 | Open Graph (`og:title`, `og:description`, `og:image`) | Las 5 páginas | Controla cómo se ve la vista previa al compartir el link por WhatsApp o Facebook. |
-| 9 | Datos estructurados JSON-LD (Schema.org) | `index.html` — tipo `SportsActivityLocation` | Le declara a Google que es un club deportivo, con dirección, teléfono y horarios. |
-| 10 | `robots.txt` + `sitemap.xml` | Raíz del proyecto | Le indica al robot qué puede recorrer y le entrega la lista completa de URLs. |
-| 11 | Optimización de carga | `loading="lazy"`, `width`/`height` y `aspect-ratio` en imágenes; un solo CSS externo | La velocidad de carga y la estabilidad visual (CLS) son factores de posicionamiento. |
+| Pantalla | Ancho | Qué cambia |
+|---|---|---|
+| Celular | base (menos de 768px) | Todo en 1 columna, botones apilados, menú compacto. |
+| Tablet | `min-width: 768px` | Grillas a 2 columnas, formulario a 2 columnas, títulos más grandes. |
+| Escritorio | `min-width: 1024px` | Grillas a 3 columnas, Contacto y Reservar a 2 columnas, títulos más grandes. |
 
 ---
 
-## 🌿 Organización del proyecto con Git
+## Organización con Git
 
 ```
-main                (protegida — sólo integra Lourdes)
+main                (protegida — integra Lourdes)
 └── dev             (rama de desarrollo — integran Lourdes o Belén)
     ├── home        (Lourdes)
-    ├── contacto    (Belén)
-    ├── reservar    (Emilse)
     ├── canchas     (Analía)
-    └── horarios    (Laura)
+    ├── horarios    (Laura)
+    ├── reservar    (Emilse)
+    └── contacto    (Belén)
 ```
 
-### Flujo de trabajo
+Flujo de trabajo:
 
-1. Traer lo último de `dev`: `git checkout mi-rama` → `git fetch origin` → `git merge origin/dev`
-2. Trabajar sobre la propia rama.
-3. `git add .` → `git commit -m "mensaje claro y descriptivo"`
-4. `git push origin mi-rama`
-5. Crear un **Pull Request** de la rama personal hacia `dev` y asignar a una compañera como *reviewer*.
-6. Una vez aprobado, se mergea a `dev`.
-7. Al final, un único Pull Request de `dev` hacia `main` con el trabajo integrado.
-
----
-
-## 🚀 Estado del proyecto
-
-🟢 **Interfaz completa** — HTML semántico, hoja de estilos única, diseño responsive y SEO aplicados en las 5 páginas.
+1. Pararse en la rama propia: `git checkout mi-rama`
+2. Traer lo último de dev: `git fetch origin` y `git merge origin/dev`
+3. Trabajar, y después `git add .` y `git commit -m "mensaje claro"`
+4. Subir: `git push origin mi-rama`
+5. Crear un Pull Request de la rama personal hacia `dev`.
+6. Al final, un único Pull Request de `dev` hacia `main`.
 
 ---
 
-## 📚 Proyecto académico
+## Proyecto académico
 
-Realizado como parte de la Tecnicatura Universitaria en Programación.
-Se utilizaron herramientas de IA como apoyo; todo el código fue revisado y es explicable
-por las integrantes del grupo.
+Realizado para la Tecnicatura Universitaria en Programación.
+Se usaron herramientas de IA como apoyo; todo el código fue revisado y es
+explicable por las integrantes del grupo.
