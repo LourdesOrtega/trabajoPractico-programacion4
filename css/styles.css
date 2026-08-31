@@ -1,0 +1,761 @@
+:root {
+
+  /* --- Colores del club --- */
+  --color-primario: #0f766e;
+  --color-primario-oscuro: #115e59;
+  --color-primario-claro: #ccfbf1;
+  --color-secundario: #f59e0b;
+  --color-secundario-oscuro: #d97706;
+
+  /* --- Colores de la interfaz --- */
+  --color-fondo: #f4f7f8;
+  /* fondo general de la pagina */
+  --color-superficie: #ffffff;
+  /* fondo de tarjetas y formularios */
+  --color-oscuro: #0b1f1d;
+  /* header y footer */
+  --color-blanco: #ffffff;
+  --color-texto: #1f2937;
+  --color-texto-suave: #4b5563;
+  --color-texto-claro: #e5e7eb;
+  --color-borde: #d1d5db;
+
+  /* --- Colores segun el estado del turno --- */
+  --color-disponible: #15803d;
+  --color-disponible-fondo: #dcfce7;
+  --color-ocupado: #b91c1c;
+  --color-ocupado-fondo: #fee2e2;
+  --color-pendiente: #b45309;
+  --color-pendiente-fondo: #fef3c7;
+
+  /* --- Tipografias --- */
+  --fuente-titulos: "Segoe UI", Arial, sans-serif;
+  --fuente-texto: "Segoe UI", Arial, sans-serif;
+
+  /* --- Espaciados (siempre multiplos de 0.5rem = 8px) --- */
+  --esp-1: 0.5rem;
+  --esp-2: 1rem;
+  --esp-3: 1.5rem;
+  --esp-4: 2rem;
+  --esp-5: 3rem;
+
+  /* --- Bordes y sombras --- */
+  --radio: 12px;
+  --radio-chico: 8px;
+  --radio-pastilla: 50px;
+  --sombra: 0 2px 8px #9ca3af;
+
+  /* --- Ancho maximo del contenido --- */
+  --ancho-contenedor: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+img {
+  max-width: 100%;
+  /* la imagen nunca se pasa de su caja */
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-secundario-oscuro);
+}
+
+a:focus {
+  outline: 3px solid var(--color-secundario);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  line-height: 1.2;
+  color: var(--color-primario-oscuro);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-contenedor);
+  margin: 0 auto;
+  padding: 0 var(--esp-2);
+}
+
+.seccion {
+  padding: var(--esp-5) 0;
+}
+
+.seccion--clara {
+  background-color: var(--color-superficie);
+}
+
+.seccion__titulo {
+  text-align: center;
+  margin-bottom: var(--esp-2);
+}
+
+.seccion__bajada {
+  max-width: 600px;
+  margin: 0 auto var(--esp-4);
+  text-align: center;
+  color: var(--color-texto-suave);
+}
+
+.centrado {
+  text-align: center;
+}
+
+.intro {
+  margin-bottom: var(--esp-3);
+  color: var(--color-texto-suave);
+}
+
+.campo__ayuda {
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+}
+
+
+.boton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  /* BOX MODEL: padding */
+  border: 2px solid var(--color-primario);
+  /* BOX MODEL: border */
+  border-radius: var(--radio-pastilla);
+  font-family: var(--fuente-titulos);
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.boton--primario {
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+  color: var(--color-blanco);
+  box-shadow: var(--sombra);
+}
+
+.boton--primario:hover {
+  background-color: var(--color-primario-oscuro);
+  border-color: var(--color-primario-oscuro);
+  color: var(--color-blanco);
+}
+
+.boton--secundario {
+  background-color: var(--color-secundario);
+  border-color: var(--color-secundario);
+  color: var(--color-oscuro);
+  box-shadow: var(--sombra);
+}
+
+.boton--secundario:hover {
+  background-color: var(--color-secundario-oscuro);
+  border-color: var(--color-secundario-oscuro);
+  color: var(--color-blanco);
+}
+
+.boton--borde {
+  background-color: var(--color-superficie);
+  border-color: var(--color-primario);
+  color: var(--color-primario);
+}
+
+.boton--borde:hover {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.boton--bloque {
+  display: block;
+  width: 100%;
+}
+
+.cabecera {
+  background-color: var(--color-oscuro);
+}
+
+.cabecera__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-2);
+  padding: var(--esp-2) 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-1);
+  font-family: var(--fuente-titulos);
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--color-blanco);
+}
+
+.logo:hover {
+  color: var(--color-secundario);
+}
+
+.logo__icono {
+  font-size: 1.6rem;
+}
+
+.nav__lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--esp-1);
+  list-style: none;
+}
+
+.nav__link {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radio-pastilla);
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--color-texto-claro);
+}
+
+.nav__link:hover {
+  background-color: var(--color-primario-oscuro);
+  color: var(--color-blanco);
+}
+
+.nav__link--activo {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.hero {
+  padding: var(--esp-5) 0;
+  background-color: var(--color-primario-oscuro);
+  color: var(--color-blanco);
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: var(--esp-2);
+  color: var(--color-blanco);
+}
+
+.hero__texto {
+  max-width: 600px;
+  margin: 0 auto var(--esp-3);
+  font-size: 1.1rem;
+  color: var(--color-primario-claro);
+}
+
+.tarjeta {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+}
+
+.tarjeta__cuerpo {
+  padding: var(--esp-3);
+}
+
+.tarjeta__cuerpo h3 {
+  margin-bottom: var(--esp-1);
+}
+
+.tarjeta__texto {
+  margin-bottom: var(--esp-2);
+  color: var(--color-texto-suave);
+}
+
+.tarjeta__pie {
+  margin-top: var(--esp-2);
+}
+
+.pie {
+  margin-top: var(--esp-5);
+  padding: var(--esp-4) 0 var(--esp-2);
+  background-color: var(--color-oscuro);
+  color: var(--color-texto-claro);
+}
+
+.pie__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* fr = fraccion del espacio libre */
+  gap: var(--esp-3);
+  padding-bottom: var(--esp-3);
+}
+
+.pie h3 {
+  margin-bottom: var(--esp-1);
+  font-size: 1rem;
+  color: var(--color-secundario);
+  text-transform: uppercase;
+}
+
+.pie p {
+  font-size: 0.875rem;
+}
+
+.pie a {
+  color: var(--color-texto-claro);
+  font-size: 0.875rem;
+}
+
+.pie a:hover {
+  color: var(--color-secundario);
+}
+
+.pie__copy {
+  padding-top: var(--esp-2);
+  border-top: 1px solid var(--color-primario-oscuro);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+
+/*  MEDIA QUERIES DE LA ZONA COMUN
+
+/* --- TABLET: desde 768px --- */
+@media (min-width: 768px) {
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .contenedor {
+    padding: 0 var(--esp-3);
+  }
+
+  .hero__texto {
+    font-size: 1.25rem;
+  }
+}
+
+/* --- ESCRITORIO: desde 1024px --- */
+@media (min-width: 1024px) {
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero {
+    padding: var(--esp-5) 0 var(--esp-5);
+  }
+}
+
+/*    PAGINA DE INICIO - DUEÑA: LOURDES   */
+
+.hero--alto {
+  padding: var(--esp-5) 0;
+}
+
+.hero__acciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--esp-2);
+}
+
+.grid-funciones {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--esp-3);
+}
+
+/* Circulito con el emoji de cada funcion (flexbox para centrarlo adentro) */
+.tarjeta__icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  /* px: medida fija, no cambia nunca */
+  height: 56px;
+  margin-bottom: var(--esp-2);
+  border-radius: 50%;
+  /* 50% de su propio tamano = circulo */
+  background-color: var(--color-primario-claro);
+  font-size: 1.75rem;
+}
+
+/* ----------------------------------------------------------------------------
+   1.4  MEDIA QUERIES DE INICIO
+   ---------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  .grid-funciones {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columnas iguales */
+  }
+
+  .hero__acciones {
+    flex-direction: row;
+    /* botones uno al lado del otro */
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .grid-funciones {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columnas iguales */
+  }
+}
+
+
+/*  PAGINA DE CANCHAS - DUEÑA: ANALIA  */
+
+.grid-canchas {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* celular: una tarjeta por fila */
+  gap: var(--esp-3);
+}
+
+.tarjeta__imagen {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.datos {
+  list-style: none;
+  margin-bottom: var(--esp-2);
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+}
+
+.datos li {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px dashed var(--color-borde);
+}
+
+.precio {
+  margin-bottom: var(--esp-2);
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: var(--color-primario);
+}
+
+.precio span {
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: var(--color-texto-suave);
+}
+
+/* ----------------------------------------------------------------------------
+   2.4  MEDIA QUERIES DE CANCHAS
+   ---------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  .grid-canchas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .grid-canchas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*  PAGINA DE HORARIOS - DUEÑA: LAURA */
+
+.grid-horarios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--esp-2);
+  margin-top: var(--esp-2);
+  margin-bottom: var(--esp-5);
+}
+
+.referencias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--esp-2);
+  margin-bottom: var(--esp-4);
+  list-style: none;
+}
+
+.estado {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radio-pastilla);
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.estado--disponible {
+  color: var(--color-disponible);
+  background-color: var(--color-disponible-fondo);
+}
+
+.estado--ocupado {
+  color: var(--color-ocupado);
+  background-color: var(--color-ocupado-fondo);
+}
+
+.estado--pendiente {
+  color: var(--color-pendiente);
+  background-color: var(--color-pendiente-fondo);
+}
+
+.turno {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--esp-1);
+  padding: var(--esp-2);
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-chico);
+  background-color: var(--color-superficie);
+  text-align: center;
+}
+
+.turno__hora {
+  font-family: var(--fuente-titulos);
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--color-texto);
+}
+
+.turno--disponible {
+  border-color: var(--color-disponible);
+}
+
+.turno--ocupado {
+  border-color: var(--color-ocupado);
+  background-color: var(--color-ocupado-fondo);
+}
+
+.turno--pendiente {
+  border-color: var(--color-pendiente);
+}
+
+/* ----------------------------------------------------------------------------
+   3.4  MEDIA QUERIES DE HORARIOS
+   ---------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  .grid-horarios {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .grid-horarios {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/* PAGINA DE RESERVAR - DUEÑA: EMILSE */
+
+.grid-reserva {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--esp-4);
+}
+
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* celular: un campo por fila */
+  gap: var(--esp-2);
+  padding: var(--esp-4);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label {
+  font-family: var(--fuente-titulos);
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 0.75rem var(--esp-2);
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-chico);
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: var(--color-primario);
+}
+
+.campo textarea {
+  height: 130px;
+}
+
+.obligatorio {
+  color: var(--color-ocupado);
+  font-weight: bold;
+}
+
+.aviso {
+  padding: var(--esp-3);
+  border-left: 5px solid var(--color-secundario);
+  /* BOX MODEL: border */
+  border-radius: var(--radio);
+  background-color: var(--color-superficie);
+  box-shadow: var(--sombra);
+}
+
+.aviso h2,
+.aviso h3 {
+  margin-bottom: var(--esp-2);
+}
+
+.aviso ul {
+  padding-left: var(--esp-3);
+  color: var(--color-texto-suave);
+}
+
+.aviso li {
+  margin-bottom: var(--esp-1);
+}
+
+/* ----------------------------------------------------------------------------
+   4.4  MEDIA QUERIES DE RESERVAR
+   ---------------------------------------------------------------------------- */
+
+/* --- TABLET: el formulario pasa a 2 columnas --- */
+@media (min-width: 768px) {
+
+  .formulario {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Los campos largos y el boton ocupan las 2 columnas */
+  .campo--ancho,
+  .formulario .boton {
+    grid-column: span 2;
+  }
+}
+
+/* --- ESCRITORIO: formulario ancho + columna de avisos --- */
+@media (min-width: 1024px) {
+
+  .grid-reserva {
+    grid-template-columns: 2fr 1fr;
+    /* el form ocupa el doble que el aside */
+  }
+}
+
+
+/* PAGINA DE CONTACTO - DUEÑA: BELEN */
+
+.grid-contacto {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--esp-4);
+}
+
+.lista-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  list-style: none;
+}
+
+.lista-contacto li {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--esp-2);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-chico);
+  background-color: var(--color-superficie);
+}
+
+.lista-contacto .icono {
+  font-size: 1.5rem;
+}
+
+.lista-contacto strong {
+  display: block;
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario-oscuro);
+}
+
+/* ----------------------------------------------------------------------------
+   5.3  MEDIA QUERIES DE CONTACTO
+   ---------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+
+  .grid-contacto {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
