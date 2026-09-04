@@ -17,6 +17,11 @@ body {
   color: var(--texto);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 h1, h2, h3, h4, .navbar-brand {
   font-family: var(--fuente-titulo);
   font-weight: 700;
@@ -151,9 +156,4 @@ h1, h2 {
 .chip-ocupado {
   background: #FBE2DC;
   color: #9A3221;
-},
-
-/* ---- 10. Numeros alineados en columna ---- */
-.numeros {
-  font-variant-numeric: tabular-nums;
 }
