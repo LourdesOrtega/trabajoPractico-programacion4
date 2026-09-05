@@ -5,32 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestras Canchas | Club Canchas de Fútbol y Pádel</title>
-    <meta name="description" content="Conocé las canchas del club: fútbol 5, fútbol 7 y pádel. Precios por hora, vestuarios e iluminación LED en todas.">
+    <meta name="description"
+        content="Conocé las canchas del club: fútbol 5, fútbol 7 y pádel. Precios por hora, vestuarios e iluminación LED en todas.">
     <meta name="author" content="Grupo 6 - Tecnicatura Universitaria en Programación">
+    <link rel="icon" href="img/logo-club.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/comun.css">
+    <link rel="stylesheet" href="css/canchas.css">
 </head>
 
 <body>
 
-    <header class="cabecera">
-        <div class="contenedor cabecera__inner">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg  navbar-club" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <img src="img/logo-club.png" alt="" width="46" height="46">
+                    <span>Club Cancha</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir el menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <a class="logo" href="index.html">
-                <span class="logo__icono" aria-hidden="true">&#9917;</span>
-                <span>Club Cancha</span>
-            </a>
-
-            <nav class="nav" aria-label="Navegación principal">
-                <ul class="nav__lista">
-                    <li><a class="nav__link" href="index.html">Inicio</a></li>
-                    <li><a class="nav__link nav__link--activo" href="canchas.html" aria-current="page">Canchas</a></li>
-                    <li><a class="nav__link" href="horarios.html">Horarios</a></li>
-                    <li><a class="nav__link" href="reservar.html">Reservar</a></li>
-                    <li><a class="nav__link" href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-
-        </div>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="canchas.html">Canchas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <a class="btn btn-club ms-lg-3 mt-2 mt-lg-0" href="reservar.html">Reservar turno</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -57,7 +72,7 @@
 
                     <!-- Cancha 1 -->
                     <article class="tarjeta">
-                        <img class="tarjeta__imagen" src="img/cancha-futbol5.svg" width="640" height="400"
+                        <img class="tarjeta__imagen" src="img/cancha-futbol5.jpg" width="640" height="400"
                             loading="lazy" alt="Vista aérea de la cancha de fútbol 5 con césped sintético">
                         <div class="tarjeta__cuerpo">
                             <h3>Fútbol 5</h3>
@@ -76,7 +91,7 @@
 
                     <!-- Cancha 2 -->
                     <article class="tarjeta">
-                        <img class="tarjeta__imagen" src="img/cancha-futbol7.svg" width="640" height="400"
+                        <img class="tarjeta__imagen" src="img/cancha-futbol7.jpg" width="640" height="400"
                             loading="lazy" alt="Vista aérea de la cancha de fútbol 7 con arcos reglamentarios">
                         <div class="tarjeta__cuerpo">
                             <h3>Fútbol 7</h3>
@@ -95,8 +110,8 @@
 
                     <!-- Cancha 3 -->
                     <article class="tarjeta">
-                        <img class="tarjeta__imagen" src="img/cancha-padel.svg" width="640" height="400"
-                            loading="lazy" alt="Cancha de pádel con paredes de vidrio y red central">
+                        <img class="tarjeta__imagen" src="img/cancha-padel.jpg" width="640" height="400" loading="lazy"
+                            alt="Cancha de pádel con paredes de vidrio y red central">
                         <div class="tarjeta__cuerpo">
                             <h3>Pádel</h3>
                             <p class="tarjeta__texto">Cancha de pádel equipada para disfrutar con amigos.</p>
@@ -153,21 +168,42 @@
 
     </main>
 
-    <footer class="pie">
-        <div class="contenedor">
+    <footer class="pie-club">
+        <div class="container">
+            <div class="row g-4">
 
-            <div class="pie__grid">
-                <div>
-                    <h3>Club Cancha</h3>
-                    <p>Sistema interno de gestión de turnos para canchas de fútbol y pádel.</p>
+                <div class="col-12 col-md-5">
+                    <h3 class="h5">Club Cancha</h3>
+                    <p class="mb-0">Sistema de gestion de turnos para canchas de futbol 5, futbol 7 y padel.</p>
                 </div>
+
+                <div class="col-6 col-md-3">
+                    <h3 class="h6 text-uppercase">Secciones</h3>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="canchas.html">Canchas</a></li>
+                        <li><a href="horarios.html">Horarios</a></li>
+                        <li><a href="reservar.html">Reservar</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <h3 class="h6 text-uppercase">Contacto</h3>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="tel:+543884000000">+54 388 400-0000</a></li>
+                        <li><a href="mailto:administracion@clubcancha.com.ar">administracion@clubcancha.com.ar</a></li>
+                        <li>Lunes a domingo, 8 a 23 h</li>
+                    </ul>
+                </div>
+
             </div>
 
-            <p class="pie__copy">Copyright 2026 &middot; Sistema interno del club</p>
-
+            <hr class="border-secondary my-4">
+            <p class="text-center small mb-0">Copyright 2026 &middot; Grupo 6 &middot; Sistema del club</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

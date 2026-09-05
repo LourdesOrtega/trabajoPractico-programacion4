@@ -1,26 +1,30 @@
+/*
+   CSS DEL TP2 - Grupo 6
+   Se conserva comentado segun la consigna del TP3. NO BORRAR.
+
 :root {
 
-  /* --- Colores del club --- */
+  /* --- Colores del club ---* /
   --color-primario: #0f766e;
   --color-primario-oscuro: #115e59;
   --color-primario-claro: #ccfbf1;
   --color-secundario: #f59e0b;
   --color-secundario-oscuro: #d97706;
 
-  /* --- Colores de la interfaz --- */
+  /* --- Colores de la interfaz ---* /
   --color-fondo: #f4f7f8;
-  /* fondo general de la pagina */
+  /* fondo general de la pagina* /
   --color-superficie: #ffffff;
-  /* fondo de tarjetas y formularios */
+  /* fondo de tarjetas y formularios* /
   --color-oscuro: #0b1f1d;
-  /* header y footer */
+  /* header y footer* /
   --color-blanco: #ffffff;
   --color-texto: #1f2937;
   --color-texto-suave: #4b5563;
   --color-texto-claro: #e5e7eb;
   --color-borde: #d1d5db;
 
-  /* --- Colores segun el estado del turno --- */
+  /* --- Colores segun el estado del turno ---* /
   --color-disponible: #15803d;
   --color-disponible-fondo: #dcfce7;
   --color-ocupado: #b91c1c;
@@ -28,24 +32,24 @@
   --color-pendiente: #b45309;
   --color-pendiente-fondo: #fef3c7;
 
-  /* --- Tipografias --- */
+  /* --- Tipografias ---* /
   --fuente-titulos: "Segoe UI", Arial, sans-serif;
   --fuente-texto: "Segoe UI", Arial, sans-serif;
 
-  /* --- Espaciados (siempre multiplos de 0.5rem = 8px) --- */
+  /* --- Espaciados (siempre multiplos de 0.5rem = 8px) ---* /
   --esp-1: 0.5rem;
   --esp-2: 1rem;
   --esp-3: 1.5rem;
   --esp-4: 2rem;
   --esp-5: 3rem;
 
-  /* --- Bordes y sombras --- */
+  /* --- Bordes y sombras ---* /
   --radio: 12px;
   --radio-chico: 8px;
   --radio-pastilla: 50px;
   --sombra: 0 2px 8px #9ca3af;
 
-  /* --- Ancho maximo del contenido --- */
+  /* --- Ancho maximo del contenido ---* /
   --ancho-contenedor: 1200px;
 }
 
@@ -65,7 +69,7 @@ body {
 
 img {
   max-width: 100%;
-  /* la imagen nunca se pasa de su caja */
+  /* la imagen nunca se pasa de su caja* /
   height: auto;
   display: block;
 }
@@ -148,9 +152,9 @@ h3 {
 .boton {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  /* BOX MODEL: padding */
+  /* BOX MODEL: padding* /
   border: 2px solid var(--color-primario);
-  /* BOX MODEL: border */
+  /* BOX MODEL: border* /
   border-radius: var(--radio-pastilla);
   font-family: var(--fuente-titulos);
   font-size: 1rem;
@@ -313,7 +317,7 @@ h3 {
 .pie__grid {
   display: grid;
   grid-template-columns: 1fr;
-  /* fr = fraccion del espacio libre */
+  /* fr = fraccion del espacio libre* /
   gap: var(--esp-3);
   padding-bottom: var(--esp-3);
 }
@@ -348,7 +352,7 @@ h3 {
 
 /*  MEDIA QUERIES DE LA ZONA COMUN
 
-/* --- TABLET: desde 768px --- */
+/* --- TABLET: desde 768px ---* /
 @media (min-width: 768px) {
 
   h1 {
@@ -372,7 +376,7 @@ h3 {
   }
 }
 
-/* --- ESCRITORIO: desde 1024px --- */
+/* --- ESCRITORIO: desde 1024px ---* /
 @media (min-width: 1024px) {
 
   h1 {
@@ -388,7 +392,7 @@ h3 {
   }
 }
 
-/*    PAGINA DE INICIO - DUEÑA: LOURDES   */
+/*    PAGINA DE INICIO - DUEÑA: LOURDES  * /
 
 .hero--alto {
   padding: var(--esp-5) 0;
@@ -407,35 +411,35 @@ h3 {
   gap: var(--esp-3);
 }
 
-/* Circulito con el emoji de cada funcion (flexbox para centrarlo adentro) */
+/* Circulito con el emoji de cada funcion (flexbox para centrarlo adentro)* /
 .tarjeta__icono {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 56px;
-  /* px: medida fija, no cambia nunca */
+  /* px: medida fija, no cambia nunca* /
   height: 56px;
   margin-bottom: var(--esp-2);
   border-radius: 50%;
-  /* 50% de su propio tamano = circulo */
+  /* 50% de su propio tamano = circulo* /
   background-color: var(--color-primario-claro);
   font-size: 1.75rem;
 }
 
 /* ----------------------------------------------------------------------------
    1.4  MEDIA QUERIES DE INICIO
-   ---------------------------------------------------------------------------- */
+   ----------------------------------------------------------------------------* /
 
 @media (min-width: 768px) {
 
   .grid-funciones {
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columnas iguales */
+    /* 2 columnas iguales* /
   }
 
   .hero__acciones {
     flex-direction: row;
-    /* botones uno al lado del otro */
+    /* botones uno al lado del otro* /
     justify-content: center;
   }
 }
@@ -444,17 +448,17 @@ h3 {
 
   .grid-funciones {
     grid-template-columns: repeat(3, 1fr);
-    /* 3 columnas iguales */
+    /* 3 columnas iguales* /
   }
 }
 
 
-/*  PAGINA DE CANCHAS - DUEÑA: ANALIA  */
+/*  PAGINA DE CANCHAS - DUEÑA: ANALIA * /
 
 .grid-canchas {
   display: grid;
   grid-template-columns: 1fr;
-  /* celular: una tarjeta por fila */
+  /* celular: una tarjeta por fila* /
   gap: var(--esp-3);
 }
 
@@ -494,7 +498,7 @@ h3 {
 
 /* ----------------------------------------------------------------------------
    2.4  MEDIA QUERIES DE CANCHAS
-   ---------------------------------------------------------------------------- */
+   ----------------------------------------------------------------------------* /
 
 @media (min-width: 768px) {
 
@@ -510,7 +514,7 @@ h3 {
   }
 }
 
-/*  PAGINA DE HORARIOS - DUEÑA: LAURA */
+/*  PAGINA DE HORARIOS - DUEÑA: LAURA* /
 
 .grid-horarios {
   display: grid;
@@ -587,7 +591,7 @@ h3 {
 
 /* ----------------------------------------------------------------------------
    3.4  MEDIA QUERIES DE HORARIOS
-   ---------------------------------------------------------------------------- */
+   ----------------------------------------------------------------------------* /
 
 @media (min-width: 768px) {
 
@@ -603,7 +607,7 @@ h3 {
   }
 }
 
-/* PAGINA DE RESERVAR - DUEÑA: EMILSE */
+/* PAGINA DE RESERVAR - DUEÑA: EMILSE* /
 
 .grid-reserva {
   display: grid;
@@ -615,7 +619,7 @@ h3 {
 .formulario {
   display: grid;
   grid-template-columns: 1fr;
-  /* celular: un campo por fila */
+  /* celular: un campo por fila* /
   gap: var(--esp-2);
   padding: var(--esp-4);
   background-color: var(--color-superficie);
@@ -667,7 +671,7 @@ h3 {
 .aviso {
   padding: var(--esp-3);
   border-left: 5px solid var(--color-secundario);
-  /* BOX MODEL: border */
+  /* BOX MODEL: border* /
   border-radius: var(--radio);
   background-color: var(--color-superficie);
   box-shadow: var(--sombra);
@@ -689,33 +693,33 @@ h3 {
 
 /* ----------------------------------------------------------------------------
    4.4  MEDIA QUERIES DE RESERVAR
-   ---------------------------------------------------------------------------- */
+   ----------------------------------------------------------------------------* /
 
-/* --- TABLET: el formulario pasa a 2 columnas --- */
+/* --- TABLET: el formulario pasa a 2 columnas ---* /
 @media (min-width: 768px) {
 
   .formulario {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Los campos largos y el boton ocupan las 2 columnas */
+  /* Los campos largos y el boton ocupan las 2 columnas* /
   .campo--ancho,
   .formulario .boton {
     grid-column: span 2;
   }
 }
 
-/* --- ESCRITORIO: formulario ancho + columna de avisos --- */
+/* --- ESCRITORIO: formulario ancho + columna de avisos ---* /
 @media (min-width: 1024px) {
 
   .grid-reserva {
     grid-template-columns: 2fr 1fr;
-    /* el form ocupa el doble que el aside */
+    /* el form ocupa el doble que el aside* /
   }
 }
 
 
-/* PAGINA DE CONTACTO - DUEÑA: BELEN */
+/* PAGINA DE CONTACTO - DUEÑA: BELEN* /
 
 .grid-contacto {
   display: grid;
@@ -751,7 +755,7 @@ h3 {
 
 /* ----------------------------------------------------------------------------
    5.3  MEDIA QUERIES DE CONTACTO
-   ---------------------------------------------------------------------------- */
+   ----------------------------------------------------------------------------* /
 
 @media (min-width: 1024px) {
 
@@ -759,3 +763,5 @@ h3 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+   ===== FIN DEL CSS DEL TP2 ===== */
