@@ -48,125 +48,302 @@
         </nav>
     </header>
 
-    <main>
+<main>
 
-        <section class="hero">
-            <div class="contenedor">
-                <h1>Nuestras Canchas</h1>
-                <p class="hero__texto">
-                    Elegí la cancha que mejor se adapte a tu partido. Todas cuentan con
-                    vestuarios e iluminación para jugar de noche.
-                </p>
+    <!-- Presentación -->
+    <section class="container py-5">
+        <div class="text-center">
+            <h1 class="titulo-cal">Nuestras Canchas</h1>
+
+            <p class="lead">
+                Elegí la cancha que mejor se adapte a tu partido.
+                Todas cuentan con vestuarios e iluminación para jugar de noche.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Catálogo -->
+    <section class="container pb-5" aria-labelledby="titulo-catalogo">
+
+        <div class="text-center mb-4">
+            <h2 id="titulo-catalogo">Catálogo de canchas</h2>
+
+            <p>
+                Precios vigentes por hora de juego.
+                Los turnos se confirman por teléfono o email.
+            </p>
+        </div>
+
+
+        <!-- GRID BOOTSTRAP -->
+        <div class="row g-4">
+
+            <!-- CANCHA 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <article class="card h-100 shadow-sm">
+
+                    <img
+                        src="img/cancha-futbol5.jpg"
+                        class="card-img-top"
+                        width="640"
+                        height="400"
+                        loading="lazy"
+                        alt="Vista aérea de la cancha de fútbol 5 con césped sintético">
+
+                    <div class="card-body d-flex flex-column">
+
+                        <h3 class="card-title">Fútbol 5</h3>
+
+                        <p class="card-text">
+                            Cancha ideal para partidos rápidos de fútbol 5.
+                        </p>
+
+                        <p class="precio">
+                            $18.000 <span>/ hora</span>
+                        </p>
+
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Jugadores</span>
+                                <strong>10</strong>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Vestuarios</span>
+                                <strong>Sí</strong>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Iluminación</span>
+                                <strong>Sí</strong>
+                            </li>
+                        </ul>
+
+                        <span class="chip-estado chip-libre mb-3">
+                            Libre
+                        </span>
+
+                        <a
+                            class="btn btn-club mt-auto"
+                            href="reservar.html">
+                            Reservar
+                        </a>
+
+                    </div>
+                </article>
+
             </div>
-        </section>
 
-        <section class="seccion" aria-labelledby="titulo-catalogo">
-            <div class="contenedor">
 
-                <h2 class="seccion__titulo" id="titulo-catalogo">Catálogo de canchas</h2>
-                <p class="seccion__bajada">
-                    Precios vigentes por hora de juego. Los turnos se confirman por teléfono o email.
-                </p>
+            <!-- CANCHA 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
 
-                <div class="grid-canchas">
+                <article class="card h-100 shadow-sm">
 
-                    <!-- Cancha 1 -->
-                    <article class="tarjeta">
-                        <img class="tarjeta__imagen" src="img/cancha-futbol5.jpg" width="640" height="400"
-                            loading="lazy" alt="Vista aérea de la cancha de fútbol 5 con césped sintético">
-                        <div class="tarjeta__cuerpo">
-                            <h3>Fútbol 5</h3>
-                            <p class="tarjeta__texto">Cancha ideal para partidos rápidos de fútbol 5.</p>
-                            <p class="precio">$18.000 <span>/ hora</span></p>
-                            <ul class="datos">
-                                <li><span>Jugadores</span> <strong>10</strong></li>
-                                <li><span>Vestuarios</span> <strong>Sí</strong></li>
-                                <li><span>Iluminación</span> <strong>Sí</strong></li>
-                            </ul>
-                            <p class="tarjeta__pie">
-                                <a class="boton boton--primario boton--bloque" href="reservar.html">Reservar</a>
-                            </p>
-                        </div>
-                    </article>
+                    <img
+                        src="img/cancha-futbol7.jpg"
+                        class="card-img-top"
+                        width="640"
+                        height="400"
+                        loading="lazy"
+                        alt="Vista aérea de la cancha de fútbol 7 con arcos reglamentarios">
 
-                    <!-- Cancha 2 -->
-                    <article class="tarjeta">
-                        <img class="tarjeta__imagen" src="img/cancha-futbol7.jpg" width="640" height="400"
-                            loading="lazy" alt="Vista aérea de la cancha de fútbol 7 con arcos reglamentarios">
-                        <div class="tarjeta__cuerpo">
-                            <h3>Fútbol 7</h3>
-                            <p class="tarjeta__texto">Cancha amplia para partidos de fútbol 7.</p>
-                            <p class="precio">$25.000 <span>/ hora</span></p>
-                            <ul class="datos">
-                                <li><span>Jugadores</span> <strong>14</strong></li>
-                                <li><span>Vestuarios</span> <strong>Sí</strong></li>
-                                <li><span>Iluminación</span> <strong>Sí</strong></li>
-                            </ul>
-                            <p class="tarjeta__pie">
-                                <a class="boton boton--primario boton--bloque" href="reservar.html">Reservar</a>
-                            </p>
-                        </div>
-                    </article>
+                    <div class="card-body d-flex flex-column">
 
-                    <!-- Cancha 3 -->
-                    <article class="tarjeta">
-                        <img class="tarjeta__imagen" src="img/cancha-padel.jpg" width="640" height="400" loading="lazy"
-                            alt="Cancha de pádel con paredes de vidrio y red central">
-                        <div class="tarjeta__cuerpo">
-                            <h3>Pádel</h3>
-                            <p class="tarjeta__texto">Cancha de pádel equipada para disfrutar con amigos.</p>
-                            <p class="precio">$12.000 <span>/ hora</span></p>
-                            <ul class="datos">
-                                <li><span>Jugadores</span> <strong>4</strong></li>
-                                <li><span>Vestuarios</span> <strong>Sí</strong></li>
-                                <li><span>Iluminación</span> <strong>Sí</strong></li>
-                            </ul>
-                            <p class="tarjeta__pie">
-                                <a class="boton boton--primario boton--bloque" href="reservar.html">Reservar</a>
-                            </p>
-                        </div>
-                    </article>
+                        <h3 class="card-title">Fútbol 7</h3>
 
-                </div>
+                        <p class="card-text">
+                            Cancha amplia para partidos de fútbol 7.
+                        </p>
+
+                        <p class="precio">
+                            $25.000 <span>/ hora</span>
+                        </p>
+
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Jugadores</span>
+                                <strong>14</strong>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Vestuarios</span>
+                                <strong>Sí</strong>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Iluminación</span>
+                                <strong>Sí</strong>
+                            </li>
+                        </ul>
+
+                        <span class="chip-estado chip-pendiente mb-3">
+                            Pendiente
+                        </span>
+
+                        <a
+                            class="btn btn-club mt-auto"
+                            href="reservar.html">
+                            Reservar
+                        </a>
+
+                    </div>
+                </article>
+
             </div>
-        </section>
 
-        <section class="seccion seccion--clara" aria-labelledby="titulo-servicios">
-            <div class="contenedor">
 
-                <h2 class="seccion__titulo" id="titulo-servicios">Servicios incluidos</h2>
+            <!-- CANCHA 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
 
-                <div class="grid-funciones">
+                <article class="card h-100 shadow-sm">
 
-                    <article class="tarjeta">
-                        <div class="tarjeta__cuerpo">
-                            <span class="tarjeta__icono" aria-hidden="true">&#128694;</span>
-                            <h3>Vestuarios con duchas</h3>
-                            <p class="tarjeta__texto">Vestuarios climatizados y lockers sin costo adicional.</p>
-                        </div>
-                    </article>
+                    <img
+                        src="img/cancha-padel.jpg"
+                        class="card-img-top"
+                        width="640"
+                        height="400"
+                        loading="lazy"
+                        alt="Cancha de pádel con paredes de vidrio y red central">
 
-                    <article class="tarjeta">
-                        <div class="tarjeta__cuerpo">
-                            <span class="tarjeta__icono" aria-hidden="true">&#128161;</span>
-                            <h3>Iluminación LED</h3>
-                            <p class="tarjeta__texto">Todas las canchas se pueden usar hasta las 23 h.</p>
-                        </div>
-                    </article>
+                    <div class="card-body d-flex flex-column">
 
-                    <article class="tarjeta">
-                        <div class="tarjeta__cuerpo">
-                            <span class="tarjeta__icono" aria-hidden="true">&#128663;</span>
-                            <h3>Estacionamiento</h3>
-                            <p class="tarjeta__texto">Playa de estacionamiento propia y gratuita para socios.</p>
-                        </div>
-                    </article>
+                        <h3 class="card-title">Pádel</h3>
 
-                </div>
+                        <p class="card-text">
+                            Cancha de pádel equipada para disfrutar con amigos.
+                        </p>
+
+                        <p class="precio">
+                            $12.000 <span>/ hora</span>
+                        </p>
+
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Jugadores</span>
+                                <strong>4</strong>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Vestuarios</span>
+                                <strong>Sí</strong>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Iluminación</span>
+                                <strong>Sí</strong>
+                            </li>
+                        </ul>
+
+                        <span class="chip-estado chip-ocupado mb-3">
+                            Ocupada
+                        </span>
+
+                        <a
+                            class="btn btn-club mt-auto"
+                            href="reservar.html">
+                            Reservar
+                        </a>
+
+                    </div>
+                </article>
+
             </div>
-        </section>
 
-    </main>
+        </div>
+    </section>
+
+
+    <!-- SERVICIOS -->
+    <section class="container pb-5" aria-labelledby="titulo-servicios">
+
+        <div class="text-center mb-4">
+            <h2 id="titulo-servicios">Servicios incluidos</h2>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Servicio 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <article class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+
+                        <div class="servicio-icono" aria-hidden="true">
+                            &#128694;
+                        </div>
+
+                        <h3 class="card-title">
+                            Vestuarios con duchas
+                        </h3>
+
+                        <p class="card-text">
+                            Vestuarios climatizados y lockers
+                            sin costo adicional.
+                        </p>
+
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- Servicio 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <article class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+
+                        <div class="servicio-icono" aria-hidden="true">
+                            &#128161;
+                        </div>
+
+                        <h3 class="card-title">
+                            Iluminación LED
+                        </h3>
+
+                        <p class="card-text">
+                            Todas las canchas se pueden usar
+                            hasta las 23 h.
+                        </p>
+
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- Servicio 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <article class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+
+                        <div class="servicio-icono" aria-hidden="true">
+                            &#128663;
+                        </div>
+
+                        <h3 class="card-title">
+                            Estacionamiento
+                        </h3>
+
+                        <p class="card-text">
+                            Playa de estacionamiento propia
+                            y gratuita para socios.
+                        </p>
+
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
 
     <footer class="pie-club">
         <div class="container">

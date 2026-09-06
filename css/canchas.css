@@ -1,1 +1,79 @@
-/* canchas.css - Analia Roldan - TP3 */
+/* canchas.css - Analía Roldan - TP3 */
+
+
+/* =========================
+   CANCHAS
+   ========================= */
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Imágenes de las canchas */
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+
+/* Títulos de las tarjetas */
+
+.card-title {
+    color: var(--verde-noche);
+    font-weight: 700;
+}
+
+
+/* Texto de las tarjetas */
+
+.card-text {
+    line-height: 1.6;
+}
+
+
+/* Precio */
+
+.precio {
+    color: var(--verde-noche);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.precio span {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+
+/* Lista de características */
+
+.list-group-item {
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* Iconos de servicios */
+
+.servicio-icono {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Espaciado general de las tarjetas */
+
+.card-body {
+    padding: 1.5rem;
+}/* canchas.css - Analia Roldan - TP3 */
