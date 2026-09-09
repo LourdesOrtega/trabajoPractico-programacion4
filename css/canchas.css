@@ -1,79 +1,92 @@
-/* canchas.css - Analía Roldan - TP3 */
+/* canchas.css - Analia Roldan - TP3 */
 
 
-/* =========================
-   CANCHAS
-   ========================= */
+/* =====================================================
+   CSS DEL TP2
+   Se conserva comentado porque el TP3 pide
+   no eliminar el CSS anterior.
+   ===================================================== */
 
-.card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+/*
+
+.grid-canchas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--esp-3);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-
-/* Imágenes de las canchas */
-
-.card-img-top {
-    height: 220px;
+.tarjeta__imagen {
+    width: 100%;
+    height: 200px;
     object-fit: cover;
+    border-bottom: var(--borde);
 }
 
-
-/* Títulos de las tarjetas */
-
-.card-title {
-    color: var(--verde-noche);
-    font-weight: 700;
+.datos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin: var(--esp-1) 0;
+    font-size: var(--fs-chico);
+    color: var(--color-texto-suave);
 }
 
-
-/* Texto de las tarjetas */
-
-.card-text {
-    line-height: 1.6;
+.datos li {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--esp-1);
+    padding-bottom: 0.35rem;
+    border-bottom: 1px dashed var(--color-borde);
 }
-
-
-/* Precio */
 
 .precio {
-    color: var(--verde-noche);
-    font-size: 1.4rem;
+    font-family: var(--fuente-titulos);
+    font-size: 1.35rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    color: var(--color-primario);
 }
 
 .precio span {
-    font-size: 0.9rem;
+    font-size: var(--fs-chico);
     font-weight: 400;
+    color: var(--color-texto-suave);
 }
 
+@media (min-width: 900px) {
 
-/* Lista de características */
+    .grid-canchas {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-.list-group-item {
-    background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
 }
 
+@media (max-width: 600px) {
 
-/* Iconos de servicios */
+    .grid-canchas {
+        grid-template-columns: 1fr;
+    }
 
-.servicio-icono {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
 }
 
+*/
 
-/* Espaciado general de las tarjetas */
 
-.card-body {
-    padding: 1.5rem;
-}/* canchas.css - Analia Roldan - TP3 */
+/* =====================================================
+   TP3 - BOOTSTRAP
+   ===================================================== */
+
+/* canchas.css - Analia Roldan - TP3 */
+
+
+/* CSS del TP3 */
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.precio {
+    font-weight: bold;
+    font-size: 20px;
+}
