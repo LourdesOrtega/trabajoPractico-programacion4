@@ -1,1 +1,124 @@
 /* reservar.css - Emilse Andrada Suarez - TP3 */
+/* ================================
+   ESTILOS PROPIOS DE RESERVAR
+   ================================ */
+
+
+/* Números de los pasos */
+
+.paso-numero {
+      display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background-color: var(--lima);
+    color: var(--verde-noche);
+
+    font-weight: 700;
+}
+
+
+/* Campos obligatorios con punto lima */
+
+.obligatorio {
+    color: var(--lima);
+    font-weight: 700;
+}
+
+
+/* Efecto de foco en los campos */
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--lima);
+    box-shadow: 0 0 .25rem rgba(200, 241, 105, .35);
+}
+
+
+/* El botón mantiene el estilo de Bootstrap */
+
+.btn-club {
+    font-weight: 600;
+}
+
+
+/* Separación de la columna de recordatorios */
+
+.sticky-top {
+    z-index: 10;
+}
+/* Columna de recordatorios */
+
+.reserva-recordatorio {
+    top: 90px;
+    z-index: 10;
+}
+
+
+/* Ajustes del formulario */
+
+.form-label {
+    font-weight: 600;
+}
+
+
+/* Espaciado de los grupos de pasos */
+
+.paso-numero + h3 {
+    margin-bottom: 0;
+}
+
+
+/* Íconos de los recordatorios */
+
+.list-group-item i {
+    color: var(--verde-cancha);
+}
+
+
+/* Evita que el contenido se estire demasiado */
+
+.card {
+    overflow: hidden;
+}
+
+
+/* Mejora visual del textarea */
+
+textarea.form-control {
+    resize: vertical;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 991.98px) {
+
+    .reserva-recordatorio {
+        position: static !important;
+        top: auto;
+    }
+
+}
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
