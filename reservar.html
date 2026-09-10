@@ -1,590 +1,515 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Reservar un turno | Club Canchas de Fútbol y Pádel</title>
+    <title>Reservar turno | Club Cancha</title>
 
-    <meta name="description"
-        content="Formulario para registrar la reserva de un turno en las canchas del club.">
-
-    <meta name="author"
-        content="Grupo 6 - Tecnicatura Universitaria en Programación">
-
-    <link rel="icon" href="img/logo-club.png" type="image/png">
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Bootstrap 5.3.3 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
     <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap">
+    <!-- CSS de TP2 - NO BORRAR: se conserva para referencia pero Bootstrap reemplaza sus estilos -->
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
 
-    <!-- CSS del proyecto -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- CSS compartido -->
     <link rel="stylesheet" href="css/comun.css">
+
+    <!-- CSS propio de la página -->
     <link rel="stylesheet" href="css/reservar.css">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-
+    <!-- NAVBAR -->
     <header class="sticky-top">
-
-        <nav class="navbar navbar-expand-lg navbar-club"
-            data-bs-theme="dark">
-
+        <nav class="navbar navbar-expand-lg navbar-club" data-bs-theme="dark">
             <div class="container">
 
-                <a class="navbar-brand d-flex align-items-center gap-2"
-                    href="index.html">
-
-                    <img src="img/logo-club.png"
-                        alt=""
-                        width="46"
-                        height="46">
-
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <img
+                        src="img/logo-club.png"
+                        alt="Logo de Club Cancha"
+                        width="45"
+                        height="45"
+                    >
                     <span>Club Cancha</span>
-
                 </a>
 
-                <button class="navbar-toggler"
+                <button
+                    class="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#menuPrincipal"
                     aria-controls="menuPrincipal"
                     aria-expanded="false"
-                    aria-label="Abrir el menu">
-
+                    aria-label="Abrir menú de navegación"
+                >
                     <span class="navbar-toggler-icon"></span>
-
                 </button>
 
-                <div class="collapse navbar-collapse"
-                    id="menuPrincipal">
-
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
 
                         <li class="nav-item">
-                            <a class="nav-link"
-                                href="index.html">
+                            <a class="nav-link" href="index.html">
                                 Inicio
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link"
-                                href="canchas.html">
+                            <a class="nav-link" href="canchas.html">
                                 Canchas
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link"
-                                href="horarios.html">
+                            <a class="nav-link" href="horarios.html">
                                 Horarios
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link"
-                                href="contacto.html">
+                            <a
+                                class="nav-link active"
+                                href="reservar.html"
+                                aria-current="page"
+                            >
+                                Reservar
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">
                                 Contacto
                             </a>
                         </li>
 
+                        <li class="nav-item ms-lg-2">
+                            <a class="btn btn-club" href="reservar.html">
+                                Reservar turno
+                            </a>
+                        </li>
+
                     </ul>
-
-                    <a class="btn btn-club ms-lg-3 mt-2 mt-lg-0"
-                        href="reservar.html"
-                        aria-current="page">
-
-                        Reservar turno
-
-                    </a>
-
                 </div>
 
             </div>
-
         </nav>
-
     </header>
 
 
-    <!-- ================= CONTENIDO PRINCIPAL ================= -->
-
+    <!-- HERO -->
     <main>
 
-        <!-- HERO -->
-
-        <section class="hero">
-
-            <div class="contenedor">
-
+        <section class="hero-club franjas">
+            <div class="container py-5">
                 <h1>Registrar una Reserva</h1>
 
-                <p class="hero__texto">
-                    Completá los datos solicitados por el cliente para registrar el turno.
+                <p class="lead mb-0">
+                    Completá el formulario para reservar tu cancha de manera rápida y sencilla.
                 </p>
-
             </div>
-
         </section>
 
 
-        <!-- ================= RESERVA ================= -->
-
-        <section class="seccion">
-
+        <!-- RESERVA -->
+        <section class="py-5">
             <div class="container">
 
                 <div class="row g-4">
 
+                    <!-- FORMULARIO -->
+                    <div class="col-12 col-lg-8">
 
-                    <!-- ================= PRIMERA COLUMNA ================= -->
-
-                    <div class="col-lg-8">
-
-                        <!-- PASO 1 -->
-
-                        <div class="d-flex align-items-center gap-2 mb-3">
-
-                            <span class="paso-numero">1</span>
-
-                            <h2 class="h4 mb-0">
-                                Cliente
-                            </h2>
-
-                        </div>
-
-
-                        <!-- CARD DEL FORMULARIO -->
-
-                        <div class="card shadow-sm">
-
+                        <div class="card shadow-sm border-0">
                             <div class="card-body p-4">
 
-                                <h2 id="titulo-formulario"
-                                    class="h3">
-
+                                <h2 class="titulo-cal mb-4">
                                     Datos de la reserva
-
                                 </h2>
 
-                                <p class="intro">
+                                <form
+                                    class="needs-validation"
+                                    novalidate
+                                    id="formReserva"
+                                >
 
-                                    Los campos marcados con
-                                    <span class="obligatorio"
-                                        aria-hidden="true">
-                                        ●
-                                    </span>
-                                    son obligatorios.
+                                    <!-- PASO 1 -->
+                                    <div class="mb-4">
 
-                                </p>
+                                        <h3 class="h4 d-flex align-items-center gap-2">
+                                            <span class="paso-numero">1</span>
+                                            Cliente
+                                        </h3>
 
+                                        <div class="row g-3 mt-1">
 
-                                <!-- MENSAJE DE ÉXITO -->
+                                            <div class="col-12 col-md-6">
+                                                <label
+                                                    for="nombre"
+                                                    class="form-label"
+                                                >
+                                                    Nombre
+                                                    <span
+                                                        class="obligatorio"
+                                                        aria-hidden="true"
+                                                    >•</span>
+                                                </label>
 
-                                <div class="alert alert-success d-none"
-                                    role="alert"
-                                    id="mensajeExito">
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="nombre"
+                                                    name="nombre"
+                                                    autocomplete="given-name"
+                                                    required
+                                                >
 
-                                    Reserva registrada correctamente.
-
-                                </div>
-
-
-                                <!-- FORMULARIO -->
-
-                                <form class="row g-3 needs-validation"
-                                    aria-labelledby="titulo-formulario"
-                                    novalidate>
-
-
-                                    <!-- NOMBRE -->
-
-                                    <div class="col-12 col-md-6">
-
-                                        <label for="nombre"
-                                            class="form-label">
-
-                                            Nombre y apellido
-                                            <span class="obligatorio"
-                                                aria-hidden="true">
-                                                ●
-                                            </span>
-
-                                        </label>
-
-                                        <input type="text"
-                                            class="form-control"
-                                            id="nombre"
-                                            name="nombre"
-                                            autocomplete="name"
-                                            placeholder="Ej: María González"
-                                            required>
-
-                                        <div class="invalid-feedback">
-
-                                            Falta el nombre del cliente.
-
-                                        </div>
-
-                                    </div>
+                                                <div class="invalid-feedback">
+                                                    Ingresá tu nombre.
+                                                </div>
+                                            </div>
 
 
-                                    <!-- TELEFONO -->
+                                            <div class="col-12 col-md-6">
+                                                <label
+                                                    for="apellido"
+                                                    class="form-label"
+                                                >
+                                                    Apellido
+                                                    <span
+                                                        class="obligatorio"
+                                                        aria-hidden="true"
+                                                    >•</span>
+                                                </label>
 
-                                    <div class="col-12 col-md-6">
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="apellido"
+                                                    name="apellido"
+                                                    autocomplete="family-name"
+                                                    required
+                                                >
 
-                                        <label for="telefono"
-                                            class="form-label">
+                                                <div class="invalid-feedback">
+                                                    Ingresá tu apellido.
+                                                </div>
+                                            </div>
 
-                                            Teléfono
-                                            <span class="obligatorio"
-                                                aria-hidden="true">
-                                                ●
-                                            </span>
 
-                                        </label>
+                                            <div class="col-12 col-md-6">
+                                                <label
+                                                    for="telefono"
+                                                    class="form-label"
+                                                >
+                                                    Teléfono
+                                                    <span
+                                                        class="obligatorio"
+                                                        aria-hidden="true"
+                                                    >•</span>
+                                                </label>
 
-                                        <div class="input-group">
+                                                <div class="input-group">
+                                                    <span
+                                                        class="input-group-text"
+                                                        aria-hidden="true"
+                                                    >
+                                                        <i class="bi bi-telephone"></i>
+                                                    </span>
 
-                                            <span class="input-group-text">
-                                                <i class="bi bi-telephone"></i>
-                                            </span>
+                                                    <input
+                                                        type="tel"
+                                                        class="form-control"
+                                                        id="telefono"
+                                                        name="telefono"
+                                                        autocomplete="tel"
+                                                        required
+                                                    >
+                                                </div>
 
-                                            <input type="tel"
-                                                class="form-control"
-                                                id="telefono"
-                                                name="telefono"
-                                                autocomplete="tel"
-                                                placeholder="Ej: 388 400 0000"
-                                                required>
+                                                <div class="invalid-feedback">
+                                                    Ingresá un teléfono válido.
+                                                </div>
+                                            </div>
 
-                                            <div class="invalid-feedback">
 
-                                                Falta el teléfono del cliente.
+                                            <div class="col-12 col-md-6">
+                                                <label
+                                                    for="email"
+                                                    class="form-label"
+                                                >
+                                                    Correo electrónico
+                                                    <span
+                                                        class="obligatorio"
+                                                        aria-hidden="true"
+                                                    >•</span>
+                                                </label>
 
+                                                <div class="input-group">
+                                                    <span
+                                                        class="input-group-text"
+                                                        aria-hidden="true"
+                                                    >
+                                                        <i class="bi bi-envelope"></i>
+                                                    </span>
+
+                                                    <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        id="email"
+                                                        name="email"
+                                                        autocomplete="email"
+                                                        required
+                                                    >
+                                                </div>
+
+                                                <div class="invalid-feedback">
+                                                    Ingresá un correo electrónico válido.
+                                                </div>
                                             </div>
 
                                         </div>
-
-                                    </div>
-
-
-                                    <!-- EMAIL -->
-
-                                    <div class="col-12">
-
-                                        <label for="email"
-                                            class="form-label">
-
-                                            Email
-                                            <span class="obligatorio"
-                                                aria-hidden="true">
-                                                ●
-                                            </span>
-
-                                        </label>
-
-                                        <div class="input-group">
-
-                                            <span class="input-group-text">
-                                                <i class="bi bi-envelope"></i>
-                                            </span>
-
-                                            <input type="email"
-                                                class="form-control"
-                                                id="email"
-                                                name="email"
-                                                autocomplete="email"
-                                                placeholder="Ej: maria@correo.com"
-                                                required>
-
-                                            <div class="invalid-feedback">
-
-                                                Ingresá un email válido.
-
-                                            </div>
-
-                                        </div>
-
                                     </div>
 
 
                                     <!-- PASO 2 -->
+                                    <div class="mb-4">
 
-                                    <div class="col-12 mt-4">
-
-                                        <div class="d-flex align-items-center gap-2">
-
+                                        <h3 class="h4 d-flex align-items-center gap-2">
                                             <span class="paso-numero">2</span>
-
-                                            <h2 class="h4 mb-0">
-                                                Turno
-                                            </h2>
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <!-- DEPORTE -->
-
-                                    <div class="col-12 col-md-6">
-
-                                        <label for="deporte"
-                                            class="form-label">
-
-                                            Deporte
-                                            <span class="obligatorio"
-                                                aria-hidden="true">
-                                                ●
-                                            </span>
-
-                                        </label>
-
-                                        <select id="deporte"
-                                            name="deporte"
-                                            class="form-select"
-                                            required>
-
-                                            <option value="">
-                                                Seleccioná un deporte
-                                            </option>
-
-                                            <option value="futbol-5">
-                                                Fútbol 5
-                                            </option>
-
-                                            <option value="futbol-7">
-                                                Fútbol 7
-                                            </option>
-
-                                            <option value="padel">
-                                                Pádel
-                                            </option>
-
-                                        </select>
-
-                                        <div class="invalid-feedback">
-
-                                            Seleccioná un deporte.
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <!-- CANCHA -->
-
-                                    <div class="col-12 col-md-6">
-
-                                        <label for="cancha"
-                                            class="form-label">
-
-                                            Cancha
-                                            <span class="obligatorio"
-                                                aria-hidden="true">
-                                                ●
-                                            </span>
-
-                                        </label>
-
-                                        <select id="cancha"
-                                            name="cancha"
-                                            class="form-select"
-                                            required>
-
-                                            <option value="">
-                                                Seleccioná una cancha
-                                            </option>
-
-                                            <option value="cancha-1">
-                                                Cancha 1
-                                            </option>
-
-                                            <option value="cancha-2">
-                                                Cancha 2
-                                            </option>
-
-                                            <option value="cancha-3">
-                                                Cancha 3
-                                            </option>
-
-                                        </select>
-
-                                        <div class="invalid-feedback">
-
-                                            Seleccioná una cancha.
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <!-- FECHA -->
-
-                                    <div class="col-12 col-md-6">
-
-                                        <label for="fecha"
-                                            class="form-label">
-
-                                            Fecha
-                                            <span class="obligatorio"
-                                                aria-hidden="true">
-                                                ●
-                                            </span>
-
-                                        </label>
-
-                                        <input type="date"
-                                            class="form-control"
-                                            id="fecha"
-                                            name="fecha"
-                                            required>
-
-                                        <div class="invalid-feedback">
-
-                                            Seleccioná una fecha.
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <!-- HORA -->
-
-                                    <div class="col-12 col-md-6">
-
-                                        <label for="hora"
-                                            class="form-label">
-
-                                            Hora
-                                            <span class="obligatorio"
-                                                aria-hidden="true">
-                                                ●
-                                            </span>
-
-                                        </label>
-
-                                        <select id="hora"
-                                            name="hora"
-                                            class="form-select"
-                                            required>
-
-                                            <option value="">
-                                                Seleccioná un horario
-                                            </option>
-
-                                            <option>08:00</option>
-                                            <option>09:00</option>
-                                            <option>10:00</option>
-                                            <option>11:00</option>
-                                            <option>12:00</option>
-                                            <option>13:00</option>
-                                            <option>14:00</option>
-                                            <option>15:00</option>
-                                            <option>16:00</option>
-                                            <option>17:00</option>
-                                            <option>18:00</option>
-                                            <option>19:00</option>
-                                            <option>20:00</option>
-                                            <option>21:00</option>
-                                            <option>22:00</option>
-                                            <option>23:00</option>
-
-                                        </select>
-
-                                        <div class="invalid-feedback">
-
-                                            Seleccioná un horario.
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <!-- OBSERVACIONES -->
-
-                                    <div class="col-12">
-
-                                        <label for="observaciones"
-                                            class="form-label">
-
-                                            Observaciones (opcional)
-
-                                        </label>
-
-                                        <textarea id="observaciones"
-                                            name="observaciones"
-                                            class="form-control"
-                                            rows="4"
-                                            maxlength="300"
-                                            placeholder="Por ejemplo: cantidad de jugadores o alguna consulta."></textarea>
-
-                                        <div class="form-text">
-
-                                            Máximo 300 caracteres.
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <!-- CHECKBOX -->
-
-                                    <div class="col-12">
-
-                                        <div class="form-check">
-
-                                            <input class="form-check-input"
-                                                type="checkbox"
-                                                id="politica"
-                                                required>
-
-                                            <label class="form-check-label"
-                                                for="politica">
-
-                                                El cliente fue informado de la política de cancelación.
-
-                                            </label>
-
-                                            <div class="invalid-feedback">
-
-                                                Debés confirmar que el cliente fue informado.
-
+                                            Turno
+                                        </h3>
+
+                                        <div class="row g-3 mt-1">
+
+                                            <div class="col-12 col-md-6">
+                                                <label
+                                                    for="deporte"
+                                                    class="form-label"
+                                                >
+                                                    Deporte
+                                                    <span
+                                                        class="obligatorio"
+                                                        aria-hidden="true"
+                                                    >•</span>
+                                                </label>
+
+                                                <select
+                                                    class="form-select"
+                                                    id="deporte"
+                                                    name="deporte"
+                                                    required
+                                                >
+                                                    <option value="" selected disabled>
+                                                        Seleccioná un deporte
+                                                    </option>
+                                                    <option value="futbol">
+                                                        Fútbol
+                                                    </option>
+                                                    <option value="padel">
+                                                        Pádel
+                                                    </option>
+                                                    <option value="voley">
+                                                        Vóley
+                                                    </option>
+                                                </select>
+
+                                                <div class="invalid-feedback">
+                                                    Seleccioná un deporte.
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-12 col-md-6">
+                                                <label
+                                                    for="cancha"
+                                                    class="form-label"
+                                                >
+                                                    Cancha
+                                                    <span
+                                                        class="obligatorio"
+                                                        aria-hidden="true"
+                                                    >•</span>
+                                                </label>
+
+                                                <select
+                                                    class="form-select"
+                                                    id="cancha"
+                                                    name="cancha"
+                                                    required
+                                                >
+                                                    <option value="" selected disabled>
+                                                        Seleccioná una cancha
+                                                    </option>
+                                                    <option value="cancha-1">
+                                                        Cancha 1
+                                                    </option>
+                                                    <option value="cancha-2">
+                                                        Cancha 2
+                                                    </option>
+                                                    <option value="cancha-3">
+                                                        Cancha 3
+                                                    </option>
+                                                </select>
+
+                                                <div class="invalid-feedback">
+                                                    Seleccioná una cancha.
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-12 col-md-6">
+                                                <label
+                                                    for="fecha"
+                                                    class="form-label"
+                                                >
+                                                    Fecha
+                                                    <span
+                                                        class="obligatorio"
+                                                        aria-hidden="true"
+                                                    >•</span>
+                                                </label>
+
+                                                <input
+                                                    type="date"
+                                                    class="form-control"
+                                                    id="fecha"
+                                                    name="fecha"
+                                                    required
+                                                >
+
+                                                <div class="invalid-feedback">
+                                                    Seleccioná una fecha.
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-12 col-md-6">
+                                                <label
+                                                    for="hora"
+                                                    class="form-label"
+                                                >
+                                                    Horario
+                                                    <span
+                                                        class="obligatorio"
+                                                        aria-hidden="true"
+                                                    >•</span>
+                                                </label>
+
+                                                <select
+                                                    class="form-select"
+                                                    id="hora"
+                                                    name="hora"
+                                                    required
+                                                >
+                                                    <option value="" selected disabled>
+                                                        Seleccioná un horario
+                                                    </option>
+                                                    <option value="09:00">
+                                                        09:00
+                                                    </option>
+                                                    <option value="10:00">
+                                                        10:00
+                                                    </option>
+                                                    <option value="11:00">
+                                                        11:00
+                                                    </option>
+                                                    <option value="12:00">
+                                                        12:00
+                                                    </option>
+                                                    <option value="17:00">
+                                                        17:00
+                                                    </option>
+                                                    <option value="18:00">
+                                                        18:00
+                                                    </option>
+                                                    <option value="19:00">
+                                                        19:00
+                                                    </option>
+                                                    <option value="20:00">
+                                                        20:00
+                                                    </option>
+                                                    <option value="21:00">
+                                                        21:00
+                                                    </option>
+                                                </select>
+
+                                                <div class="invalid-feedback">
+                                                    Seleccioná un horario.
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-12">
+                                                <label
+                                                    for="observaciones"
+                                                    class="form-label"
+                                                >
+                                                    Observaciones
+                                                </label>
+
+                                                <textarea
+                                                    class="form-control"
+                                                    id="observaciones"
+                                                    name="observaciones"
+                                                    rows="4"
+                                                    placeholder="Agregá algún comentario sobre tu reserva"
+                                                ></textarea>
                                             </div>
 
                                         </div>
-
                                     </div>
 
 
                                     <!-- PASO 3 -->
+                                    <div class="mb-4">
 
-                                    <div class="col-12 mt-4">
-
-                                        <div class="d-flex align-items-center gap-2">
-
+                                        <h3 class="h4 d-flex align-items-center gap-2">
                                             <span class="paso-numero">3</span>
+                                            Confirmación
+                                        </h3>
 
-                                            <h2 class="h4 mb-0">
-                                                Confirmación
-                                            </h2>
+                                        <div class="form-check mt-3">
+
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                id="politica"
+                                                name="politica"
+                                                required
+                                            >
+
+                                            <label
+                                                class="form-check-label"
+                                                for="politica"
+                                            >
+                                                Acepto la política de cancelación de reservas.
+                                                <span
+                                                    class="obligatorio"
+                                                    aria-hidden="true"
+                                                >•</span>
+                                            </label>
+
+                                            <div class="invalid-feedback">
+                                                Debés aceptar la política de cancelación.
+                                            </div>
 
                                         </div>
 
@@ -592,225 +517,226 @@
 
 
                                     <!-- BOTÓN -->
-
-                                    <div class="col-12">
-
-                                        <button type="submit"
-                                            class="btn btn-club btn-lg w-100">
-
-                                            Solicitar reserva
-
+                                    <div class="d-grid d-sm-flex justify-content-sm-end">
+                                        <button
+                                            type="submit"
+                                            class="btn btn-club px-4"
+                                        >
+                                            <i class="bi bi-calendar-check me-2"></i>
+                                            Confirmar reserva
                                         </button>
-
                                     </div>
 
+
+                                    <!-- ALERTA -->
+                                    <div
+                                        id="mensajeExito"
+                                        class="alert alert-success d-none mt-4"
+                                        role="alert"
+                                    >
+                                        <i class="bi bi-check-circle me-2"></i>
+                                        ¡Reserva registrada correctamente!
+                                    </div>
 
                                 </form>
 
                             </div>
-
                         </div>
 
                     </div>
 
 
-                    <!-- ================= SEGUNDA COLUMNA ================= -->
+                    <!-- RECORDATORIOS -->
+                    <aside class="col-12 col-lg-4">
 
-                    <div class="col-lg-4">
+                        <div class="sticky-top" style="top: 90px;">
 
-                        <div class="sticky-top"
-                            style="top: 90px;">
+                            <div class="card shadow-sm border-0">
 
-                            <aside class="card shadow-sm">
+                                <div class="card-body p-4">
 
-                                <div class="card-body">
-
-                                    <h2 class="h4">
-                                        Antes de reservar
+                                    <h2 class="titulo-cal mb-4">
+                                        Recordatorios
                                     </h2>
 
+                                    <div class="list-group list-group-flush">
+
+                                        <div class="list-group-item px-0">
+                                            <div class="d-flex gap-3">
+                                                <span class="badge rounded-pill">
+                                                    1
+                                                </span>
+
+                                                <div>
+                                                    <h3 class="h6 mb-1">
+                                                        Elegí tu cancha
+                                                    </h3>
+
+                                                    <p class="mb-0 small">
+                                                        Seleccioná el deporte y la cancha
+                                                        que querés reservar.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="list-group-item px-0">
+                                            <div class="d-flex gap-3">
+                                                <span class="badge rounded-pill">
+                                                    2
+                                                </span>
+
+                                                <div>
+                                                    <h3 class="h6 mb-1">
+                                                        Revisá el horario
+                                                    </h3>
+
+                                                    <p class="mb-0 small">
+                                                        Comprobá que la fecha y el horario
+                                                        sean los correctos.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="list-group-item px-0">
+                                            <div class="d-flex gap-3">
+                                                <span class="badge rounded-pill">
+                                                    3
+                                                </span>
+
+                                                <div>
+                                                    <h3 class="h6 mb-1">
+                                                        Confirmá tu reserva
+                                                    </h3>
+
+                                                    <p class="mb-0 small">
+                                                        Aceptá la política de cancelación
+                                                        y confirmá el turno.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="alert alert-light mt-4 mb-0" role="alert">
+                                        <i class="bi bi-info-circle me-2"></i>
+                                        Recordá llegar unos minutos antes del horario reservado.
+                                    </div>
+
                                 </div>
-
-
-                                <ul class="list-group list-group-flush">
-
-                                    <li class="list-group-item">
-                                        Los turnos son de una hora.
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        Verificar la disponibilidad antes de reservar.
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        Informar al cliente si el turno queda pendiente.
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        Cancelaciones hasta 3 horas antes.
-                                    </li>
-
-                                </ul>
-
-
-                                <div class="card-body">
-
-                                    <a class="btn btn-outline-dark w-100"
-                                        href="horarios.html">
-
-                                        Ver disponibilidad
-
-                                    </a>
-
-                                </div>
-
-                            </aside>
+                            </div>
 
                         </div>
 
-                    </div>
+                    </aside>
 
                 </div>
 
             </div>
-
         </section>
 
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
-
+    <!-- FOOTER -->
     <footer class="pie-club">
-
-        <div class="container">
+        <div class="container py-4">
 
             <div class="row g-4">
 
-                <div class="col-12 col-md-5">
-
-                    <h3 class="h5">
-                        Club Cancha
-                    </h3>
+                <div class="col-12 col-md-6">
+                    <h2 class="h4">Club Cancha</h2>
 
                     <p class="mb-0">
-                        Sistema de gestion de turnos para canchas de futbol 5,
-                        futbol 7 y padel.
+                        Tu lugar para disfrutar del deporte.
                     </p>
-
                 </div>
 
 
-                <div class="col-6 col-md-3">
-
-                    <h3 class="h6 text-uppercase">
-                        Secciones
-                    </h3>
+                <div class="col-12 col-md-3">
+                    <h2 class="h5">Enlaces</h2>
 
                     <ul class="list-unstyled mb-0">
-
                         <li>
-                            <a href="canchas.html">
-                                Canchas
-                            </a>
+                            <a href="index.html">Inicio</a>
                         </li>
-
                         <li>
-                            <a href="horarios.html">
-                                Horarios
-                            </a>
+                            <a href="canchas.html">Canchas</a>
                         </li>
-
                         <li>
-                            <a href="reservar.html">
-                                Reservar
-                            </a>
+                            <a href="horarios.html">Horarios</a>
                         </li>
-
                         <li>
-                            <a href="contacto.html">
-                                Contacto
-                            </a>
+                            <a href="reservar.html">Reservar</a>
                         </li>
-
+                        <li>
+                            <a href="contacto.html">Contacto</a>
+                        </li>
                     </ul>
-
                 </div>
 
 
-                <div class="col-6 col-md-4">
-
-                    <h3 class="h6 text-uppercase">
-                        Contacto
-                    </h3>
+                <div class="col-12 col-md-3">
+                    <h2 class="h5">Contacto</h2>
 
                     <ul class="list-unstyled mb-0">
-
                         <li>
-                            <a href="tel:+543884000000">
-                                +54 388 400-0000
-                            </a>
+                            <i class="bi bi-telephone me-2"></i>
+                            Teléfono
                         </li>
-
                         <li>
-                            <a href="mailto:administracion@clubcancha.com.ar">
-                                administracion@clubcancha.com.ar
-                            </a>
+                            <i class="bi bi-envelope me-2"></i>
+                            Email
                         </li>
-
-                        <li>
-                            Lunes a domingo, 8 a 23 h
-                        </li>
-
                     </ul>
-
                 </div>
 
             </div>
 
+            <hr>
 
-            <hr class="border-secondary my-4">
-
-            <p class="text-center small mb-0">
-
-                Copyright 2026 &middot; Grupo 6 &middot; Sistema del club
-
+            <p class="text-center mb-0">
+                © 2025 Club Cancha. Todos los derechos reservados.
             </p>
 
         </div>
-
     </footer>
 
 
-    <!-- ================= JAVASCRIPT BOOTSTRAP ================= -->
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
 
-
-    <!-- ================= VALIDACIÓN BOOTSTRAP ================= -->
-
+    <!-- Validación Bootstrap -->
     <script>
+        (() => {
+            'use strict';
 
-        document.querySelectorAll(".needs-validation").forEach(function (form) {
+            const form = document.getElementById('formReserva');
+            const mensajeExito = document.getElementById('mensajeExito');
 
-            form.addEventListener("submit", function (evento) {
+            form.addEventListener('submit', event => {
 
                 if (!form.checkValidity()) {
-
-                    evento.preventDefault();
-                    evento.stopPropagation();
-
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    event.preventDefault();
+                    mensajeExito.classList.remove('d-none');
                 }
 
-                form.classList.add("was-validated");
+                form.classList.add('was-validated');
 
-            });
+            }, false);
 
-        });
-
+        })();
     </script>
 
 </body>
-
 </html>
