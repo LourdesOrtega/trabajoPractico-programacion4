@@ -1,1 +1,92 @@
 /* canchas.css - Analia Roldan - TP3 */
+
+
+/* =====================================================
+   CSS DEL TP2
+   Se conserva comentado porque el TP3 pide
+   no eliminar el CSS anterior.
+   ===================================================== */
+
+/*
+
+.grid-canchas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--esp-3);
+}
+
+.tarjeta__imagen {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: var(--borde);
+}
+
+.datos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin: var(--esp-1) 0;
+    font-size: var(--fs-chico);
+    color: var(--color-texto-suave);
+}
+
+.datos li {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--esp-1);
+    padding-bottom: 0.35rem;
+    border-bottom: 1px dashed var(--color-borde);
+}
+
+.precio {
+    font-family: var(--fuente-titulos);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+.precio span {
+    font-size: var(--fs-chico);
+    font-weight: 400;
+    color: var(--color-texto-suave);
+}
+
+@media (min-width: 900px) {
+
+    .grid-canchas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .grid-canchas {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+*/
+
+
+/* =====================================================
+   TP3 - BOOTSTRAP
+   ===================================================== */
+
+/* canchas.css - Analia Roldan - TP3 */
+
+
+/* CSS del TP3 */
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.precio {
+    font-weight: bold;
+    font-size: 20px;
+}
