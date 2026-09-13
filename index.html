@@ -55,106 +55,112 @@
 
     <main>
 
-        <section class="hero hero--alto">
-            <div class="contenedor">
+         <section class="hero-club hero-inicio">
+            <div class="container">
                 <h1>Sistema de Gestión de Turnos</h1>
-                <p class="hero__texto">
+                <p class="lead">
                     Organizá y controlá de manera óptima los turnos de las canchas del club,
                     desde cualquier dispositivo y en pocos clics.
                 </p>
-                <div class="hero__acciones">
-                    <a class="boton boton--secundario" href="reservar.html">Reservar un turno</a>
-                    <a class="boton boton--primario" href="horarios.html">Ver disponibilidad</a>
+                <div class="d-flex flex-wrap gap-3">
+                    <a class="btn btn-club" href="reservar.html">Reservar un turno</a>
+                    <a class="btn btn-club-linea" href="horarios.html">Ver disponibilidad</a>
                 </div>
             </div>
         </section>
 
-        <section class="seccion" aria-labelledby="titulo-funciones">
-            <div class="contenedor">
+        <section class="py-5" aria-labelledby="titulo-funciones">
+            <div class="container">
 
-                <h2 class="seccion__titulo" id="titulo-funciones">Funciones principales</h2>
-                <p class="seccion__bajada">
+                <h2 class="titulo-cal" id="titulo-funciones">Funciones principales</h2>
+                <p class="text-secondary mb-4">
                     Todo lo que necesita el club para no perder ni un turno.
                 </p>
 
-                <div class="grid-funciones">
+                <div class="row g-4">
 
-                    <article class="tarjeta">
-                        <div class="tarjeta__cuerpo">
-                            <span class="tarjeta__icono" aria-hidden="true">&#128197;</span>
-                            <h3>Administrar reservas</h3>
-                            <p class="tarjeta__texto">
-                                Registrar, modificar o cancelar los turnos solicitados por los clientes.
-                            </p>
-                            <p class="tarjeta__pie">
-                                <a class="boton boton--borde" href="reservar.html">Ir a reservas</a>
-                            </p>
-                        </div>
-                    </article>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card card-inicio h-100">
+                            <div class="card-body">
+                                <span class="icono-tarjeta d-block mb-2" aria-hidden="true">&#128197;</span>
+                                <h3 class="card-title h4">Administrar reservas</h3>
+                                <p class="card-text">
+                                    Registrar, modificar o cancelar los turnos solicitados por los clientes.
+                                </p>
+                                <a class="btn btn-club-linea" href="reservar.html">Ir a reservas</a>
+                            </div>
+                        </article>
+                    </div>
 
-                    <article class="tarjeta">
-                        <div class="tarjeta__cuerpo">
-                            <span class="tarjeta__icono" aria-hidden="true">&#128336;</span>
-                            <h3>Controlar disponibilidad</h3>
-                            <p class="tarjeta__texto">
-                                Consultar en una grilla los horarios libres y ocupados de cada cancha.
-                            </p>
-                            <p class="tarjeta__pie">
-                                <a class="boton boton--borde" href="horarios.html">Ver horarios</a>
-                            </p>
-                        </div>
-                    </article>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card card-inicio h-100">
+                            <div class="card-body">
+                                <span class="icono-tarjeta d-block mb-2" aria-hidden="true">&#128336;</span>
+                                <h3 class="card-title h4">Controlar disponibilidad</h3>
+                                <p class="card-text">
+                                    Consultar en una grilla los horarios libres y ocupados de cada cancha.
+                                </p>
+                                <a class="btn btn-club-linea" href="horarios.html">Ver horarios</a>
+                            </div>
+                        </article>
+                    </div>
 
-                    <article class="tarjeta">
-                        <div class="tarjeta__cuerpo">
-                            <span class="tarjeta__icono" aria-hidden="true">&#128100;</span>
-                            <h3>Gestionar clientes</h3>
-                            <p class="tarjeta__texto">
-                                Guardar y consultar los datos necesarios de cada cliente del club.
-                            </p>
-                            <p class="tarjeta__pie">
-                                <a class="boton boton--borde" href="contacto.html">Contactar</a>
-                            </p>
-                        </div>
-                    </article>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card card-inicio h-100">
+                            <div class="card-body">
+                                <span class="icono-tarjeta d-block mb-2" aria-hidden="true">&#128100;</span>
+                                <h3 class="card-title h4">Gestionar clientes</h3>
+                                <p class="card-text">
+                                    Guardar y consultar los datos necesarios de cada cliente del club.
+                                </p>
+                                <a class="btn btn-club-linea" href="contacto.html">Contactar</a>
+                            </div>
+                        </article>
+                    </div>
 
                 </div>
             </div>
         </section>
 
-        <section class="seccion seccion--clara" aria-labelledby="titulo-deportes">
-            <div class="contenedor">
+        <section class="py-5 bg-white" aria-labelledby="titulo-deportes">
+            <div class="container">
 
-                <h2 class="seccion__titulo" id="titulo-deportes">Deportes disponibles</h2>
-                <p class="seccion__bajada">
+                <h2 class="titulo-cal" id="titulo-deportes">Deportes disponibles</h2>
+                <p class="text-secondary mb-4">
                     Tres tipos de cancha, iluminación LED y vestuarios en todas.
                 </p>
 
-                <div class="grid-canchas">
+                <div class="row g-4">
 
-                    <article class="tarjeta">
-                        <div class="tarjeta__cuerpo">
-                            <span class="tarjeta__icono" aria-hidden="true">&#9917;</span>
-                            <h3>Fútbol 5</h3>
-                            <p class="tarjeta__texto">Césped sintético, ideal para partidos rápidos.</p>
-                        </div>
-                    </article>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card card-inicio h-100">
+                            <div class="card-body">
+                                <span class="icono-tarjeta d-block mb-2" aria-hidden="true">&#9917;</span>
+                                <h3 class="card-title h4">Fútbol 5</h3>
+                                <p class="card-text">Césped sintético, ideal para partidos rápidos.</p>
+                            </div>
+                        </article>
+                    </div>
 
-                    <article class="tarjeta">
-                        <div class="tarjeta__cuerpo">
-                            <span class="tarjeta__icono" aria-hidden="true">&#127942;</span>
-                            <h3>Fútbol 7</h3>
-                            <p class="tarjeta__texto">Cancha amplia para equipos más numerosos.</p>
-                        </div>
-                    </article>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card card-inicio h-100">
+                            <div class="card-body">
+                                <span class="icono-tarjeta d-block mb-2" aria-hidden="true">&#127942;</span>
+                                <h3 class="card-title h4">Fútbol 7</h3>
+                                <p class="card-text">Cancha amplia para equipos más numerosos.</p>
+                            </div>
+                        </article>
+                    </div>
 
-                    <article class="tarjeta">
-                        <div class="tarjeta__cuerpo">
-                            <span class="tarjeta__icono" aria-hidden="true">&#127955;</span>
-                            <h3>Pádel</h3>
-                            <p class="tarjeta__texto">Paredes de blindex y piso de césped sintético.</p>
-                        </div>
-                    </article>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card card-inicio h-100">
+                            <div class="card-body">
+                                <span class="icono-tarjeta d-block mb-2" aria-hidden="true">&#127955;</span>
+                                <h3 class="card-title h4">Pádel</h3>
+                                <p class="card-text">Paredes de blindex y piso de césped sintético.</p>
+                            </div>
+                        </article>
+                    </div>
 
                 </div>
             </div>
