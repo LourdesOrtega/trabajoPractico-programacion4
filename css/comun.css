@@ -157,3 +157,7 @@ h1, h2 {
   background: #FBE2DC;
   color: #9A3221;
 }
+
+.pie-club a {
+  overflow-wrap: anywhere;
+}
