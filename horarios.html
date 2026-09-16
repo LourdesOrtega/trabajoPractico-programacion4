@@ -52,8 +52,9 @@
         </nav>
     </header>
 
-    <main>
+<main>
 
+        <!-- HERO -->
         <section class="hero-club hero-horarios">
             <div class="container">
                 <h1>Horarios y disponibilidad</h1>
@@ -64,7 +65,7 @@
             </div>
         </section>
 
-        <!-- TURNOS -->
+        <!-- GRILLA DE TURNOS -->
         <section class="py-5" aria-labelledby="titulo-grilla">
             <div class="container">
 
@@ -79,7 +80,7 @@
                     <li><span class="chip-estado chip-libre">Libre</span></li>
                     <li><span class="chip-estado chip-pendiente">A confirmar</span></li>
                     <li><span class="chip-estado chip-ocupado">Ocupado</span></li>
-                    <li><span class="badge rounded-pill text-bg-light border border-2 border-lima">Turno en curso</span></li>
+                    <li><span class="badge rounded-pill text-bg-light turno-actual">Turno en curso</span></li>
                 </ul>
 
                 <!-- PESTAÑAS DE CANCHAS -->
@@ -92,7 +93,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="tab-f7" data-bs-toggle="pill" data-bs-target="#f7"
-                            type="button" role="tab" aria-controls="f7" aria-selected="false">
+                            type="button" role="tab" aria-controls="f7" aria-selected="f
                             Fútbol 7
                         </button>
                     </li>
@@ -119,7 +120,7 @@
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">08:00</span>
+                                            <span class="fw-bold fs-5">08:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
@@ -127,21 +128,21 @@
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">09:00</span>
+                                            <span class="fw-bold fs-5">09:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
 
                                     <div class="col">
-                                        <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
-                                            <span class="fw-bold fs-5 numeros text-secondary">10:00</span>
+                                        <div class="card h-100 border-2 border-danger bgs-center p-2">
+                                            <span class="fw-bold fs-5 text-secondary">10:00</span>
                                             <span class="chip-estado chip-ocupado">Ocupado</span>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="card h-100 border-2 border-warning text-center align-items-center p-2">
-                                            <span class="fw-bold fs-5 numeros">11:00</span>
+                                            <span class="fw-bold fs-5">11:00</span>
                                             <span class="chip-estado chip-pendiente">A confirmar</span>
                                         </div>
                                     </div>
@@ -149,21 +150,21 @@
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">18:00</span>
+                                            <span class="fw-bold fs-5">18:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
 
                                     <div class="col">
                                         <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
-                                            <span class="fw-bold fs-5 numeros text-secondary">19:00</span>
+                                            <span class="fw-bold fs-5 text-secondary">19:00</span>
                                             <span class="chip-estado chip-ocupado">Ocupado</span>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
-                                            <span class="fw-bold fs-5 numeros text-secondary">20:00</span>
+                                            <span class="fw-bold fs-5 text-secondary">20:00</span>
                                             <span class="chip-estado chip-ocupado">Ocupado</span>
                                         </div>
                                     </div>
@@ -171,7 +172,7 @@
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre turno-actual">
-                                            <span class="fw-bold fs-5 numeros">21:00</span>
+                                            <span class="fw-bold fs-5">21:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
@@ -184,11 +185,11 @@
 
                                 <h3 class="h4 mb-3">Fútbol 7 · Cancha 2</h3>
 
-                                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 g-2">
+                                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 r2">
 
                                     <div class="col">
-                                        <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
-                                            <span class="fw-bold fs-5 numeros text-secondary">08:00</span>
+                                        <div class="card h-100 border-2 border-danger bgs-center p-2">
+                                            <span class="fw-bold fs-5 text-secondary">08:00</span>
                                             <span class="chip-estado chip-ocupado">Ocupado</span>
                                         </div>
                                     </div>
@@ -196,7 +197,7 @@
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">09:00</span>
+                                            <span class="fw-bold fs-5">09:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
@@ -204,7 +205,7 @@
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">10:00</span>
+                                            <span class="fw-bold fs-5">10:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
@@ -212,29 +213,29 @@
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">17:00</span>
+                                            <span class="fw-bold fs-5">17:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
 
                                     <div class="col">
                                         <div class="card h-100 border-2 border-warning text-center align-items-center p-2">
-                                            <span class="fw-bold fs-5 numeros">19:00</span>
+                                            <span class="fw-bold fs-5">19:00</span>
                                             <span class="chip-estado chip-pendiente">A confirmar</span>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2 turno-actual">
-                                            <span class="fw-bold fs-5 numeros text-secondary">21:00</span>
-                                            <span class="chip-estado chip-ocupado">Ocupado</span>
+                                            <span class="fw-bold fs-5 text-secondary">21
+                                            <span class="chip-estado chip-ocupado">Ocupa
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">22:00</span>
+                                            <span class="fw-bold fs-5">22:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
@@ -242,7 +243,7 @@
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">23:00</span>
+                                            <span class="fw-bold fs-5">23:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
@@ -260,29 +261,29 @@
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">08:00</span>
+                                            <span class="fw-bold fs-5">08:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
 
                                     <div class="col">
-                                        <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
-                                            <span class="fw-bold fs-5 numeros text-secondary">12:00</span>
+                                        <div class="card h-100 border-2 border-danger bgs-center p-2">
+                                            <span class="fw-bold fs-5 text-secondary">12:00</span>
                                             <span class="chip-estado chip-ocupado">Ocupado</span>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
-                                            <span class="fw-bold fs-5 numeros text-secondary">13:00</span>
+                                            <span class="fw-bold fs-5 text-secondary">13:00</span>
                                             <span class="chip-estado chip-ocupado">Ocupado</span>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <a href="reservar.html"
-                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">16:00</span>
+                                           class="card h-100 border-2 border-success texext-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">16:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
@@ -290,21 +291,21 @@
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">18:00</span>
+                                            <span class="fw-bold fs-5">18:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
 
                                     <div class="col">
-                                        <div class="card h-100 border-2 border-warning text-center align-items-center p-2">
-                                            <span class="fw-bold fs-5 numeros">20:00</span>
+                                        <div class="card h-100 border-2 border-warning t p-2">
+                                            <span class="fw-bold fs-5">20:00</span>
                                             <span class="chip-estado chip-pendiente">A confirmar</span>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2 turno-actual">
-                                            <span class="fw-bold fs-5 numeros text-secondary">21:00</span>
+                                            <span class="fw-bold fs-5 text-secondary">21:00</span>
                                             <span class="chip-estado chip-ocupado">Ocupado</span>
                                         </div>
                                     </div>
@@ -312,7 +313,7 @@
                                     <div class="col">
                                         <a href="reservar.html"
                                            class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
-                                            <span class="fw-bold fs-5 numeros">22:00</span>
+                                            <span class="fw-bold fs-5">22:00</span>
                                             <span class="chip-estado chip-libre">Libre</span>
                                         </a>
                                     </div>
@@ -332,6 +333,47 @@
             </div>
         </section>
 
+        <!-- REGLAS DE LOS TURNOS -->
+        <section class="py-5 bg-white" aria-labelledby="titulo-reglas">
+            <div class="container">
+
+                <h2 class="titulo-cal" id="titulo-reglas">Cómo funcionan los turnos</h2>
+
+                <div class="accordion mt-4" id="acordeon-turnos">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggl
+                                data-bs-target="#reglas-turnos" aria-expanded="true" aria-controls="reglas-turnos">
+                                Reglas para cargar y confirmar turnos
+                            </button>
+                        </h3>
+                        <div id="reglas-turnos" class="accordion-collapse collapse show" data-bs-parent="#acordeon-turnos">
+                            <div class="accordion-body">
+                                <ul class="mb-0">
+                                    <li>Cada turno tiene una duración de una hora exacta
+                                    <li>La grilla se actualiza cuando el club confirma o cancela una reserva.</li>
+                                    <li>Un turno "a confirmar" queda reservado por 24 horas.</li>
+                                    <li>Las cancelaciones se avisan con 3 horas de antic
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+                </div>
+
+                <!-- BOTON CARGAR RESERVA -->
+                <p class="text-center mt-4 mb-0">
+                    <a class="btn btn-club" href="reservar.html">Cargar reserva</a>
+                </p>
+
+            </div>
+        </section>
+
+        <!-- REGLAS DE LOS TURNOS -->
         <section class="py-5 bg-white" aria-labelledby="titulo-reglas">
             <div class="container">
 
@@ -349,7 +391,7 @@
                             <div class="accordion-body">
                                 <ul class="mb-0">
                                     <li>Cada turno tiene una duración de una hora exacta.</li>
-                                    <li>La grilla se actualiza cuando el club confirma o cancela una reserva.</li>
+                                    <li>La grilla se actualiza cuando el club confirma o
                                     <li>Un turno "a confirmar" queda reservado por 24 horas.</li>
                                     <li>Las cancelaciones se avisan con 3 horas de anticipación.</li>
                                 </ul>
