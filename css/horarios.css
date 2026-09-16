@@ -1,207 +1,34 @@
 /* horarios.css - Laura Soria - TP3 */
 
-/* ---- Hero ---- */
 
-
-.hero-horarios{
+.hero-horarios {
   background-color: var(--verde-noche);
-  padding: 6rem 0;
 }
 
-.hero-horarios .lead {
-  max-width: 40rem;
-}
-
-.referencias {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-/* ---- Pestañas de las canchas ---- */
 #pestanas-canchas .nav-link {
-  background-color: #FFFFFF;
   color: var(--verde-noche);
   border: 2px solid var(--verde-noche);
-  border-radius: 999px;
-  font-family: var(--fuente-titulo);
-  font-size: 1.15rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  white-space: nowrap;
-}
-
-#pestanas-canchas .nav-link:hover {
-  color: var(--verde-cancha);
-  border-color: var(--verde-cancha);
 }
 
 #pestanas-canchas .nav-link.active {
   background-color: var(--verde-noche);
   color: var(--lima);
-  border-color: var(--verde-noche);
-}
-
-.card-horarios {
-  border-top: 4px solid var(--lima);
-}
-
-/* ---- Turnos ---- */
-.turno {
-  width: 100%;
-  height: 100%;
-  min-height: 90px;
-  padding: 0.75rem 0.5rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-
-  background-color: #FFFFFF;
-  border: 2px solid transparent;
-  border-radius: 0.75rem;
-  color: var(--texto);
-  font-family: inherit;
-  text-decoration: none;
-  text-align: center;
-
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.turno__hora {
-  font-family: var(--fuente-titulo);
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.numeros {
-  font-variant-numeric: tabular-nums;
-}
-
-.turno .chip-estado {
-  max-width: 100%;
-  white-space: nowrap;
-}
-
-.turno--disponible {
-  border-color: #14603A;
-  color: var(--verde-noche);
-  cursor: pointer;
-}
-
-.turno--disponible:hover {
-  color: var(--verde-noche);
-}
-
-.turno--disponible:focus-visible {
-  outline: 3px solid var(--lima);
-  outline-offset: 2px;
-}
-
-.turno--pendiente {
-  border-color: #8A5B08;
-  border-style: dashed;
-  cursor: default;
-}
-
-.turno--ocupado {
-  border-color: var(--ladrillo);
-  background-color: #FDF3F0;
-  cursor: not-allowed;
-}
-
-.turno--ocupado .turno__hora {
-  text-decoration: line-through;
-  color: #9A3221;
-}
-
-.turno:disabled {
-  opacity: 0.8;
-}
-
-/* Turno de la hora actual */
-.turno--actual {
-  border: 4px solid var(--lima);
-}
-
-#acordeon-turnos .accordion-item {
-  border-top: 4px solid var(--lima);
-}
-
-#acordeon-turnos .accordion-button {
-  font-family: var(--fuente-titulo);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: var(--verde-noche);
 }
 
 #acordeon-turnos .accordion-button:not(.collapsed) {
-  background-color: var(--cal);
+  background-color: #EEF4D6;
   color: var(--verde-noche);
-  box-shadow: none;
 }
 
-#acordeon-turnos .accordion-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(180, 205, 53, 0.5);
+.turno-libre:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(11, 43, 35, 0.15);
 }
 
-/* ---- Efecto de hover solo en equipos con mouse (notebook y PC) ---- */
-@media (hover: hover) {
-  .turno--disponible:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0.5rem 1rem rgba(11, 43, 35, 0.15);
-  }
+.turno-actual {
+  outline: 3px solid var(--lima);
+  outline-offset: 2px;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .turno {
-    transition: none;
-  }
-}
-
-/* ---- Tablet ---- */
-@media (max-width: 991.98px) {
-  .turno__hora {
-    font-size: 1.35rem;
-  }
-}
-
-/* ---- Celulares ---- */
-@media (max-width: 767.98px) {
-  .hero-horarios {
-    padding: 2.5rem 0;
-  }
-
-  #pestanas-canchas .nav-link {
-    padding: 0.5rem 0.4rem;
-    font-size: 1rem;
-  }
-}
-
-/* ---- Celulares chicos ---- */
-@media (max-width: 575.98px) {
-  .turno {
-    min-height: 80px;
-    padding: 0.5rem 0.25rem;
-  }
-
-  .turno__hora {
-    font-size: 1.25rem;
-  }
-
-  .turno .chip-estado {
-    font-size: 0.65rem;
-    padding: 0.2rem 0.5rem;
-    letter-spacing: 0;
-  }
-
-  #pestanas-canchas .nav-link {
-    font-size: 0.9rem;
-    letter-spacing: 0;
-  }
 }
