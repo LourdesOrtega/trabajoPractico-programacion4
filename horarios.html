@@ -7,241 +7,398 @@
     <title>Horarios | Club Canchas de Fútbol y Pádel</title>
     <meta name="description" content="Grilla de horarios y disponibilidad de turnos por cancha del club.">
     <meta name="author" content="Grupo 6 - Tecnicatura Universitaria en Programación">
+
+    <link rel="icon" href="img/logo-club.png" type="image/png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap">
+
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/comun.css">
+    <link rel="stylesheet" href="css/horarios.css">
 </head>
 
 <body>
 
-    <header class="cabecera">
-        <div class="contenedor cabecera__inner">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-club" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <img src="img/logo-club.png" alt="" width="46" height="46">
+                    <span>Club Cancha</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir el menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <a class="logo" href="index.html">
-                <span class="logo__icono" aria-hidden="true">&#9917;</span>
-                <span>Club Cancha</span>
-            </a>
-
-            <nav class="nav" aria-label="Navegación principal">
-                <ul class="nav__lista">
-                    <li><a class="nav__link" href="index.html">Inicio</a></li>
-                    <li><a class="nav__link" href="canchas.html">Canchas</a></li>
-                    <li><a class="nav__link nav__link--activo" href="horarios.html" aria-current="page">Horarios</a></li>
-                    <li><a class="nav__link" href="reservar.html">Reservar</a></li>
-                    <li><a class="nav__link" href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-
-        </div>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="canchas.html">Canchas</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                href="horarios.html">Horarios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <a class="btn btn-club ms-lg-3 mt-2 mt-lg-0" href="reservar.html">Cargar Reserva</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main>
+<main>
 
-        <section class="hero">
-            <div class="contenedor">
+        <section class="hero-club hero-horarios">
+            <div class="container">
                 <h1>Horarios y disponibilidad</h1>
-                <p class="hero__texto">
+                <p class="lead">
                     Grilla de turnos del día de hoy. Cada turno dura una hora y el club abre
                     de 8 a 23 h, todos los días.
                 </p>
             </div>
         </section>
 
-        <section class="seccion" aria-labelledby="titulo-grilla">
-            <div class="contenedor">
+ 
+        <section class="py-5" aria-labelledby="titulo-grilla">
+            <div class="container">
 
-                <h2 class="seccion__titulo" id="titulo-grilla">Grilla del día</h2>
-                <p class="seccion__bajada">
-                    Hacé clic en un turno disponible para pasar al formulario de reserva.
+                <h2 class="titulo-cal" id="titulo-grilla">Grilla del día</h2>
+                <p class="text-secondary mb-4">
+                    Elegí una cancha y consultá sus turnos. Hacé clic en un turno libre
+                    para cargar la reserva.
                 </p>
 
-                <!-- Referencias de color (FLEXBOX) -->
-                <ul class="referencias">
-                    <li><span class="estado estado--disponible">Disponible</span></li>
-                    <li><span class="estado estado--pendiente">A confirmar</span></li>
-                    <li><span class="estado estado--ocupado">Ocupado</span></li>
+
+                <ul class="list-unstyled d-flex flex-wrap gap-2 mb-4" aria-label="Referencias de estado">
+                    <li><span class="chip-estado chip-libre">Libre</span></li>
+                    <li><span class="chip-estado chip-pendiente">A confirmar</span></li>
+                    <li><span class="chip-estado chip-ocupado">Ocupado</span></li>
+                    <li><span class="badge rounded-pill text-bg-light turno-actual">Turno en curso</span></li>
                 </ul>
 
-                <!-- ============ CANCHA DE FUTBOL 5 (CSS GRID) ============ -->
-                <article aria-labelledby="cancha-futbol5">
-                    <h3 id="cancha-futbol5">Fútbol 5 &middot; Cancha 1</h3>
-                    <div class="grid-horarios">
 
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">08:00</span>
-                            <span class="estado estado--disponible">Libre</span>
+                <ul class="nav nav-pills nav-fill gap-2 mb-4" id="pestanas-canchas" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="tab-f5" data-bs-toggle="pill" data-bs-target="#f5"
+                            type="button" role="tab" aria-controls="f5" aria-selected="true">
+                            Fútbol 5
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-f7" data-bs-toggle="pill" data-bs-target="#f7"
+                            type="button" role="tab" aria-controls="f7" aria-selected="false">
+                            Fútbol 7
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-padel" data-bs-toggle="pill" data-bs-target="#padel"
+                            type="button" role="tab" aria-controls="padel" aria-selected="false">
+                            Pádel
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="tab-content" id="contenido-canchas">
+
+                            <!-- FÚTBOL 5 -->
+                            <div class="tab-pane fade show active" id="f5" role="tabpanel" aria-labelledby="tab-f5" tabindex="0">
+
+                                <h3 class="h4 mb-3">Fútbol 5 · Cancha 1</h3>
+
+                                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 g-2">
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">08:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">09:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
+                                            <span class="fw-bold fs-5 text-secondary">10:00</span>
+                                            <span class="chip-estado chip-ocupado">Ocupado</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card h-100 border-2 border-warning text-center align-items-center p-2">
+                                            <span class="fw-bold fs-5">11:00</span>
+                                            <span class="chip-estado chip-pendiente">A confirmar</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">18:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
+                                            <span class="fw-bold fs-5 text-secondary">19:00</span>
+                                            <span class="chip-estado chip-ocupado">Ocupado</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
+                                            <span class="fw-bold fs-5 text-secondary">20:00</span>
+                                            <span class="chip-estado chip-ocupado">Ocupado</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre turno-actual">
+                                            <span class="fw-bold fs-5">21:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- FÚTBOL 7 -->
+                            <div class="tab-pane fade" id="f7" role="tabpanel" aria-labelledby="tab-f7" tabindex="0">
+
+                                <h3 class="h4 mb-3">Fútbol 7 · Cancha 2</h3>
+
+                                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 g-2">
+
+                                    <div class="col">
+                                        <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
+                                            <span class="fw-bold fs-5 text-secondary">08:00</span>
+                                            <span class="chip-estado chip-ocupado">Ocupado</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">09:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">10:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">17:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card h-100 border-2 border-warning text-center align-items-center p-2">
+                                            <span class="fw-bold fs-5">19:00</span>
+                                            <span class="chip-estado chip-pendiente">A confirmar</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2 turno-actual">
+                                            <span class="fw-bold fs-5 text-secondary">21:00</span>
+                                            <span class="chip-estado chip-ocupado">Ocupado</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">22:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">23:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- PÁDEL -->
+                            <div class="tab-pane fade" id="padel" role="tabpanel" aria-labelledby="tab-padel" tabindex="0">
+
+                                <h3 class="h4 mb-3">Pádel · Cancha 3</h3>
+
+                                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 g-2">
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">08:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
+                                            <span class="fw-bold fs-5 text-secondary">12:00</span>
+                                            <span class="chip-estado chip-ocupado">Ocupado</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2">
+                                            <span class="fw-bold fs-5 text-secondary">13:00</span>
+                                            <span class="chip-estado chip-ocupado">Ocupado</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">16:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">18:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card h-100 border-2 border-warning text-center align-items-center p-2">
+                                            <span class="fw-bold fs-5">20:00</span>
+                                            <span class="chip-estado chip-pendiente">A confirmar</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card h-100 border-2 border-danger bg-light text-center align-items-center p-2 turno-actual">
+                                            <span class="fw-bold fs-5 text-secondary">21:00</span>
+                                            <span class="chip-estado chip-ocupado">Ocupado</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="reservar.html"
+                                           class="card h-100 border-2 border-success text-center align-items-center text-decoration-none p-2 turno-libre">
+                                            <span class="fw-bold fs-5">22:00</span>
+                                            <span class="chip-estado chip-libre">Libre</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">09:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">10:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--pendiente">
-                            <span class="turno__hora">11:00</span>
-                            <span class="estado estado--pendiente">A confirmar</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">18:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">19:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">20:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">21:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
                     </div>
-                </article>
+                </div>
 
-                <!-- ============ CANCHA DE FUTBOL 7 ============ -->
-                <article aria-labelledby="cancha-futbol7">
-                    <h3 id="cancha-futbol7">Fútbol 7 &middot; Cancha 2</h3>
-                    <div class="grid-horarios">
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">08:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">09:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">10:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">17:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--pendiente">
-                            <span class="turno__hora">19:00</span>
-                            <span class="estado estado--pendiente">A confirmar</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">21:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">22:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">23:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                    </div>
-                </article>
-
-                <!-- ============ CANCHA DE PADEL ============ -->
-                <article aria-labelledby="cancha-padel">
-                    <h3 id="cancha-padel">Pádel &middot; Cancha 3</h3>
-                    <div class="grid-horarios">
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">08:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">12:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">13:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">16:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">18:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                        <div class="turno turno--pendiente">
-                            <span class="turno__hora">20:00</span>
-                            <span class="estado estado--pendiente">A confirmar</span>
-                        </div>
-
-                        <div class="turno turno--ocupado">
-                            <span class="turno__hora">21:00</span>
-                            <span class="estado estado--ocupado">Ocupado</span>
-                        </div>
-
-                        <div class="turno turno--disponible">
-                            <span class="turno__hora">22:00</span>
-                            <span class="estado estado--disponible">Libre</span>
-                        </div>
-
-                    </div>
-                </article>
-
-                <p class="centrado">
-                    <a class="boton boton--secundario" href="reservar.html">Reservar un turno disponible</a>
+      
+                <p class="text-center mt-4 mb-0">
+                    <a class="btn btn-club" href="reservar.html">Cargar reserva</a>
                 </p>
 
             </div>
         </section>
 
-        <!-- ============ INFORMACION DE LA GRILLA ============ -->
-        <section class="seccion seccion--clara" aria-labelledby="titulo-reglas">
-            <div class="contenedor">
-                <aside class="aviso">
-                    <h2 id="titulo-reglas">Cómo funcionan los turnos</h2>
-                    <ul>
-                        <li>Cada turno tiene una duración de una hora exacta.</li>
-                        <li>La grilla se actualiza cuando el club confirma o cancela una reserva.</li>
-                        <li>Un turno "a confirmar" queda reservado por 24 horas.</li>
-                        <li>Las cancelaciones se avisan con 3 horas de anticipación.</li>
-                    </ul>
-                </aside>
+    
+        <section class="py-5 bg-white" aria-labelledby="titulo-reglas">
+            <div class="container">
+
+                <h2 class="titulo-cal" id="titulo-reglas">Cómo funcionan los turnos</h2>
+
+                <div class="accordion mt-4" id="acordeon-turnos">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#reglas-turnos" aria-expanded="true" aria-controls="reglas-turnos">
+                                Reglas para cargar y confirmar turnos
+                            </button>
+                        </h3>
+                        <div id="reglas-turnos" class="accordion-collapse collapse show" data-bs-parent="#acordeon-turnos">
+                            <div class="accordion-body">
+                                <ul class="mb-0">
+                                    <li>Cada turno tiene una duración de una hora exacta.</li>
+                                    <li>La grilla se actualiza cuando el club confirma o cancela una reserva.</li>
+                                    <li>Un turno "a confirmar" queda reservado por 24 horas.</li>
+                                    <li>Las cancelaciones se avisan con 3 horas de anticipación.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
     </main>
 
-    <footer class="pie">
-        <div class="contenedor">
+    <footer class="pie-club">
+        <div class="container">
+            <div class="row g-4">
 
-            <div class="pie__grid">
-                <div>
-                    <h3>Club Cancha</h3>
-                    <p>Sistema interno de gestión de turnos para canchas de fútbol y pádel.</p>
+                <div class="col-12 col-md-5">
+                    <h3 class="h5">Club Cancha</h3>
+                    <p class="mb-0">Sistema de gestion de turnos para canchas de futbol 5, futbol 7 y padel.</p>
                 </div>
+
+                <div class="col-6 col-md-3">
+                    <h3 class="h6 text-uppercase">Secciones</h3>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="canchas.html">Canchas</a></li>
+                        <li><a href="horarios.html">Horarios</a></li>
+                        <li><a href="reservar.html">Reservar</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <h3 class="h6 text-uppercase">Contacto</h3>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="tel:+543884000000">+54 388 400-0000</a></li>
+                        <li><a href="mailto:administracion@clubcancha.com.ar">administracion@clubcancha.com.ar</a></li>
+                        <li>Lunes a domingo, 8 a 23 h</li>
+                    </ul>
+                </div>
+
             </div>
 
-            <p class="pie__copy">Copyright 2026 &middot; Sistema interno del club</p>
-
+            <hr class="border-secondary my-4">
+            <p class="text-center small mb-0">Copyright 2026 &middot; Grupo 6 &middot; Sistema del club</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

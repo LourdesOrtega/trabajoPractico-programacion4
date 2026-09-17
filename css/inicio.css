@@ -1,0 +1,43 @@
+ /* inicio.css - Lourdes Ortega - TP3 */
+
+.hero-inicio {
+  background-color: var(--verde-noche);
+  padding: 6rem 0;
+}
+
+.hero-inicio .lead {
+  max-width: 40rem;  
+}
+
+.hero-inicio .btn-club-linea {
+  color: var(--cal);
+  border-color: var(--cal);
+}
+
+.hero-inicio .btn-club-linea:hover {
+  background-color: var(--cal);
+  color: var(--verde-noche);
+}
+
+
+.icono-tarjeta {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.card-inicio {
+  border-top: 4px solid var(--lima);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-inicio:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(11, 43, 35, 0.15);
+}
+
+
+@media (max-width: 767.98px) {
+  .hero-inicio {
+    padding: 3.5rem 0;
+  }
+}
