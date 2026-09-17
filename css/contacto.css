@@ -1,18 +1,15 @@
-/* ============================================================
-   CONTACTO.CSS - Belén Bulacio - TP3
-   Contacto e información administrativa
-   ============================================================ */
-
-
-/* ------------------------------------------------------------
-   1. ENCABEZADO
-   ------------------------------------------------------------ */
+.hero-club {
+    background-color: var(--verde-noche);
+    color: var(--cal);
+    padding: 6rem 0;
+}
 
 .contacto-encabezado {
     background: var(--verde-noche);
     color: var(--cal);
     padding: 70px 0;
 }
+
 
 .contacto-encabezado h1 {
     font-family: "Barlow Condensed", sans-serif;
