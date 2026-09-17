@@ -69,6 +69,78 @@
             </div>
         </section>
 
+
+        <section class="py-5 bg-white" aria-labelledby="titulo-panel">
+            <div class="container">
+
+                <h2 class="titulo-cal" id="titulo-panel">Panel de la recepción</h2>
+                <p class="text-secondary mb-4">
+                    Lo que hay que hacer al abrir el club y los avisos para el próximo turno.
+                </p>
+
+                <div class="row g-4">
+
+                    <div class="col-12 col-lg-7">
+                        <div class="card card-inicio h-100">
+                            <div class="card-body">
+                                <h3 class="card-title h4">Apertura del día</h3>
+
+                                <ul class="list-unstyled mb-3" id="lista-apertura">
+                                    <li class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="tarea-1">
+                                        <label class="form-check-label" for="tarea-1">Encender la iluminación de las canchas</label>
+                                    </li>
+                                    <li class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="tarea-2">
+                                        <label class="form-check-label" for="tarea-2">Revisar redes y arcos</label>
+                                    </li>
+                                    <li class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="tarea-3">
+                                        <label class="form-check-label" for="tarea-3">Abrir los vestuarios</label>
+                                    </li>
+                                    <li class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="tarea-4">
+                                        <label class="form-check-label" for="tarea-4">Confirmar por teléfono los turnos "a confirmar"</label>
+                                    </li>
+                                    <li class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="tarea-5">
+                                        <label class="form-check-label" for="tarea-5">Cargar las reservas recibidas por WhatsApp</label>
+                                    </li>
+                                    <li class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="tarea-6">
+                                        <label class="form-check-label" for="tarea-6">Revisar el stock de pelotas para alquiler</label>
+                                    </li>
+                                </ul>
+
+                                <div class="d-flex flex-wrap align-items-center gap-3">
+                                    <span id="progreso-apertura" class="chip-estado chip-pendiente">0 de 6 tareas</span>
+                                    <button type="button" id="boton-reiniciar" class="btn btn-club-linea btn-sm">Reiniciar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-5">
+                        <div class="card card-inicio h-100">
+                            <div class="card-body">
+                                <h3 class="card-title h4">Avisos para el próximo turno</h3>
+
+                                <form id="form-aviso" class="d-flex gap-2 mb-3">
+                                    <label for="texto-aviso" class="visually-hidden">Nuevo aviso</label>
+                                    <input type="text" class="form-control" id="texto-aviso" placeholder="Ej: Cancha 2, la luz del fondo no anda" required>
+                                    <button type="submit" class="btn btn-club">Agregar</button>
+                                </form>
+
+                                <ul class="list-group" id="lista-avisos"></ul>
+                                <p class="text-secondary small mb-0 mt-2" id="sin-avisos">No hay avisos pendientes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
         <section class="py-5" aria-labelledby="titulo-funciones">
             <div class="container">
 
@@ -199,14 +271,13 @@
             </div>
 
             <hr class="border-secondary my-4">
-            <p class="text-center small mb-0"> Copyright <span id="anio-actual">2026</span> &middot; Grupo 6 &middot;
-                Sistema del club</p>
+            <p class="text-center small mb-0"> Copyright <span id="anio-actual">2026</span> &middot; Grupo 6 &middot; Sistema del club</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/inicio.js"></script>
+<script src="js/app.js"></script>
+<script src="js/inicio.js"></script>
 </body>
 
 </html>
