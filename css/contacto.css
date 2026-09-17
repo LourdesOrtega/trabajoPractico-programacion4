@@ -26,8 +26,7 @@
     max-width: 650px;
 }
 
-.contacto-etiqueta,
-.subtitulo-contacto {
+.contacto-etiqueta {
     display: inline-block;
     color: var(--lima);
     font-size: 0.75rem;
@@ -68,80 +67,14 @@
    2. SECCIONES
    ------------------------------------------------------------ */
 
-.seccion-contacto {
-    padding: 60px 0;
-    background: var(--cal);
-}
-
-.seccion-contacto--clara {
-    background: #ffffff;
-}
 
 .titulo-cal {
     margin-bottom: 0;
 }
 
-.texto-secundario {
-    color: #68736e;
-    font-size: 0.95rem;
-}
-
-
 /* ------------------------------------------------------------
    3. CARD DE DATOS
    ------------------------------------------------------------ */
-
-.contacto-card {
-    overflow: hidden;
-    border-radius: 12px;
-    background: #ffffff;
-}
-
-.contacto-card .card-body:first-child {
-    padding: 25px;
-}
-
-.contacto-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 17px 25px;
-    border-color: #e7ebe7;
-}
-
-.contacto-item > div {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.contacto-item strong {
-    font-size: 0.85rem;
-    color: var(--verde-noche);
-}
-
-.contacto-item a,
-.contacto-item span {
-    color: #4d5954;
-    text-decoration: none;
-}
-
-.contacto-item a:hover {
-    color: var(--verde-cancha);
-}
-
-.contacto-icono {
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--lima);
-    color: var(--verde-noche);
-    font-size: 1.15rem;
-}
 
 .botones-contacto {
     display: flex;
@@ -192,51 +125,6 @@
 /* ------------------------------------------------------------
    5. INFORMACIÓN ADMINISTRATIVA
    ------------------------------------------------------------ */
-
-.admin-card {
-    border-radius: 12px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.admin-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0.5rem 1rem rgba(11, 43, 35, 0.12) !important;
-}
-
-.admin-card .card-body {
-    padding: 30px;
-}
-
-.admin-icono {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 18px;
-    border-radius: 50%;
-    background: var(--verde-noche);
-    color: var(--lima);
-    font-size: 1.3rem;
-}
-
-.admin-card h3 {
-    color: var(--verde-noche);
-}
-
-.admin-card p {
-    color: #68736e;
-}
-
-.admin-card li {
-    margin-top: 10px;
-    color: #4d5954;
-}
-
-.admin-card li i {
-    color: var(--verde-cancha);
-    margin-right: 7px;
-}
 
 .horario-dato {
     display: flex;
@@ -379,26 +267,6 @@
    ------------------------------------------------------------ */
 
 @media (max-width: 767.98px) {
-
-    .contacto-encabezado {
-        padding: 50px 0;
-    }
-
-    .seccion-contacto {
-        padding: 45px 0;
-    }
-
-    .contacto-item {
-        padding: 15px 20px;
-    }
-
-    .botones-contacto {
-        flex-direction: column;
-    }
-
-    .botones-contacto .btn {
-        width: 100%;
-    }
 
     .contacto-mapa__titulo {
         padding: 20px;

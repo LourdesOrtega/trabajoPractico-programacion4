@@ -51,7 +51,7 @@
 <main>
 
     <!-- ENCABEZADO -->
-    <section class="contacto-encabezado franjas">
+    <section class="hero-club franjas">
         <div class="container">
             <div class="row align-items-center g-4">
                 <div class="col-12 col-lg-8">
@@ -83,11 +83,11 @@
 
 
     <!-- DATOS DEL ESTABLECIMIENTO -->
-    <section class="seccion-contacto">
+    <section class="py-5">
         <div class="container">
 
             <div class="mb-4">
-                <span class="subtitulo-contacto">INFORMACIÓN GENERAL</span>
+                <span class="text-uppercase fw-bold text-secondary">INFORMACIÓN GENERAL</span>
                 <h2 class="titulo-cal">Datos del establecimiento</h2>
             </div>
 
@@ -96,14 +96,14 @@
                 <!-- DATOS -->
                 <div class="col-12 col-lg-5">
 
-                    <div class="card contacto-card border-0 shadow-sm h-100">
+                    <div class="card border-0 shadow-sm h-100">
 
                         <div class="card-body">
                             <h3 class="h4 mb-1">
                                 Datos registrados
                             </h3>
 
-                            <p class="texto-secundario mb-0">
+                            <p class="text-secondary small mb-0">
                                 Información utilizada para la administración
                                 del establecimiento.
                             </p>
@@ -111,8 +111,8 @@
 
                         <ul class="list-group list-group-flush">
 
-                            <li class="list-group-item contacto-item">
-                                <span class="contacto-icono">
+                            <li class="list-group-item d-flex gap-3 align-items-center">
+                                <span class="fs-3 text-success">
                                     <i class="bi bi-telephone"></i>
                                 </span>
 
@@ -124,8 +124,8 @@
                                 </div>
                             </li>
 
-                            <li class="list-group-item contacto-item">
-                                <span class="contacto-icono">
+                            <li class="list-group-item d-flex gap-3 align-items-center">
+                                <span class="fs-3 text-succes">
                                     <i class="bi bi-envelope"></i>
                                 </span>
 
@@ -137,8 +137,8 @@
                                 </div>
                             </li>
 
-                            <li class="list-group-item contacto-item">
-                                <span class="contacto-icono">
+                            <li class="list-group-item d-flex gap-3 align-items-center">
+                                <span class="fs-3 text-succes">
                                     <i class="bi bi-geo-alt"></i>
                                 </span>
 
@@ -150,8 +150,8 @@
                                 </div>
                             </li>
 
-                            <li class="list-group-item contacto-item">
-                                <span class="contacto-icono">
+                            <li class="list-group-item d-flex gap-3 align-items-center">
+                                <span class="fs-3 text-succes">
                                     <i class="bi bi-geo"></i>
                                 </span>
 
@@ -165,15 +165,15 @@
 
                         </ul>
 
-                        <div class="card-body botones-contacto">
+                        <div class="card-body d-flex flex-wrap align-items-center gap-2">
                             <a href="tel:+543884000000"
-                               class="btn btn-club">
+                               class="btn btn-club btn-sm w-auto">
                                 <i class="bi bi-telephone me-2"></i>
                                 Llamar
                             </a>
 
                             <a href="mailto:administracion@clubcancha.com.ar"
-                               class="btn btn-club-linea">
+                               class="btn btn-club-linea btn-sm w-auto">
                                 <i class="bi bi-envelope me-2"></i>
                                 Enviar correo
                             </a>
@@ -191,15 +191,15 @@
 
                         <div class="contacto-mapa__titulo">
                             <div>
-                                <span class="subtitulo-contacto">
+                                <span class="text-uppercase fw-bold text-secondary">
                                     UBICACIÓN
                                 </span>
 
                                 <h3 class="h4 mb-1">
-                                    Ubicación del establecimiento
+                                    Ubicación para indicar al cliente
                                 </h3>
 
-                                <p class="mb-0 texto-secundario">
+                                <p class="mb-0 text-secondary small">
                                     Referencia de ubicación para la gestión
                                     administrativa del club.
                                 </p>
@@ -226,11 +226,11 @@
 
 
     <!-- INFORMACIÓN ADMINISTRATIVA -->
-    <section class="seccion-contacto seccion-contacto--clara">
+    <section class="py-5 bg-white">
         <div class="container">
 
             <div class="mb-4">
-                <span class="subtitulo-contacto">GESTIÓN</span>
+                <span class="text-uppercase fw-bold text-secondary">GESTIÓN</span>
                 <h2 class="titulo-cal">Información administrativa</h2>
             </div>
 
@@ -238,10 +238,10 @@
 
                 <div class="col-12 col-md-6">
 
-                    <div class="card admin-card border-0 shadow-sm h-100">
+                    <div class="card border-0 shadow-sm h-100">
                         <div class="card-body">
 
-                            <div class="admin-icono">
+                            <div class="fs-3 text-success">
                                 <i class="bi bi-person-badge"></i>
                             </div>
 
@@ -280,10 +280,10 @@
 
                 <div class="col-12 col-md-6">
 
-                    <div class="card admin-card border-0 shadow-sm h-100">
+                    <div class="card border-0 shadow-sm h-100">
                         <div class="card-body">
 
-                            <div class="admin-icono">
+                            <div class="fs-3 text-success">
                                 <i class="bi bi-clock-history"></i>
                             </div>
 
@@ -311,107 +311,8 @@
     </section>
 
 
-    <!-- HORARIOS -->
-    <section class="seccion-contacto">
-        <div class="container">
-
-            <div class="mb-4">
-                <span class="subtitulo-contacto">ATENCIÓN</span>
-                <h2 class="titulo-cal">Horarios del establecimiento</h2>
-            </div>
-
-            <div class="table-responsive horario-tabla">
-                <table class="table table-sm align-middle mb-0">
-
-                    <thead>
-                        <tr>
-                            <th>Día</th>
-                            <th>Horario de atención</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>Lunes</td>
-                            <td>08:00 - 23:00</td>
-                            <td>
-                                <span class="chip-estado chip-libre">
-                                    Activo
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Martes</td>
-                            <td>08:00 - 23:00</td>
-                            <td>
-                                <span class="chip-estado chip-libre">
-                                    Activo
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Miércoles</td>
-                            <td>08:00 - 23:00</td>
-                            <td>
-                                <span class="chip-estado chip-libre">
-                                    Activo
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Jueves</td>
-                            <td>08:00 - 23:00</td>
-                            <td>
-                                <span class="chip-estado chip-libre">
-                                    Activo
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Viernes</td>
-                            <td>08:00 - 23:00</td>
-                            <td>
-                                <span class="chip-estado chip-libre">
-                                    Activo
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Sábado</td>
-                            <td>08:00 - 23:00</td>
-                            <td>
-                                <span class="chip-estado chip-libre">
-                                    Activo
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Domingo</td>
-                            <td>08:00 - 23:00</td>
-                            <td>
-                                <span class="chip-estado chip-libre">
-                                    Activo
-                                </span>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-    </section>
-
-
     <!-- FUERA DE HORARIO -->
-    <section class="seccion-contacto seccion-contacto--clara">
+    <section class="py-5 bg-white">
         <div class="container">
 
             <div class="guardia-card">
@@ -421,7 +322,7 @@
                 </div>
 
                 <div>
-                    <span class="subtitulo-contacto">
+                    <span class="text-uppercase fw-bold text-secondary">
                         FUERA DE HORARIO
                     </span>
 
@@ -442,12 +343,12 @@
 
 
     <!-- PREGUNTAS FRECUENTES -->
-    <section class="seccion-contacto">
+    <section class="py-5">
         <div class="container">
 
             <div class="mb-4">
-                <span class="subtitulo-contacto">CONSULTAS</span>
-                <h2 class="titulo-cal">Preguntas frecuentes</h2>
+                <span class="text-uppercase fw-bold text-secondary">CONSULTAS</span>
+                <h2 class="titulo-cal">Qué responder al cliente</h2>
             </div>
 
             <div class="accordion accordion-club" id="accordionContacto">
@@ -460,7 +361,7 @@
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#preguntaUno">
-                            ¿Cómo cancelo un turno?
+                            Si preguntan cómo cancelar un turno
                         </button>
                     </h3>
 
@@ -486,7 +387,7 @@
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#preguntaDos">
-                            ¿Se aceptan pagos con tarjeta?
+                            Si preguntan por pagos con tarjeta
                         </button>
                     </h3>
 
@@ -511,7 +412,7 @@
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#preguntaTres">
-                            ¿Hay estacionamiento?
+                            Si preguntan por estacionamiento
                         </button>
                     </h3>
 
@@ -536,7 +437,7 @@
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#preguntaCuatro">
-                            ¿Se alquilan pelotas?
+                            Si preguntan por el alquiler de pelotas
                         </button>
                     </h3>
 
