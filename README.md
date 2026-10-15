@@ -1,46 +1,53 @@
 # Club Cancha — Sistema de Turnos
 
-Trabajo Práctico N.º 2 — HTML5 y CSS
-Tecnicatura Universitaria en Programación.
+Sitio web **interno** de un club deportivo para gestionar los turnos de las canchas
+de fútbol 5, fútbol 7 y pádel. No está pensado para el público general, sino para
+las personas que administran el club.
+
+Trabajo Práctico de **Programación IV** — Tecnicatura Universitaria en Programación.
+
+El proyecto se fue construyendo en tres etapas:
+
+| Trabajo | Qué se hizo |
+| --- | --- |
+| TP2 — HTML5 y CSS | Las 5 páginas con HTML semántico y una hoja de estilos propia |
+| TP3 — Bootstrap | Se rehízo el diseño con ad visual propia |
+| TP4 — JavaScript y DOM | Se agregó funcionalidad a cada página con JavaScript |
 
 ---
 
 ## Integrantes
 
-| Integrante            | Página a cargo                                     | Rama            |
-| --------------------- | -------------------------------------------------- | --------------- |
-| Lourdes Ortega        | feat/inicio (`index.html`) + hoja de estilos común | `feat/inicio`   |
-| Analía Roldan         | feat/canchas (`canchas.html`)                      | `feat/canchas`  |
-| Laura Soria           | feat/horarios (`horarios.html`)                    | `feat/horarios` |
-| Emilse Andrada Suarez | feat/reservar (`reservar.html`)                    | `feat/reservar` |
-| Belén Bulacio         | feat/contacto (`contacto.html`)                    | `feat/contacto` |
+| Integrante | Página a cargo |
+| --- | --- |
+| Lourdes Ortega | Inicio (`index.html`), estilos comunes y `app.js` |
+| Analía Roldan | Canchas (`canchas.html`) |
+| Laura Soria | Horarios (`horarios.html`) |
+| Emilse Andrada Suarez | Reservar (`reservar.html`) |
+| Belén Bulacio | Contacto (`contacto.html`)
 
 ---
 
-## Descripción breve
+## Páginas
 
-Sitio web **interno** de un club deportivo para gestionar los turnos de las canchas
-de fútbol 5, fútbol 7 y pádel. No está pensado para el público general, sino para
-las personas que administran el club.
-
-Tiene 5 páginas:
-
-- **Inicio**: presentación del sistema y accesos rápidos.
-- **Canchas**: catálogo de las canchas con precio por hora y servicios.
-- **Horarios**: grilla del día con los turnos libres, ocupados y a confirmar.
+- **Inicio**: panel de la recepción y accesos.
+- **Canchas**: las canchas del club con su foto, precio por hora y estado.
+- **Horarios**: grilla del día con los turnormar de cada cancha.
 - **Reservar**: formulario para cargar una reserva.
-- **Contacto**: datos del establecimiento e información administrativa.
+- **Contacto**: datos del establecimiento, información administrativa y respuestas
+  a las preguntas frecuentes de los clientes
 
 ---
 
 ## Tecnologías utilizadas
 
 - **HTML5 semántico**: `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`.
-- **CSS3**: variables (`:root` y `var()`), Flexbox, CSS Grid, Media Queries.
+- **CSS3**: variables (`:root` y `var()`), F.
+- **Bootstrap 5.3.3** y **Bootstrap Icons**, desde CDN.
+- **JavaScript** y manipulación del **DOM**.
+- **Google Fonts**: Barlow Condensed para lol texto.
 - **Git y GitHub**: una rama por integrante, commits y Pull Requests.
-- **Visual Studio Code**.
-
-Una sola hoja de estilos externa: `css/styles.css`.
+- **Visual Studio Code** con Live Server.
 
 ---
 
@@ -49,13 +56,26 @@ Una sola hoja de estilos externa: `css/styles.css`.
 ```
 trabajoPractico-programacion4/
 ├── css/
-│   └── styles.css        <-- ÚNICA hoja de estilos
+│   ├── styles.css        CSS del TP2, comentado (no se usa)
+│   ├── comun.css         colores, tipografíel sitio
+│   ├── inicio.css
+│   ├── canchas.css
+│   ├── horarios.css
+│   ├── reservar.css
+│   └── contacto.css
+├── js/
+│   ├── app.js            compartido: se carga en las 5 páginas
+│   ├── inicio.js
+│   ├── canchas.js
+│   ├── horarios.js
+│   ├── reservar.js
+│   └── contacto.js
 ├── img/
-│   ├── cancha-futbol5.svg
-│   ├── cancha-futbol7.svg
-│   ├── cancha-padel.svg
-│
-├── index.html            <-- Inicio
+│   ├── cancha-futbol5.jpg
+│   ├── cancha-futbol7.jpg
+│   ├── cancha-padel.jpg
+│   └── logo-club.png     logo del navbar y favicon
+├── index.html            Inicio
 ├── canchas.html
 ├── horarios.html
 ├── reservar.html
@@ -63,132 +83,119 @@ trabajoPractico-programacion4/
 └── README.md
 ```
 
-El archivo `styles.css` está dividido en **zonas** y cada integrante escribe
-únicamente dentro de la suya. Así podemos editar el mismo archivo al mismo
-tiempo sin que git nos genere conflictos.
+Cada integrante trabaja **solo en su HTML, su CSS y su JS**. Los archivos
+compartidos (`comun.css` y `app.js`) los modifica una sola persona. Así varias
+podemos trabajar al mismo tiempo sin que Git genere conflictos.
 
 ---
 
-## ¿Dónde utilizamos Flexbox?
+## Bootstrap (TP3)
 
-Flexbox lo usamos cuando hay que acomodar elementos **en una sola dirección**
-(una fila o una columna).
+Cada página carga los estilos en este orden:
 
-| Dónde                  | Clase                        | Qué hace                                                                             |
-| ---------------------- | ---------------------------- | ------------------------------------------------------------------------------------ |
-| Cabecera               | `.cabecera__inner`           | `justify-content: space-between` deja el logo a la izquierda y el menú a la derecha. |
-| Logo                   | `.logo`                      | Pone el ícono y el texto en fila, alineados al medio.                                |
-| Menú                   | `.nav__lista`                | Pone los 5 links en fila con la misma separación (`gap`).                            |
-| Botones de la portada  | `.hero__acciones`            | En celular se apilan en columna, en tablet pasan a fila.                             |
-| Círculo de los íconos  | `.tarjeta__icono`            | `align-items` y `justify-content` en `center` centran el emoji adentro del círculo.  |
-| Ficha de cada cancha   | `.datos li`                  | Etiqueta a la izquierda y valor a la derecha.                                        |
-| Casilleros de turno    | `.turno`                     | Columna centrada: la hora arriba y el estado abajo.                                  |
-| Referencias de colores | `.referencias`               | Fila centrada que se acomoda sola.                                                   |
-| Campos del formulario  | `.campo`                     | Columna: la etiqueta arriba y el input abajo.                                        |
-| Datos de contacto      | `.lista-contacto` y sus `li` | El ícono a la izquierda y el texto a la derecha.                                     |
+```
+bootstrap.min.css  →  bootstrap-icons  →  stágina.css
+```
 
----
+El orden importa: lo que se carga después tiene prioridad. Por eso primero va
+Bootstrap, después lo común del club y al final lo propio de cada página.
 
-## ¿Dónde utilizamos CSS Grid?
+El `styles.css` del TP2 **no se borró**: quedó comentado, como pedía la consigna.
 
-Grid lo usamos cuando hay que armar una **grilla de filas y columnas**.
-En todos los casos arrancamos con **1 columna en el celular** y agregamos
-columnas con media queries.
+### Componentes de Bootstrap que usamos
 
-| Dónde                                     | Clase             | Columnas                                                     |
-| ----------------------------------------- | ----------------- | ------------------------------------------------------------ |
-| Funciones principales (Inicio y Contacto) | `.grid-funciones` | 1 → 2 (768px) → 3 (1024px)                                   |
-| Catálogo de canchas                       | `.grid-canchas`   | 1 → 2 (768px) → 3 (1024px)                                   |
-| Grilla de turnos                          | `.grid-horarios`  | 2 → 4 (768px) → 8 (1024px)                                   |
-| Página Reservar                           | `.grid-reserva`   | 1 → `2fr 1fr` en 1024px (formulario + avisos)                |
-| Formulario                                | `.formulario`     | 1 → 2 en 768px. Los campos largos usan `grid-column: span 2` |
-| Página Contacto                           | `.grid-contacto`  | 1 → 2 en 1024px                                              |
-| Pie de página                             | `.pie__grid`      | 1 columna                                                    |
+| Página | Componentes |
+| --- | --- |
+| Todas | `navbar` con menú hamburguesa (`collapse`), sistema de grillas (`container`, `row`, `col`) |
+| Inicio | `card`, `list-group` |
+| Canchas | `card` con imagen (`card-img-top`), `form-select` |
+| Horarios | Pestañas (`nav-pills`), `card`,
+| Reservar | Formulario con validación (`was-validated`, `invalid-feedback`), `card`, `list-group`, `alert`, `badge` |
+| Contacto | `accordion`, `list-group`, `card` |
 
----
+### Identidad visual propia
 
-## ¿Qué variables CSS creamos?
+Para que el sitio no se vea como una plantilla de Bootstrap, `comun.css` define
+la paleta y las tipografías del club, tomadas del logo:
 
-Están todas declaradas en `:root` (la raíz del documento) y se usan con
-`var(--nombre)`. La ventaja es que si queremos cambiar el verde del club,
-lo cambiamos en un solo lugar y se actualiza todo el sitio.
+| Variable | Uso |
+| --- | --- |
+| `--verde-noche` | Navbar y footer |
+| `--verde-cancha` | Fondo de los encabezado
+| `--lima` | Botones y acentos |
+| `--cal` | Fondo general de la página |
+| `--ladrillo` | Turno ocupado |
+| `--texto` | Color del texto |
+| `--fuente-titulo` | Barlow Condensed |
+| `--fuente-texto` | Work Sans |
 
-**Colores del club**
-`--color-primario` · `--color-primario-oscuro` · `--color-primario-claro` ·
-`--color-secundario` · `--color-secundario-oscuro`
+También hay detalles propios, como la línea color lima a la izquierda de los
+títulos (`.titulo-cal`).
 
-**Colores de la interfaz**
-`--color-fondo` · `--color-superficie` · `--color-oscuro` · `--color-texto` ·
-`--color-texto-suave` · `--color-texto-claro` · `--color-borde`
+### Responsive
 
-**Colores según el estado del turno**
-`--color-disponible` · `--color-disponible-fondo` · `--color-ocupado` ·
-`--color-ocupado-fondo` · `--color-pendiente` · `--color-pendiente-fondo`
+Usamos los **puntos de corte de Bootstrap** con sus clases de grilla
+(`col-md-6`, `col-lg-4`, etc.): en el celular todo va en una columna, y a medida
+que la pantalla crece se acomodan más columnas. El menú pasa a ser hamburguesa
+en pantallas chicas.
 
-**Tipografías**
-`--fuente-titulos` · `--fuente-texto`
-
-**Espaciados** (múltiplos de 0.5rem, o sea de 8px)
-`--esp-1` (0.5rem) · `--esp-2` (1rem) · `--esp-3` (1.5rem) ·
-`--esp-4` (2rem) · `--esp-5` (3rem)
-
-**Bordes, sombras y ancho**
-`--radio` · `--radio-chico` · `--radio-pastilla` · `--sombra` · `--ancho-contenedor`
+Todas las páginas tienen
+`<meta name="viewport" content="width=device-width, initial-scale=1.0">`.
 
 ---
 
-## ¿Cómo implementamos el Responsive Design?
+## JavaScript (TP4)
 
-Usamos la metodología **Mobile First**: primero escribimos los estilos del
-celular y después, con `min-width`, vamos **agregando** reglas para las
-pantallas más grandes.
+Cada página tiene su propio archivo JS, que se carga al final del `<body>`,
+después de Bootstrap y de `app.js`. Todo el comportamiento está en los archivos
+`.js`: en el HTML no hay código JavaScript n
 
-1. **`<meta name="viewport" content="width=device-width, initial-scale=1.0">`**
-   en las 5 páginas. Sin esta línea el celular simula una pantalla de escritorio
-   y la página se ve chiquita y alejada.
-2. **Unidades relativas** en lugar de medidas fijas. En todo el proyecto
-   usamos solamente cuatro:
+| Archivo | Qué hace |
+| --- | --- |
+| `app.js` | Escribe el año actual en el pie de todas las páginas |
+| `inicio.js` | **Checklist de apertura del club**: cuenta las tareas hechas y avisa cuando el club está listo para abrir. **Avisos para el próximo turno**: se agregan y se marcan como listos, y se guardan en el `localStorage` para que no se pierdan al recargar |
+| `canchas.js` | **Filtro por estado**: muestra todas las canchas o solo las libres, pendientes u ocupadas |
+| `horarios.js` | Muestra la **fecha de hoy**, **cuenta los turnos libres** de cada cancha, agrega un botón para **ver solo los turnos libres** y **marca el turno en curso** según la hora real |
+| `reservar.js` | **Valida el formulario**: no deja elegir un día anterior a hoy, desactiva los horarios que ya
+pasaron y en el teléfono solo deja escribir
+| `contacto.js` | **Buscador** de las respuestas a los clientes: filtra las preguntas mientras se escribe |
 
-| Unidad | Qué es                                              | Dónde la usamos                                                        |
-| ------ | --------------------------------------------------- | ---------------------------------------------------------------------- |
-| `px`   | Medida fija                                         | Bordes, sombras, el círculo de los íconos (56px), el alto del textarea |
-| `%`    | Relativa al elemento padre                          | `.contenedor` (100%), imágenes, `border-radius: 50%` para el círculo   |
-| `rem`  | Relativa al tamaño base del navegador (1rem = 16px) | Textos, paddings, márgenes, gaps                                       |
-| `fr`   | Fracción del espacio libre (solo en Grid)           | Todas las columnas de las grillas                                      |
+### Conceptos que usamos
 
-3. **`box-sizing: border-box`** en todos los elementos, para que el `padding`
-   y el `border` no agranden las cajas y no se desborde nada.
-4. **`img { max-width: 100%; height: auto; }`** para que ninguna imagen se
-   salga de la pantalla.
-5. **Media queries** en dos puntos de corte:
-
-| Pantalla   | Ancho                 | Qué cambia                                                                   |
-| ---------- | --------------------- | ---------------------------------------------------------------------------- |
-| Celular    | base (menos de 768px) | Todo en 1 columna, botones apilados, menú compacto.                          |
-| Tablet     | `min-width: 768px`    | Grillas a 2 columnas, formulario a 2 columnas, títulos más grandes.          |
-| Escritorio | `min-width: 1024px`   | Grillas a 3 columnas, Contacto y Reservar a 2 columnas, títulos más grandes. |
+- Seleccionar elementos: `getElementById`, `querySelector`, `querySelectorAll`.
+- Eventos: `addEventListener` con `click`, `change`, `input` y `submit`.
+- Modificar la página: `textContent`, `classList`, `createElement`, `appendChild`.
+- Recorrer listas con `forEach`.
+- Guardar datos en el navegador con `localStorage` y `JSON`.
+- Fechas y horas con `Date`.
+- Validación de formularios con `checkValidity` y `setCustomValidity`.
 
 ---
 
 ## Organización con Git
 
 ```
-main                (protegida — integra Lourdes)
-└── dev             (rama de desarrollo — integran Lourdes o Belén)
-    ├── feat/inicio      (Lourdes)
-    ├── feat/canchas     (Analía)
-    ├── feat/horarios    (Laura)
-    ├── feat/reservar    (Emilse)
-    └── feat/contacto    (Belén)
+main                (rama final, protegida)
+└── dev             (rama donde se junta el trabajo de todas)
+    ├── ramas de cada integrante
 ```
+
+Cada trabajo práctico tuvo sus propias ramas:
+
+| Trabajo | Ramas |
+| --- | --- |
+| TP2 | `feat/inicio`, `feat/canchas`, `feat/horarios`, `feat/reservar`, `feat/contacto` |
+| TP3 | `refactor/inicio`, `refactor/canchas`, `refactor/horarios`, `refactor/reservar`, `refactor/contacto` |
+| TP4 | `feature/funcionalidades-javascript-ios`, `-reservar`, `-contacto` |
 
 Flujo de trabajo:
 
-1. Pararse en la rama propia: `git checkout mi-rama`
+1. Pararse en la rama propia: `git switch mi-rama`
 2. Traer lo último de dev: `git fetch origin` y `git merge origin/dev`
-3. Trabajar, y después `git add .` y `git commit -m "mensaje claro"`
+3. Hacer los cambios, y después `git add archivo-que-cambie` y `git commit -m "mensaje claro"`
 4. Subir: `git push origin mi-rama`
 5. Crear un Pull Request de la rama personal hacia `dev`.
-6. Al final, un único Pull Request de `dev` hacia `main`.
+6. Cuando `dev` está completo y probado, un Pull Request de `dev` hacia `main`.
 
----
+Los Pull Requests los revisan las responsables del repositorio antes de
+mergearlos (archivo `.github/CODEOWNERS`).
